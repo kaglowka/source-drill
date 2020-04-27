@@ -2,6 +2,7 @@
 #### our own ignores
 
 sample_pdfs/*.pdf
+output/*
 
 ##### Python template from GitHub
 # Byte-compiled / optimized / DLL files
