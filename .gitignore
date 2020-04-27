@@ -1,3 +1,9 @@
+
+#### our own ignores
+
+sample_pdfs/*.pdf
+
+##### Python template from GitHub
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
