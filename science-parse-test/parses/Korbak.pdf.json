@@ -1,0 +1,449 @@
+{
+  "name" : "Korbak.pdf",
+  "metadata" : {
+    "source" : "CRF",
+    "title" : "Developmentally motivated emergence of compositional communication via template transfer",
+    "authors" : [ "Tomasz Korbak" ],
+    "emails" : [ "tomasz.korbak@gmail.com", "j.zubek@uw.edu.pl", "lukasz.kucinski@impan.pl", "pmilos@mimuw.edu.pl", "raczasze@psych.uw.edu.pl" ],
+    "sections" : [ {
+      "heading" : "1 Introduction",
+      "text" : "Language-like communication protocols can arise in environments that require agents to share information and coordinate behavior (Foerster et al., 2016; Lazaridou et al., 2016; Jaques et al., 2018). A crucial feature of human languages and some animal communication systems is compositionality: there are complex signals constructed through the combination of signals. Furthermore, compositionality is essential for general intelligence because it facilitates generalization —adaptability to novel situations—and productivity—an infinite number of meanings can be created using a finite set of primitives (Lake et al., 2016).\nPreprint. Under review.\nar X\niv :1\n91 0.\n06 07\nThe contribution of this paper is its demonstration that communication protocols exhibiting compositionality can emerge via adaptation of pre-existing, simpler non-compositional protocols to a new environment. This procedure is an instance of template transfer (Barrett and Skyrms, 2017).\nWe are motivated in this work by semiotic theoretical framework and empirical research in language development. Deacon (1998), after Peirce (1998) presented a semiotic framework detailing how (i) iconic and (ii) indexical communication protocols precede (iii) complex compositional communication protocols. Similarly, language development research demonstrates that children learn to speak compositionally in a structured social environment designed for teaching progressively more complex utterances through simple language games (Stern, 1974; Bruner, 1983; Nomikou et al., 2017; Rączaszek-Leonardi et al., 2018).\nOur model implements the idea of template transfer by sharing agents across games of varying complexity. We decompose learning compositional communication into three phases: (i) learning a visual classifier, (ii) learning non-compositional communication protocols, and (iii) learning a compositional communication protocol. This decomposition closely follows distinctions established in semiotics and is more plausible in the light of human language development than other approaches. Crucially, the biases learned in simple games in phase (ii) are sufficient to incentivize a compositional communication protocol to emerge in phase (iii). We compare the template transfer approach with other method of achieving compositionality—the obverter algorithm (Batali, 1998; Choi et al., 2018)— on three different metrics: zero-shot generalization, context independence and topographical similarity. The results demonstrate that the ability to communicate compositionality can emerge in a model less cognitively demanding than the obverter approach. The key idea—that complex communication protocols are easier to learn when bootstrapped on pre-existing simpler protocols—may generalize to other problems in multi-agent communication."
+    }, {
+      "heading" : "2 Related work",
+      "text" : "Recent work on emergent communication in artificial intelligence shows that compositionality requires strong inductive biases to be imposed on communicating agents (Kottur et al., 2017). One recurring idea is placing pressure on agents to use symbols consistently across varying contexts. To that end, Kottur et al. (2017) and Das et al. (2017) reset the memory of an agent between producing or receiving subsequent symbols, which helps to obtain a consistent symbol grounding. A more psychologically plausible approach is explored by Choi et al. (2018) and Bogin et al. (2018), who take inspiration from the obverter algorithm (Oliphant and Batali, 1997; Batali, 1998).\nThe obverter (from the Latin obverto, to turn towards) algorithm (Batali, 1998; Oliphant and Batali, 1997) is based on the assumption that an agent can use its own responses to messages to predict other agent’s responses, and thus can iteratively compose its messages to maximize the probability of the desired response. A limitation of the obverter is that it makes strong assumptions about the agents and task: to be able to use themselves as models of others, the agents must share an identical architecture and the task must be symmetric (the agents must be able to exchange their roles). This excludes games with functional specialization of agents.\nA different family of approaches, more similar in spirit to the approach described in this work, includes population-based training that incentivizes the creation of communication protocols that are easy to teach to new agents (Brighton, 2002; Li and Bowling, 2019) and gradually increasing task complexity that incentivizes reusing existing patterns of communication (De Beule and Bergen, 2006). Contributing to this line of thinking, we show how the history of acquiring simpler communication protocols may lead to more complex types of communication."
+    }, {
+      "heading" : "3 Method",
+      "text" : "In this section we present two Lewis signaling games (Lewis, 2011; Skyrms, 2010). The first is a standard object naming game. Based on it, we propose a new game that incorporates the idea of template transfer (Barrett and Skyrms, 2017).\nObject naming game Two agents, a sender and a receiver, learn to communicate about colored geometric objects. The sender observes an object (an RGB image) and sends a message (a sequence of discrete symbols) to the receiver; the receiver must correctly indicate both the color and the shape of the object. Formally, the game is stated as maximization of the following log likelihood:\nL(θ, ψ) := ExEm∼sθ(·|x)[− log rψ(xc, xs|m)],\nwhere sθ is the policy of the sender (i.e. sθ(m|x) is the probability of sending message m when observing image x), rψ is the policy of the receiver, x is the representation of the object and xc and xs are its color and shape, respectively. Parameters θ and ψ are learnable parameters of the polices. For more details, see Algorithm 1 in the Appendix.\nTemplate transfer game This game consists of two phases. In the first, two senders communicate with one receiver in two sub-games. The sub-games are disentangled in the sense that their tasks are to correctly indicate one aspect of the object (color or shape), as formalized by the following loss functions: L1(θ1, ψ) := ExEm∼sθ1 (·|x)[− log rψ(xc|m)], L2(θ2, ψ) := ExEm∼sθ2 (·|x)[− log rψ(xs|m)],\nwhere rθ(xc|m) is the marginalization of rθ(xc, xs|m), viz. rθ(xc|m) := ∑ xs rθ(xc, xs|m). Analogously, one can define rθ(xc|m). These two losses are optimized simultaneously (crucially with the shared parameters ψ of the receiver) until a desired level of accuracy is met. Then, the second phase follows, in which the receiver is passed (via template transfer) to the object naming game (as described in the previous paragraph) with a new sender. See Figure 1 and Algorithm 2 in the Appendix for more details.\nThe communication protocol acquired in the first phase serves as a training bias in the second phase. Informally, the new sender learns to emulate messages sent by the two specialized senders of the previous phase. Our experiments (Section 4) indicate that two-phase learning is a sufficient incentive for compositionality to emerge.\nAgents Both the sender and the receiver are implemented as recurrent neural networks. The sender is equipped with a pre-trained convolutional neural network to process visual input. After observing the object, the sender generates a sequence of T discrete messages sampled from a closed vocabulary of 10 symbols. During the object naming game, T = 2, while during the template transfer game, T = 1. To prevent distribution shift with respect to message length between games, a random uniformly sampled symbol is prepended to s1’s messages and appended to s2’s messages. Due to the discrete nature of the communication channel, Gumbel–Softmax relaxation (Maddison et al., 2016; Jang et al., 2016) is used to backpropagate through sθ(m|x). For details concerning the architecture and hyperparameters, please see the Appendix."
+    }, {
+      "heading" : "4 Experiments and results",
+      "text" : "Measuring compositionality We utilize three metrics of compositionality of a communication protocol: zero-shot generalization accuracy, context independence and topographical similarity. During evaluation we use the deterministic sender given by s(x) := argmaxm sθ(m|x), where x is an object.\nWe quantify zero-shot generalization by measuring the accuracy of the agents on a test set, containing pairs of shapes and colors not present in the training set.\nContext independence was introduced by Bogin et al. (2018) as a measure of alignment between the symbols in an agent’s messages and the concepts transmitted. We denote the set of symbols used to compose messages by V and by K the set of concepts, which in our case is the union of available colors and shapes. Given sender s, and assuming a uniform distribution of objects, we define p(v|k) as the probability that symbol v ∈ V appears when the sender observes an object with property\nk ∈ K. We define p(k|v) in the same manner. Further, let vk := argmaxv p(k|v). The context independence metric is defined as E(p(vk|k) · p(k|vk)); the expectation is taken with respect to the uniform distribution on K. Context independence is sometimes considered restrictive, as it may be low in the presence of synonyms (Lowe et al., 2019).\nFinally, we introduce topographical similarity (Brighton and Kirby, 2006; Lazaridou et al., 2018), also known as representational similarity (Kriegeskorte, 2008; Bouchacourt and Baroni, 2018). We denote the random variable Lt := L((x1c , x 1 s), (x 2 c , x 2 s)), where L is the Levenshtein (1966) distance and x1 and x2 are independently sampled objects with the subscripts denoting their shapes and colors. Note that in our case Lt ∈ {0, 1, 2}. Let Lm := L(s(x1), s(x2)) be the distance between messages sent by the sender after observing x1 and x1. Topographical similarity is the the Spearman ρ correlation of Lt and Lm.\nThe metrics described above can be regarded as measures of compositionality. Indeed, high zero-shot generalization indicates that the agents correctly map the implicit compositional structure of inputs to explicate one of the outputs. The other two metrics focus directly on the transmitted messages, comparing them to the ground truth, fully disentangled (color, shape) representation.\nObverter baseline In the obverter algorithm, two agents exchange the roles of the sender and the receiver. If an agent is the receiver, it behaves as in the object naming game. If an agent is the sender, it sends message that would have produced the most accurate prediction of color and shape, if it had received such a message as a receiver (i.e. instead of the greedy decoding used in the original implementation of Batali (1998), we simply choose the message maximizing accuracy). Accuracy is evaluated against the predictions of the visual classifier. For details, consult Algorithm 3 in the Appendix.\nThe effect of template transfer on compositionality We compared our approach with several baselines (random, the same architecture without pre-training games, and our implementation of the obverter approach) on games with five shapes and five colors1. Topographical similarity and context independence were computed on the full dataset (train and test); the results are presented in Table 1. Template transfer clearly leads to highly compositional communication protocols. While all methods struggled to generalize to unseen objects, template transfer was the most successful. For examples of communication protocols representative of the experiments conducted, see Table 2."
+    }, {
+      "heading" : "5 Conclusions",
+      "text" : "Template transfer — transferring skills from simpler to more complex Lewis signaling games — can be used to model a variety of semiotic, social and cognitive phenomena (Barrett and Skyrms, 2017; Barrett et al., 2019, 2018). In this paper we demonstrated that compositional communication can emerge via template transfer, presenting a model-free approach more general than the obverter algorithm. The one assumption that we make is that the loss function can be decomposed into\n1The code accompanying this paper is released on GitHub under https://github.com/tomekkorbak/ compositional-communication-via-template-transfer.\ntwo disentangled loss functions, as in the case of decomposing L into L1 and L2. (Note that there is no need for inputs to be disentangled.) This shows that biases necessary for compositional communication can be learned rather than imposed by design."
+    }, {
+      "heading" : "Acknowledgments",
+      "text" : "Tomasz Korbak was funded by Ministry of Science and Higher Education (Poland) grant DI2015010945. Joanna Rączaszek-Leonardi and Julian Zubek were funded by National Science Centre (Poland) grant OPUS 2018/29/B/HS1/00884. Piotr Miłoś was funded by National Science Centre (Poland) grant UMO-2017/26/E/ST6/0062. The computations were run on the PLGRID infrastructure within the Prometheus cluster."
+    }, {
+      "heading" : "A Dataset",
+      "text" : "We conduct our experiments on a dataset consisting of 2500 images of colored three-dimensional objects. Each image has dimensions of 128 x 128 x 3 pixels. The dataset includes images of five shapes (box, sphere, cylinder, torus, ellipsoid) and five colors (blue, cyan, gray, green, magenta). One hundred images generated using POV-Ray ray tracing engine,2 differing in the position of the object on a surface, are included for each color–shape pair. (An analogous dataset was previously used by Choi et al. (2018) and Bogin et al. (2018).) We choose pairs for the test set by taking one of each figure and color, i.e. the test set is composed of blue boxes, cyan spheres, gray cylinders, green tori and magenta ellipsoids. Example images from the dataset are shown in Figure 2."
+    }, {
+      "heading" : "B Agent architecture",
+      "text" : "Vision module We pre-train a simple convolutional neural network on the training subset of our datatset to predict colors and shapes. The network is composed of two layers of filters (20 and 50 filters with kernel size 5x5 and stride 1), each followed by a ReLU (rectified linear unit) activation and max pooling. The output of convolutional layers is then projected into a 25-dimensional image embedding using a fully-connected layer. During pre-training, the image embedding is passed to two linear classifiers (for color and shape) and the whole vision module is optimized with negative log likelihood as a cost function.\nSender During naming games, the vision module is kept frozen (i.e. it is not updated during training). The sender generates its messages using a single-layer recurrent neural network (RNN) with a hidden state size of 200. The 25-dimensional image embedding for each image is projected to 200 dimensions to initialize the hidden state of the RNN. Let T be a fixed length of the message. Then, at each time-step t < T , the output of the RNN is used to parameterize a Gumbel-Softmax distribution (together with a temperature τ that is a trainable parameter as well). A symbol is sampled from this distribution at each time-step t. After reaching T , the RNN halts and the generated symbols are concatenated to form a message, which is then passed to the receiver.\nReceiver The receiver processes a message symbol-by-symbol using a single-layer recurrent neural network with a hidden state size of 200. After processing the entire sequence, the last output is passed to a two-layer neural network classifier with two softmax outputs for color and shape.\nHyperparameters All models are optimized using Adam (Kingma and Ba, 2014). The batch size is always 32. During the pre-traning phase of template transfer, both sender and receiver, as well as the vision classifier, are trained with learning rate 10−3. During the object naming game, the sender is trained with learning rate 10−3 and receiver with learning rate 10−5. During experiments with obverter, the receiver is trained with learning rate 10−5.\nC Implementations\nAlgorithms 1–3 describe the particular implementations of baseline training, template transfer pretraining and obverter used in the experiments. All experiments are implemented using PyTorch (Paszke et al., 2017) and EGG (Kharitonov et al., 2019).\n2The dataset was generated using code available from https://github.com/benbogin/obverter.\nAlgorithm 1 Baseline training 1: Initialize sender sθ, receiver rψ , and training set D 2: for x, xc, xs ∈ D do 3: m ∼ sθ(x) 4: x̂c, x̂s = rψ(m) 5: L = -log_likelihood(xc, x̂c) - log_likelihood(xs, x̂s) 6: optimize(L(θ, ψ))\nAlgorithm 2 Template transfer 1: Initialize senders sθ1 , sθ2 , sθ, receiver rψ , and training set D 2: for x, xc, xs ∈ D do 3: m1 ∼ sθ1(x) . Color naming game 4: m′ ∼ vocabulary 5: x̂c, x̂s = rψ([m1,m′]) 6: L1 = -log_likelihood(xc, x̂c) 7: m2 ∼ sθ2(x) . Shape naming game 8: m′′ ∼ vocabulary 9: x̂c, x̂s = rψ([m′′,m2]) 10: L2 = -log_likelihood(xs, x̂s) 11: optimize((L1(θ1, ψ) + L2(θ2, ψ))) 12: for x, xc, xs ∈ X do 13: m ∼ sθ(x) . Object naming game 14: x̂c, x̂s = rψ(m) 15: L = -log_likelihood(xc, x̂c) - log_likelihood(xs, x̂s) 16: optimize(L(θ, ψ))"
+    }, {
+      "heading" : "D Loss derivation",
+      "text" : "We assume that we are given a dataset D = { (x(i), x (i) c , x (i) s ) }n i=1 , where entries are i.i.d., x(i) is an RGB image and x(i)c , y (i) s are (ground truth) labels for x(i).\nWe assume that each data-point comes from a distribution (X,Xs, Xc,M), where Xs and Xc are two labels for image X and M is a latent variable.\nWe are interested in minimizing the negative log likelihood of ground truth labels given the image\nE(x,xc,xs)∼D[− log p(xc, xs|x)]. (1)\nWe assume that (Xc, Xs) and X are conditionally independent given M , i.e. p(xs, xc|x,m) = p(xs, xc|m). Consequently,\nlog p(xc, xs|x) = log ∑ m p(xc, xs|m)p(m|x) ≥ Em∼p(·|x)[log p(xc, xs|m)] (2)\nwhere the last inequality follows from Jensen’s inequality. We will be optimizing the lower bound; hence, our surrogate loss function is\nE(x,xc,xs)∼DEm∼p(·|x)[− log p(xc, xs|m)]. (3)\nDuring template transfer pre-training (color naming game and shape naming game) we additionally assume that Xc is conditionally independent from Xs given X , i.e.\npθ1,θ2,ψ(xc, xs|x) = pθ1,ψ(xs|x)pθ2,ψ(xc|x). (4)\nThis implies that the surrogate loss is equal to\nE(xc,x)∼D[− log pθ1,ψ(xc|x)] + E(xs,x)∼D[− log pθ2,ψ(xs|x)]. (5)\nAlgorithm 3 Obverter 1: Initialize agents a1, a2, visual module v, training set D 2: Initialize the set M of all possible messages m 3: for x, xc, xs ∈ D do 4: sθ, rψ ∼ {a1, a2} . Randomly assigning the roles of sender and receiver 5: m = argminm∈M evaluate_message(sθ, m) 6: ŷc, ŷs = rψ(m) 7: L = - log_likelihood(xc, x̂c) - log_likelihood(xs, x̂s) 8: optimize(L(ψ)) 9: procedure EVALUATE_MESSAGE(model, m) 10: xc, xs = v(x) . Using visual classifier predictions as a proxy for ground truth labels 11: x̂c, x̂s = model(m) 12: L′ = - log_likelihood(xc, x̂c) - log_likelihood(xs, x̂s) 13: return L′\nFurthermore, we assume that pθ1,ψ(xc|x) = ∑ m sθ1(m|x)rψ(xc|m), pθ2,ψ(xs|x) = ∑ m sθ2(m|x)rψ(xs|m), (6)\nwhere both marginal distributions share the same rψ .\nDuring the object naming game (the second phase of template transfer), we have pθ3,ψ(xc, xs|x) = ∑ m sθ3(m|x)rψ(xc, xs|m), (7)\nwhere rψ is the same as in the color naming and shape naming games."
+    } ],
+    "references" : [ {
+      "title" : "Hierarchical Models for the Evolution of Compositional Language",
+      "author" : [ "J. Barrett", "B. Skyrms", "C. Cochran" ],
+      "venue" : null,
+      "citeRegEx" : "Barrett et al\\.,? \\Q2018\\E",
+      "shortCiteRegEx" : "Barrett et al\\.",
+      "year" : 2018
+    }, {
+      "title" : "Self-assembling Games. The British Journal for the Philosophy of Science, 68(2):329–353",
+      "author" : [ "J.A. Barrett", "B. Skyrms" ],
+      "venue" : null,
+      "citeRegEx" : "Barrett and Skyrms,? \\Q2017\\E",
+      "shortCiteRegEx" : "Barrett and Skyrms",
+      "year" : 2017
+    }, {
+      "title" : "Self-Assembling Networks. The British Journal for the Philosophy of Science, 70(1):301–325",
+      "author" : [ "J.A. Barrett", "B. Skyrms", "A. Mohseni" ],
+      "venue" : null,
+      "citeRegEx" : "Barrett et al\\.,? \\Q2019\\E",
+      "shortCiteRegEx" : "Barrett et al\\.",
+      "year" : 2019
+    }, {
+      "title" : "Computational simulations of the emergence of grammar. Approach to the Evolution of Language, pages 405–426",
+      "author" : [ "J. Batali" ],
+      "venue" : null,
+      "citeRegEx" : "Batali,? \\Q1998\\E",
+      "shortCiteRegEx" : "Batali",
+      "year" : 1998
+    }, {
+      "title" : "Emergence of Communication in an Interactive World with Consistent Speakers",
+      "author" : [ "B. Bogin", "M. Geva", "J. Berant" ],
+      "venue" : null,
+      "citeRegEx" : "Bogin et al\\.,? \\Q2018\\E",
+      "shortCiteRegEx" : "Bogin et al\\.",
+      "year" : 2018
+    }, {
+      "title" : "How agents see things: On visual representations in an emergent language game. arXiv:1808.10696 [cs",
+      "author" : [ "D. Bouchacourt", "M. Baroni" ],
+      "venue" : null,
+      "citeRegEx" : "Bouchacourt and Baroni,? \\Q2018\\E",
+      "shortCiteRegEx" : "Bouchacourt and Baroni",
+      "year" : 2018
+    }, {
+      "title" : "Compositional Syntax From Cultural Transmission",
+      "author" : [ "H. Brighton" ],
+      "venue" : "Artificial Life,",
+      "citeRegEx" : "Brighton,? \\Q2002\\E",
+      "shortCiteRegEx" : "Brighton",
+      "year" : 2002
+    }, {
+      "title" : "Understanding Linguistic Evolution by Visualizing the Emergence of Topographic Mappings",
+      "author" : [ "H. Brighton", "S. Kirby" ],
+      "venue" : "Artificial Life,",
+      "citeRegEx" : "Brighton and Kirby,? \\Q2006\\E",
+      "shortCiteRegEx" : "Brighton and Kirby",
+      "year" : 2006
+    }, {
+      "title" : "Child’s talk: learning to use language. W.W. Norton, New York, 1st ed edition",
+      "author" : [ "J.S. Bruner" ],
+      "venue" : null,
+      "citeRegEx" : "Bruner,? \\Q1983\\E",
+      "shortCiteRegEx" : "Bruner",
+      "year" : 1983
+    }, {
+      "title" : "Compositional Obverter Communication Learning From Raw Visual Input",
+      "author" : [ "E. Choi", "A. Lazaridou", "N. de Freitas" ],
+      "venue" : "ICLR 2018",
+      "citeRegEx" : "Choi et al\\.,? \\Q2018\\E",
+      "shortCiteRegEx" : "Choi et al\\.",
+      "year" : 2018
+    }, {
+      "title" : "Learning Cooperative Visual Dialog Agents with Deep Reinforcement Learning",
+      "author" : [ "A. Das", "S. Kottur", "J.M.F. Moura", "S. Lee", "D. Batra" ],
+      "venue" : "IEEE International Conference on Computer Vision (ICCV), Venice,",
+      "citeRegEx" : "Das et al\\.,? \\Q2017\\E",
+      "shortCiteRegEx" : "Das et al\\.",
+      "year" : 2017
+    }, {
+      "title" : "On the emergence of compositionality",
+      "author" : [ "J. De Beule", "B.K. Bergen" ],
+      "venue" : "In The Evolution of Language,",
+      "citeRegEx" : "Beule and Bergen,? \\Q2006\\E",
+      "shortCiteRegEx" : "Beule and Bergen",
+      "year" : 2006
+    }, {
+      "title" : "The symbolic species: the co-evolution of language and the brain",
+      "author" : [ "T.W. Deacon" ],
+      "venue" : "norton paperback edition",
+      "citeRegEx" : "Deacon,? \\Q1998\\E",
+      "shortCiteRegEx" : "Deacon",
+      "year" : 1998
+    }, {
+      "title" : "Learning to Communicate with Deep Multi-Agent Reinforcement Learning",
+      "author" : [ "J.N. Foerster", "Y.M. Assael", "N. de Freitas", "S. Whiteson" ],
+      "venue" : "Proceedings of the 30th International Conference on Neural Information Processing Systems",
+      "citeRegEx" : "Foerster et al\\.,? \\Q2016\\E",
+      "shortCiteRegEx" : "Foerster et al\\.",
+      "year" : 2016
+    }, {
+      "title" : "Categorical Reparameterization with Gumbel-Softmax",
+      "author" : [ "E. Jang", "S. Gu", "B. Poole" ],
+      "venue" : "[cs, stat]",
+      "citeRegEx" : "Jang et al\\.,? \\Q2016\\E",
+      "shortCiteRegEx" : "Jang et al\\.",
+      "year" : 2016
+    }, {
+      "title" : "Social Influence as Intrinsic Motivation for Multi-Agent Deep Reinforcement Learning",
+      "author" : [ "N. Jaques", "A. Lazaridou", "E. Hughes", "C. Gulcehre", "P.A. Ortega", "D.J. Strouse", "J.Z. Leibo", "N. de Freitas" ],
+      "venue" : null,
+      "citeRegEx" : "Jaques et al\\.,? \\Q2018\\E",
+      "shortCiteRegEx" : "Jaques et al\\.",
+      "year" : 2018
+    }, {
+      "title" : "EGG: a toolkit for research on Emergence of lanGuage in Games. arXiv:1907.00852 [cs",
+      "author" : [ "E. Kharitonov", "R. Chaabouni", "D. Bouchacourt", "M. Baroni" ],
+      "venue" : null,
+      "citeRegEx" : "Kharitonov et al\\.,? \\Q2019\\E",
+      "shortCiteRegEx" : "Kharitonov et al\\.",
+      "year" : 2019
+    }, {
+      "title" : "Adam: A Method for Stochastic Optimization",
+      "author" : [ "D.P. Kingma", "J. Ba" ],
+      "venue" : null,
+      "citeRegEx" : "Kingma and Ba,? \\Q2014\\E",
+      "shortCiteRegEx" : "Kingma and Ba",
+      "year" : 2014
+    }, {
+      "title" : "Natural Language Does Not Emerge ’Naturally’ in Multi-Agent Dialog",
+      "author" : [ "S. Kottur", "J.M.F. Moura", "S. Lee", "D. Batra" ],
+      "venue" : null,
+      "citeRegEx" : "Kottur et al\\.,? \\Q2017\\E",
+      "shortCiteRegEx" : "Kottur et al\\.",
+      "year" : 2017
+    }, {
+      "title" : "Representational similarity analysis – connecting the branches of systems neuroscience. Frontiers in Systems Neuroscience",
+      "author" : [ "N. Kriegeskorte" ],
+      "venue" : null,
+      "citeRegEx" : "Kriegeskorte,? \\Q2008\\E",
+      "shortCiteRegEx" : "Kriegeskorte",
+      "year" : 2008
+    }, {
+      "title" : "Building Machines That Learn and Think Like People",
+      "author" : [ "B.M. Lake", "T.D. Ullman", "J.B. Tenenbaum", "S.J. Gershman" ],
+      "venue" : null,
+      "citeRegEx" : "Lake et al\\.,? \\Q2016\\E",
+      "shortCiteRegEx" : "Lake et al\\.",
+      "year" : 2016
+    }, {
+      "title" : "Emergence of Linguistic Communication from Referential Games with Symbolic and Pixel Input",
+      "author" : [ "A. Lazaridou", "K.M. Hermann", "K. Tuyls", "S. Clark" ],
+      "venue" : null,
+      "citeRegEx" : "Lazaridou et al\\.,? \\Q2018\\E",
+      "shortCiteRegEx" : "Lazaridou et al\\.",
+      "year" : 2018
+    }, {
+      "title" : "Multi-Agent Cooperation and the Emergence of (Natural) Language. arXiv:1612.07182 [cs",
+      "author" : [ "A. Lazaridou", "A. Peysakhovich", "M. Baroni" ],
+      "venue" : null,
+      "citeRegEx" : "Lazaridou et al\\.,? \\Q2016\\E",
+      "shortCiteRegEx" : "Lazaridou et al\\.",
+      "year" : 2016
+    }, {
+      "title" : "Binary Codes Capable of Correcting Deletions, Insertions and Reversals",
+      "author" : [ "V.I. Levenshtein" ],
+      "venue" : "Soviet Physics Doklady,",
+      "citeRegEx" : "Levenshtein,? \\Q1966\\E",
+      "shortCiteRegEx" : "Levenshtein",
+      "year" : 1966
+    }, {
+      "title" : "Convention: a philosophical study",
+      "author" : [ "D.K. Lewis" ],
+      "venue" : null,
+      "citeRegEx" : "Lewis,? \\Q2011\\E",
+      "shortCiteRegEx" : "Lewis",
+      "year" : 2011
+    }, {
+      "title" : "Ease-of-Teaching and Language Structure from Emergent Communication. arXiv:1906.02403 [cs",
+      "author" : [ "F. Li", "M. Bowling" ],
+      "venue" : null,
+      "citeRegEx" : "Li and Bowling,? \\Q2019\\E",
+      "shortCiteRegEx" : "Li and Bowling",
+      "year" : 2019
+    }, {
+      "title" : "On the Pitfalls of Measuring Emergent Communication. arXiv:1903.05168 [cs, stat",
+      "author" : [ "R. Lowe", "J. Foerster", "Boureau", "Y.-L", "J. Pineau", "Y. Dauphin" ],
+      "venue" : null,
+      "citeRegEx" : "Lowe et al\\.,? \\Q2019\\E",
+      "shortCiteRegEx" : "Lowe et al\\.",
+      "year" : 2019
+    }, {
+      "title" : "The Concrete Distribution: A Continuous Relaxation of Discrete Random Variables",
+      "author" : [ "C.J. Maddison", "A. Mnih", "Y.W. Teh" ],
+      "venue" : null,
+      "citeRegEx" : "Maddison et al\\.,? \\Q2016\\E",
+      "shortCiteRegEx" : "Maddison et al\\.",
+      "year" : 2016
+    }, {
+      "title" : "Verbs in Mothers’ Input to Six-Month-Olds: Synchrony between Presentation, Meaning, and Actions Is Related to Later Verb Acquisition",
+      "author" : [ "I. Nomikou", "M. Koke", "K.J. Rohlfing" ],
+      "venue" : "Brain Sciences,",
+      "citeRegEx" : "Nomikou et al\\.,? \\Q2017\\E",
+      "shortCiteRegEx" : "Nomikou et al\\.",
+      "year" : 2017
+    }, {
+      "title" : "Learning and the Emergence of Coordinated Communication",
+      "author" : [ "M. Oliphant", "J. Batali" ],
+      "venue" : "Center for Research on Language Newsletter,",
+      "citeRegEx" : "Oliphant and Batali,? \\Q1997\\E",
+      "shortCiteRegEx" : "Oliphant and Batali",
+      "year" : 1997
+    }, {
+      "title" : "Automatic differentiation in PyTorch",
+      "author" : [ "A. Paszke", "S. Gross", "S. Chintala", "G. Chanan", "E. Yang", "Z. DeVito", "Z. Lin", "A. Desmaison", "L. Antiga", "A. Lerer" ],
+      "venue" : null,
+      "citeRegEx" : "Paszke et al\\.,? \\Q2017\\E",
+      "shortCiteRegEx" : "Paszke et al\\.",
+      "year" : 2017
+    }, {
+      "title" : "Collected papers of Charles",
+      "author" : [ "C.S. Peirce" ],
+      "venue" : null,
+      "citeRegEx" : "Peirce,? \\Q1998\\E",
+      "shortCiteRegEx" : "Peirce",
+      "year" : 1998
+    }, {
+      "title" : "Language Development From an Ecological Perspective: Ecologically Valid Ways to Abstract Symbols",
+      "author" : [ "J. Rączaszek-Leonardi", "I. Nomikou", "K.J. Rohlfing", "T.W. Deacon" ],
+      "venue" : "Ecological Psychology,",
+      "citeRegEx" : "Rączaszek.Leonardi et al\\.,? \\Q2018\\E",
+      "shortCiteRegEx" : "Rączaszek.Leonardi et al\\.",
+      "year" : 2018
+    }, {
+      "title" : "Signals: evolution, learning, & information",
+      "author" : [ "B. Skyrms" ],
+      "venue" : null,
+      "citeRegEx" : "Skyrms,? \\Q2010\\E",
+      "shortCiteRegEx" : "Skyrms",
+      "year" : 2010
+    }, {
+      "title" : "The Goal and Structure of Mother-Infant Play",
+      "author" : [ "D.N. Stern" ],
+      "venue" : "Journal of the American Academy of Child Psychiatry,",
+      "citeRegEx" : "Stern,? \\Q1974\\E",
+      "shortCiteRegEx" : "Stern",
+      "year" : 1974
+    }, {
+      "title" : "2018).) We choose pairs for the test set by taking one of each figure and color, i.e. the test set is composed of blue boxes, cyan spheres, gray cylinders, green tori and magenta ellipsoids. Example images from the dataset are shown in Figure 2. (a) Cyan box (b) Magenta cylinder (c) Green torus (d) Blue ellipsoid (e) Gray sphere",
+      "author" : [ "Choi" ],
+      "venue" : null,
+      "citeRegEx" : "Choi,? \\Q2018\\E",
+      "shortCiteRegEx" : "Choi",
+      "year" : 2018
+    } ],
+    "referenceMentions" : [ {
+      "referenceID" : 13,
+      "context" : "1 Introduction Language-like communication protocols can arise in environments that require agents to share information and coordinate behavior (Foerster et al., 2016; Lazaridou et al., 2016; Jaques et al., 2018).",
+      "startOffset" : 144,
+      "endOffset" : 212
+    }, {
+      "referenceID" : 22,
+      "context" : "1 Introduction Language-like communication protocols can arise in environments that require agents to share information and coordinate behavior (Foerster et al., 2016; Lazaridou et al., 2016; Jaques et al., 2018).",
+      "startOffset" : 144,
+      "endOffset" : 212
+    }, {
+      "referenceID" : 15,
+      "context" : "1 Introduction Language-like communication protocols can arise in environments that require agents to share information and coordinate behavior (Foerster et al., 2016; Lazaridou et al., 2016; Jaques et al., 2018).",
+      "startOffset" : 144,
+      "endOffset" : 212
+    }, {
+      "referenceID" : 20,
+      "context" : "Furthermore, compositionality is essential for general intelligence because it facilitates generalization —adaptability to novel situations—and productivity—an infinite number of meanings can be created using a finite set of primitives (Lake et al., 2016).",
+      "startOffset" : 236,
+      "endOffset" : 255
+    }, {
+      "referenceID" : 1,
+      "context" : "This procedure is an instance of template transfer (Barrett and Skyrms, 2017).",
+      "startOffset" : 51,
+      "endOffset" : 77
+    }, {
+      "referenceID" : 34,
+      "context" : "Similarly, language development research demonstrates that children learn to speak compositionally in a structured social environment designed for teaching progressively more complex utterances through simple language games (Stern, 1974; Bruner, 1983; Nomikou et al., 2017; Rączaszek-Leonardi et al., 2018).",
+      "startOffset" : 224,
+      "endOffset" : 306
+    }, {
+      "referenceID" : 8,
+      "context" : "Similarly, language development research demonstrates that children learn to speak compositionally in a structured social environment designed for teaching progressively more complex utterances through simple language games (Stern, 1974; Bruner, 1983; Nomikou et al., 2017; Rączaszek-Leonardi et al., 2018).",
+      "startOffset" : 224,
+      "endOffset" : 306
+    }, {
+      "referenceID" : 28,
+      "context" : "Similarly, language development research demonstrates that children learn to speak compositionally in a structured social environment designed for teaching progressively more complex utterances through simple language games (Stern, 1974; Bruner, 1983; Nomikou et al., 2017; Rączaszek-Leonardi et al., 2018).",
+      "startOffset" : 224,
+      "endOffset" : 306
+    }, {
+      "referenceID" : 32,
+      "context" : "Similarly, language development research demonstrates that children learn to speak compositionally in a structured social environment designed for teaching progressively more complex utterances through simple language games (Stern, 1974; Bruner, 1983; Nomikou et al., 2017; Rączaszek-Leonardi et al., 2018).",
+      "startOffset" : 224,
+      "endOffset" : 306
+    }, {
+      "referenceID" : 3,
+      "context" : "We compare the template transfer approach with other method of achieving compositionality—the obverter algorithm (Batali, 1998; Choi et al., 2018)— on three different metrics: zero-shot generalization, context independence and topographical similarity.",
+      "startOffset" : 113,
+      "endOffset" : 146
+    }, {
+      "referenceID" : 9,
+      "context" : "We compare the template transfer approach with other method of achieving compositionality—the obverter algorithm (Batali, 1998; Choi et al., 2018)— on three different metrics: zero-shot generalization, context independence and topographical similarity.",
+      "startOffset" : 113,
+      "endOffset" : 146
+    }, {
+      "referenceID" : 18,
+      "context" : "2 Related work Recent work on emergent communication in artificial intelligence shows that compositionality requires strong inductive biases to be imposed on communicating agents (Kottur et al., 2017).",
+      "startOffset" : 179,
+      "endOffset" : 200
+    }, {
+      "referenceID" : 29,
+      "context" : "(2018), who take inspiration from the obverter algorithm (Oliphant and Batali, 1997; Batali, 1998).",
+      "startOffset" : 57,
+      "endOffset" : 98
+    }, {
+      "referenceID" : 3,
+      "context" : "(2018), who take inspiration from the obverter algorithm (Oliphant and Batali, 1997; Batali, 1998).",
+      "startOffset" : 57,
+      "endOffset" : 98
+    }, {
+      "referenceID" : 3,
+      "context" : "The obverter (from the Latin obverto, to turn towards) algorithm (Batali, 1998; Oliphant and Batali, 1997) is based on the assumption that an agent can use its own responses to messages to predict other agent’s responses, and thus can iteratively compose its messages to maximize the probability of the desired response.",
+      "startOffset" : 65,
+      "endOffset" : 106
+    }, {
+      "referenceID" : 29,
+      "context" : "The obverter (from the Latin obverto, to turn towards) algorithm (Batali, 1998; Oliphant and Batali, 1997) is based on the assumption that an agent can use its own responses to messages to predict other agent’s responses, and thus can iteratively compose its messages to maximize the probability of the desired response.",
+      "startOffset" : 65,
+      "endOffset" : 106
+    }, {
+      "referenceID" : 6,
+      "context" : "A different family of approaches, more similar in spirit to the approach described in this work, includes population-based training that incentivizes the creation of communication protocols that are easy to teach to new agents (Brighton, 2002; Li and Bowling, 2019) and gradually increasing task complexity that incentivizes reusing existing patterns of communication (De Beule and Bergen, 2006).",
+      "startOffset" : 227,
+      "endOffset" : 265
+    }, {
+      "referenceID" : 25,
+      "context" : "A different family of approaches, more similar in spirit to the approach described in this work, includes population-based training that incentivizes the creation of communication protocols that are easy to teach to new agents (Brighton, 2002; Li and Bowling, 2019) and gradually increasing task complexity that incentivizes reusing existing patterns of communication (De Beule and Bergen, 2006).",
+      "startOffset" : 227,
+      "endOffset" : 265
+    }, {
+      "referenceID" : 24,
+      "context" : "3 Method In this section we present two Lewis signaling games (Lewis, 2011; Skyrms, 2010).",
+      "startOffset" : 62,
+      "endOffset" : 89
+    }, {
+      "referenceID" : 33,
+      "context" : "3 Method In this section we present two Lewis signaling games (Lewis, 2011; Skyrms, 2010).",
+      "startOffset" : 62,
+      "endOffset" : 89
+    }, {
+      "referenceID" : 1,
+      "context" : "Based on it, we propose a new game that incorporates the idea of template transfer (Barrett and Skyrms, 2017).",
+      "startOffset" : 83,
+      "endOffset" : 109
+    }, {
+      "referenceID" : 27,
+      "context" : "Due to the discrete nature of the communication channel, Gumbel–Softmax relaxation (Maddison et al., 2016; Jang et al., 2016) is used to backpropagate through sθ(m|x).",
+      "startOffset" : 83,
+      "endOffset" : 125
+    }, {
+      "referenceID" : 14,
+      "context" : "Due to the discrete nature of the communication channel, Gumbel–Softmax relaxation (Maddison et al., 2016; Jang et al., 2016) is used to backpropagate through sθ(m|x).",
+      "startOffset" : 83,
+      "endOffset" : 125
+    }, {
+      "referenceID" : 26,
+      "context" : "Context independence is sometimes considered restrictive, as it may be low in the presence of synonyms (Lowe et al., 2019).",
+      "startOffset" : 103,
+      "endOffset" : 122
+    }, {
+      "referenceID" : 7,
+      "context" : "Finally, we introduce topographical similarity (Brighton and Kirby, 2006; Lazaridou et al., 2018), also known as representational similarity (Kriegeskorte, 2008; Bouchacourt and Baroni, 2018).",
+      "startOffset" : 47,
+      "endOffset" : 97
+    }, {
+      "referenceID" : 21,
+      "context" : "Finally, we introduce topographical similarity (Brighton and Kirby, 2006; Lazaridou et al., 2018), also known as representational similarity (Kriegeskorte, 2008; Bouchacourt and Baroni, 2018).",
+      "startOffset" : 47,
+      "endOffset" : 97
+    }, {
+      "referenceID" : 19,
+      "context" : ", 2018), also known as representational similarity (Kriegeskorte, 2008; Bouchacourt and Baroni, 2018).",
+      "startOffset" : 51,
+      "endOffset" : 101
+    }, {
+      "referenceID" : 5,
+      "context" : ", 2018), also known as representational similarity (Kriegeskorte, 2008; Bouchacourt and Baroni, 2018).",
+      "startOffset" : 51,
+      "endOffset" : 101
+    }, {
+      "referenceID" : 1,
+      "context" : "Template transfer — transferring skills from simpler to more complex Lewis signaling games — can be used to model a variety of semiotic, social and cognitive phenomena (Barrett and Skyrms, 2017; Barrett et al., 2019, 2018).",
+      "startOffset" : 168,
+      "endOffset" : 222
+    }, {
+      "referenceID" : 17,
+      "context" : "Hyperparameters All models are optimized using Adam (Kingma and Ba, 2014).",
+      "startOffset" : 52,
+      "endOffset" : 73
+    }, {
+      "referenceID" : 30,
+      "context" : "All experiments are implemented using PyTorch (Paszke et al., 2017) and EGG (Kharitonov et al.",
+      "startOffset" : 46,
+      "endOffset" : 67
+    } ],
+    "year" : 2019,
+    "abstractText" : "This paper explores a novel approach to achieving emergent compositional communication in multi-agent systems. We propose a training regime implementing template transfer, the idea of carrying over learned biases across contexts. In our method, a sender–receiver pair is first trained with disentangled loss functions and then the receiver is transferred to train a new sender with a standard loss. Unlike other methods (e.g. the obverter algorithm), our approach does not require imposing inductive biases on the architecture of the agents. We experimentally show the emergence of compositional communication using topographical similarity, zero-shot generalization and context independence as evaluation metrics. The presented approach is connected to an important line of work in semiotics and developmental psycholinguistics: it supports a conjecture that compositional communication is scaffolded on simpler communication protocols.",
+    "creator" : "LaTeX with hyperref package"
+  }
+}

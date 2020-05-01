@@ -1,0 +1,536 @@
+{
+  "name" : "Microblogging_during_two_natural_hazards_events_Wh.pdf",
+  "metadata" : {
+    "source" : "CRF",
+    "title" : "Microblogging During Two Natural Hazards Events: What Twitter May Contribute to Situational Awareness",
+    "authors" : [ "Sarah Vieweg", "Amanda L. Hughes", "Kate Starbird", "Leysia Palen" ],
+    "emails" : [ "Leysia.Palen}@colorado.edu" ],
+    "sections" : [ {
+      "heading" : null,
+      "text" : ""
+    }, {
+      "heading" : "Author Keywords",
+      "text" : "Computer-Mediated Communication, Crisis Informatics, Disaster, Emergency, Hazards, Microblogging, Situational Awareness."
+    }, {
+      "heading" : "ACM Classification Keywords",
+      "text" : "H.5.3 Groups & Organization Interfaces—collaborative computing, computer-supported cooperative work, organizational design, K.4.2 Social Issues, K.4.3 Organizational Impacts—computer-supported collaborative work."
+    }, {
+      "heading" : "General Terms",
+      "text" : "Design, Human Factors."
+    }, {
+      "heading" : "INTRODUCTION",
+      "text" : "As information and communication technology (ICT) becomes more pervasive, we can access information about the world in ways and with speed never before possible. Through web search, delivery through automated notifications to mobile phones, or via social networking sites, retrieval of information can often be up-to-the-minute.\nMicroblogging is one form of social media that is being quickly adopted. It offers ways to retrieve, produce and spread information; the nature of that sharing has a lifecycle\nof information production and consumption that is rapid and repetitive [34]. Increasingly, microblogging is being considered as a means for emergency communications because of its growing ubiquity, communications rapidity, and cross-platform accessibility. This medium is also seen as a place for “harvesting” information during a crisis event to determine what is happening on the ground [21].\nIn this paper, we consider “situational update” information that is communicated by people through microblogging in mass emergency situations. Our aim is to support what time- and safety-critical domains refer to as situational awareness [28], an individually as well as socially cognitive state of understanding “the big picture” during critical situations. Microblogged information is one source that may contribute to situational awareness; our goal is to identify and measure features that could support technology in analyzing mass emergency situations. To this end, we present results of the examination of situational features communicated in microblog posts during two concurrent emergency events that took place in North America during Spring 2009."
+    }, {
+      "heading" : "Situational Awareness in Safety-Critical Situations",
+      "text" : "Situational Awareness (SA) literature assists in positing helpful processes and strategies for those seeking awareness in emergency situations. SA describes the idealized state of understanding what is happening in an event with many actors and other moving parts, especially with respect to the needs of command and control operations. Defined by Sarter and Woods as “all knowledge that is accessible and can be integrated into a coherent picture, when required, to assess and cope with a situation,” [28] the SA literature informs our research through the recognition that “reliable information is often an elusive target” [25]. Much of the literature focuses on military and aviation operations [25, 27, 28], but SA is also studied in domains such as education, weather and emergency response [5, 13]. Uncertainty is often the norm in such situations, but many are working toward reducing uncertainty through the use of tools that can help assess the reliability of information [25].\nAn additional point to consider regarding this body of research is that though much of it focuses on individual SA, some researchers investigate team or group SA [4, 32]. This\nwork examines teams of pilots and military personnel focused on a specific exercise or known goal, but is pertinent here in that it addresses individuals who must “work together to collect, analyze, synthesize and disseminate information” [32].\nIn addition to being an individual and group-level process, we suggest it is possible for SA to extend to community or region-wide levels. Endsley’s theory [4] is helpful because it addresses how SA is achieved and invoked by those in stressful situations through contribution of information from different sources. Further, in their study of a command and control exercise for army battalions, Sonnenwald and Pierce explain the processes of intragroup and intergroup SA, and the importance of information exchange to create “common situational awareness” [32].\nHere we examine how computer mediated communication—and specifically microblog posts—would be extractable for subsequent use in systems that support common situational awareness. A situational awareness perspective is helpful for anticipating how individuals, groups and communities can use information contributed by others in a social media context."
+    }, {
+      "heading" : "Social Media & Emergencies",
+      "text" : "Interaction over and within what are increasingly being referred to as social media sites and applications is of rapidly growing interest to human-computer interaction research communities [3, 12, 16], though attention to computer-mediated communication has always been a core interest. Studies of social media sites include, for example, the use of social networking sites and their relation to social capital [3]; the differences between how users employ techniques such as “social surfing” and “social browsing” [16]; and the motivation and rewards for users who frequent social networking sites [12].\nMicroblogging services have also emerged as a popular medium for communication. Twitter is one such service through which users post short messages of up to 140 characters, called tweets, from web- and mobile-based clients. Users have personal profiles that can include basic data including name, location, and biographical information. Profiles can be private or public. Public profiles and tweet messages sent by these profiles are freely searchable and readable by anyone with Internet access, while only those with permission may see private profiles. Users establish a network by “following” other Twitterers, and having others “follow” them.\nUse of Twitter and other social media tools is a widespread but still evolving phenomenon in both everyday and emergency situations. Existing research concerning social media use in emergencies includes studies of Facebook use during the 2007 Virginia Tech and the 2008 Northern Illinois University shootings [22, 23, 37] and other social media during the 2007 southern California wildfires [30,\n35]. This work shows that “widescale” computer mediated communication involves self-organizing behavior that can produce accurate results, often in advance of official communications [22, 23, 35, 37].\nAdditionally, following the 2008 Sichuan earthquake in China, Qu et al. found that local citizens used a popular online forum to organize information and to express their emotions about the disaster [24]. This research shows that members of the public use social media to support the gathering and dispersal of relevant, useful information, and online destinations like Twitter and other Internet forums support such disaster-related citizen participation [9, 17].\nResearch on Twitter is still in its infancy, with initial studies [11, 15] concentrating on descriptive properties of Twitter use; statistical accountings of user properties and number of posts broadcast. However, Twitter research is quickly evolving to include more in-depth studies of social interactions and message content. Huberman et al. look at how users interact with their Twitter social network [8]. Analysis of Twitter activity in the 2008 American Democratic and Republication National Conventions shows that those who newly adopted Twitter during these events were more likely to continue to use it for other purposes [10]. Recent research has examined under conditions of hazards threat how the “Twitterverse” is self-organizing through generative, synthetic and derivative information activity, and how these activities differ with respect to location to the event and Twitterer affiliation [34]."
+    }, {
+      "heading" : "THE STUDY",
+      "text" : "We analyzed public Twitter communications across two disaster events that took place in the US: the Red River Floods and the Oklahoma Grassfires, both of which occurred during the spring of 2009."
+    }, {
+      "heading" : "The Study Events",
+      "text" : ""
+    }, {
+      "heading" : "Red River Floods, Spring 2009",
+      "text" : "In central North America, the fertile and well-populated Red River Valley is drained by the Red River. Flowing from just south of Fargo, North Dakota (ND), the Red River runs north across the US-Canadian border through Winnipeg and into Lake Winnipeg (see Fig. 1). The region has the potential for flooding each spring due to its shallow topography and the river’s northerly flow from warmer to colder climes. Many disastrous floods have affected the region [29].\nIn late February 2009, the National Oceanic and Atmospheric Administration’s (NOAA) National Weather Service first released a series of flood forecast crest predictions1 in Fargo at the mid-30 foot range [7]. On\n1 A flood’s crest is the maximum height its waters achieve in a particular location and it can be gauged by height from the bottom of the riverbed or height above flood stage.\nMarch 28, the Red River crested in Fargo, setting an alltime record flood height of 40.82 feet. Previously built dikes and massive sandbagging efforts kept floodwaters and damage under control. Shortly after the first crest, the National Weather Service warned that a second crest, potentially higher and more devastating, would be coming in mid- to late April [20]. Fortunately, these predictions were overestimated and the second crest was much lower than the first at 34 feet [36], yet people remained on alert.\nFurther downstream to the north in Winnipeg, ice jams blocked the flow of the Red River causing more flooding and preventing the opening of the Winnipeg Floodway (a man-made channel to divert excess waters around the city) until April 8. Residents of Winnipeg experienced an extended flood threat with flash flooding and evacuations [31]. The Red River crested in Winnipeg on April 16, and flooding remained for several weeks thereafter."
+    }, {
+      "heading" : "Oklahoma Grassfires Spring 2009",
+      "text" : "Within this same time period, on the morning of April 9, 2009, high winds and dry conditions fueled numerous grassfires burning through central and southern Oklahoma and parts of northern Texas. In Oklahoma, many roads were closed and neighborhoods evacuated as firefighters tried to control the fires’ rapid spread through the heavy, dry brush and spring grass found on the Oklahoma plains. The immediate fire threat continued through mid-morning April 10, after which the fire danger was greatly reduced by decreasing wind speeds and impending rain storms [6].\nNo deaths but at least 60 injuries were reported [1]. Thirtyone counties were declared a state of emergency and eight\ncounties suffered damage. Close to 270 buildings were destroyed—228 of which were homes—and over 100,000 acres were burned [18]."
+    }, {
+      "heading" : "Method & Data",
+      "text" : "This study’s 51-day data collection window of Twitter activity related to the Red River Flood began on March 8, when residents of the Red River Valley were operating under threat of flood, and continued through April 27, when most of the flood danger had passed. The six-day data collection window for the Oklahoma grassfires ran from April 8 (the day prior to the grassfire onset), and continued until April 13, when fire threat ceased.\nStudying Twitter communication during emergency events is challenging because access to tweets is short-lived, requiring quick decisions about what information to collect while an event is in progress but before its scope and the data produced are fully understood. We describe our data collection and analysis methods under these circumstances."
+    }, {
+      "heading" : "Data Collection Steps",
+      "text" : "We began by using the Twitter Search API to obtain publicly available tweets containing case-insensitive search terms. The terms red river and redriver were used for pulling Red River Flood tweets, and the terms oklahoma, okfire, grass fire and grassfire were used for pulling Oklahoma Grassfire tweets (the Red River data collection activity is described in greater length in [34]). These terms were chosen through an initial investigation of the public Twitter stream, and returned what we judged to be a relevant sample of data with relatively little noise. Search activity for the Red River Floods resulted in 13,153 tweets and 4983 unique tweet authors, while search activity for the Oklahoma Grassfires resulted in 6674 tweets and 3852 unique tweet authors.\nTo understand how the tweets obtained via keyword search fit into an entire Twitterer’s stream, we then collected the entire Twitter stream for each user found in the above samples. The result was a data set of 4,592,466 tweets for the Red River Floods and 1,986,091 tweets for the Oklahoma Grassfires."
+    }, {
+      "heading" : "Qualitative Data Coding",
+      "text" : "To make samples manageable, we reduced the data sets to those user streams that included more than three tweets containing the search terms. As a first step, all tweets in the Red River Floods and Oklahoma Grassfires data sets— referred to as “RR” and “OK” data sets throughout the remainder of the paper—were coded as either on- or offtopic. On-topic tweets are those that include any content that relates to the given emergency, while off-topic tweets do not mention the emergency in any way. Four researchers collectively developed the criteria for on- and off-topicness. All tweets were reviewed by at least two reviewers in the RR set and half of the OK set (this amounts to thousands of tweets multiply reviewed). Once we had the set of on-topic tweets, we hand-analyzed each one to identify local individuals: Twitter users who do not affiliate themselves with a group or organization and who were geographically local2 to the event. Twitterers’ location was determined by manual investigation: we went to each Twitter account and tweet stream to determine/infer where users were located.\nThese initial stages of analysis resulted in a manageable data set: the Red River Local-Individual set contains 49 users and 19,162 tweets, and the Oklahoma Grassfire Local-Individual set has 46 users and 2779 tweets. The next step focused on content analysis.\nUsing the E-Data Viewer (EDV), an in-house software application for studying large data sets [33], we parsed, visualized and coded each data set. We read and analyzed each tweet. EDV allows for iterative development and customization of coding schemes. As a group, we identified emergent themes in Twitterers’ posts and took a ground-up approach to understanding each event. Once we gained a common and stable understanding of the data, we identified categories describing the information being communicated. For example, this tweet from the RR set was coded with the categories animal management and placename: there's an emergency animal shelter set up at the Fargo fairgrounds\nAnd this one from the OK set was coded with evacuation, city name, highway, and placename: Velma area residents: Officials say to take Old Hwy 7 to Speedy G to safely evacuate. Stephens Co Fairgrounds in Duncan for shelter\nAs themes emerged, we created appropriate categories. These themes led to the development of our coding scheme (listed in the Data Description section), which we honed\n2 In the RR data set, “geographically local” means those who were less than a 6-hour drive from flood-prone areas. In the OK data set, due to the high dispersion of the fires and uncertainty about where they might erupt next, “geographically local” means those who live in Oklahoma, and are either residents of a town/city that had a fire, or who indicated they were experiencing the effects of the fire (i.e. seeing flames, smelling smoke.)\nover multiple coding passes and comprehensively applied in a final pass.\nCoding passes had overlap among multiple researchers to crosscheck for consistency. All authors co-developed situational update, geo-location and location referencing codes in iterations over the same tweets. The lead author then coded the full set for consistency. With the complete set of annotated tweets, we then visualized thousands of data points arranged temporally to see the interaction of multiple variables which in addition to manual codes, also include author location and affiliation.\nIn a focused study of the Red River event reported elsewhere [34], we describe macro-level microblogging activity which focuses on the original sources of information, i.e. information that was broadcast and is original to the Twitterer, secondarily synthesized from several sources, or re-sourced meaning that information from other sources was passed on. We also coded for those who were seeking or providing information, as well as for themes such as support and humor, which were present in many on-topic tweets, but do not necessarily provide information that contributes to situational awareness. Here, we report on new analyses that involve additional rounds of qualitative coding over thousands of data points to identify the frequency and properties of situational features."
+    }, {
+      "heading" : "DATA DESCRIPTION",
+      "text" : "Below, we describe features and characteristics of tweets in each data set that contribute to an overall understanding of each event. These include geo-location, locationreferencing and situational update information as well as a description of “high yield Twitterers,” re-tweeted information, and markedness.\nGeo-Location Information Geo-location information is clearly identifiable information that includes street addresses and intersections, city names, county names, highways and place-names (schools, landmarks, etc.) Whether very precise or more general, tweets that include information about the location of people, fires, evacuation sites (among others) can help those who receive such information in assessing their personal situations, as well as gaining a broader understanding of the situation as a whole. This type of information not only aids those who receive such tweets, but also accommodates the automatic retrieval of relevant information regarding a specific emergency event.\nIn the OK data set, 40% of all on-topic tweets include geolocation information, while in the RR data set that number drops to 18%. When we compare percentages of on-topic tweets across categories of geo-location information (Fig. 3), we see variation in the types of geo-location information tweeted in the two sets. For example, though place names and addresses are almost equally likely in OK tweets, RR tweets are more than twice as likely to include place names.\nSeveral possible variables might account for the higher percentage of geo-location information in the OK data set and the difference in distribution across categories, including geographical and cultural features specific to the affected communities. We focus here on two variables that may help anticipate differences in Twitter behavior in other emergencies: 1) the differences between flood hazard features and wildfire hazard features 2) the differences in behavior between people who are in the warning phase of a disaster—which involves anticipating an emergency, engaging in preventive measures and consulting with others [2]—and those who are in the impact phase—which is when people “hold on” until the event has passed and comprehend the far-reaching affects of the emergency [2].\nThe wildfire hazard experienced by Oklahomans was unexpected. Wildfires are erratic by nature, and the terrain of Oklahoma is comprised of vast prairie land where fires can easily spread. Knowing exactly where fires are burning, who is evacuating from what neighborhood, and where shelters are set up are features of information that support situational awareness and may have been of significant importance to people making crucial decisions. Conversely, the RR flood took place along a river whose location is well known to surrounding residents, many of whom have weathered previous floods. In the case of predicted flooding, the general location of the event itself is not necessary to identify—it is already known. Additionally, some geo-location information (currently flooded or flooding locations) may also be implicitly conveyed using flood level information, because residents have a geographical understanding of the flood plain relative to river height.\nWe also attribute the difference in use of geo-location information to the relative lengths of the different stages of the disaster. Red River residents experienced a long period of warning [2] leading up to the first crest and in anticipation of a second. During times of warning, outcomes are uncertain and people do not know where evacuations will be required or what locations will be affected. Oklahomans, in contrast, had very little warning. Therefore, most of the OK tweets were collected during the\nstages of impact and recovery [2]. During the recovery stage—which takes place after the hazard has impinged upon the built environment—information about hazard location(s), where resources need to be directed, and what response efforts are needed can be discussed with reference to specific locations. The informational needs during the impact and recovery stages may result in increased use of geo-location information in emergency-related tweets.\nIdentifying these features is important when considering the types and formats of information that might be extractable from Twitter during hazards events. This analysis indicates that tweeted geo-location information will be different for different hazards events, and provides a basis for anticipating what some of those differences might be."
+    }, {
+      "heading" : "Further Analysis of Geo-Location Information",
+      "text" : "Overall, 78% of OK users and 86% of RR users in the data sets have at least one tweet containing geo-location information. These high percentages suggest that local individuals deem geo-location information important to convey in messages about an emergency. At the same time, individual users demonstrated notable differences in the frequency with which they included geo-location information.\nFigures 4 and 5 show the number of geo-location features compared to the number of on-topic tweets by local individual users. A feature is counted each time a category of geo-location information is mentioned; therefore it is possible for one tweet to include more than one geolocation feature. For example, this tweet excerpt from the OK data set includes both City Name and Highway: 65mph winds in Newcastle Oklahoma - Turner Turnpike closed down because of low visibility\nFigure 4 shows that six OK users (13%) average one or more geo-location features per on-topic tweet. In the RR data set (Fig. 5), no users have a greater amount of geolocation features than on-topic tweets.\nGeo-location tweets in the OK data set contain an average of 1.5 different geo-location features, while RR geo-\nlocating tweets contain 1.35. This indicates that on-topic OK tweets are both more likely to have geo-location information and more likely to include multiple types of geo-location information, suggesting that Oklahomans tended to broadcast geo-location tweets with both greater frequency and more detail.\nThe difference in the broadcasting of geo-location information between the two events is notable because it gives us an indication of the type of information that is important to a specific emergency event. In this case, those experiencing the threat or effects of wildfire are broadcasting more geo-location information than those faced with impending floods."
+    }, {
+      "heading" : "Relative References to Location: Location-Referencing",
+      "text" : "We also noted location-referencing in some tweets. Location-referencing refers to information that uses one place as a reference for another or the mention of location via a landmark, i.e. “x miles from y,” where the reference point is ambiguous without knowledge of situational context. For example, from the RR data set we read: we are on the western central edge of town, so we are a fair distance from any water for now.\nAnd from the OK data set: Could see flames above the trees two miles away from my house\nThese tweets do not contain easily extractable geo-location information. They do, however, contain information that can give an idea about the location of both the Twitterer and the emergency if we further uncover the reference points to which the user is referring.\nIn the OK data set, we found that 8% of tweets contain location-reference information, and in the RR data set, 6%. Though the percentage of location-reference information in each data set is less than 10%, it is an important communicatory phenomenon to study due to the potential for data extraction. Phrases such as “western central,” “fair distance,” and “two miles away” provide indications of location, albeit in an indefinite manner. A goal of future\nresearch is to capitalize on this type of tractable but ambiguous text, and enhance situational awareness using these references to hone in on more precise locations."
+    }, {
+      "heading" : "Situational Updates",
+      "text" : "In addition to geo-location and location-referencing information, we found additional features we label situational update. We identified and organized situational updates into the following categories: Warning, Preparatory Activity, Fire Line/Hazard Location, Flood Level, Weather, Wind, Visibility, Road Conditions, Advice (i.e. advice on how to cope with the emergency, and/or advice on other Twitter users or websites to follow), Evacuation Information, Volunteer Information, Animal Management, and Damage/Injury reports.\nThese categories were identified based on the qualitative coding we described in the Methods section. If a particular type of information arose in at least five tweets, and also contained features that contributed to understanding the emergency situation, then it was given a category name. Additionally, Kendra and Wachtendorf’s [14] work on types of social convergence that emerge in disasters guided our development of the coding scheme. It is possible for a tweet to be coded with more than one category, or to include both situational update information and geolocation or location-referencing information. For example, this tweet from the OK data set, coded as Damage/Injury (as well as City Name) provides detail on structural damage. In OKC 27 homes have been affected by fires - 14 mobile homes (6 destroyed); 13 single family homes (11 destroyed)\nAlmost every category was represented in each data set, with the exception of the Preparatory Activity and Flood Level categories, which were not found in the OK data set (as one would expect given the nature of the events)."
+    }, {
+      "heading" : "Differences in Situational Updates",
+      "text" : "Table 1 lists the percentages of situational update tweets represented in all on-topic tweets for each data set. The OK data set shows a significantly higher percentage in the Evacuation Info and Damage/Injury, Fire Line/Emergency Location, and Wind categories. The higher number of tweets in these categories is likely due to differences between the natures of wildfires and mass floods. The OK fires quickly destroyed buildings and harmed people without much warning. These conditions explain the higher presence of evacuation information in the OK data set. The higher frequency of Fire Line/Emergency Location tweets in the OK data set is also likely due to the variable nature of wildfire. People were concerned about where the fire was spreading; as such, specific fire locations were often broadcast. In contrast, the location of the Red River and its points of overflow are tacit knowledge among the local population. Finally, wind has considerable importance during wildfire; its direction and speed are one potential indication of a fire’s path, and having such knowledge\nallows people to better understand the situation and prepare as necessary. Tweets in the RR data set show significantly higher percentages of Preparatory Activity, Flood Level, Weather and Volunteer Info. Residents of the Red River Valley had advance warning of flooding, giving them opportunity to prepare, while those affected by the OK fires had little or no warning and were unable to prepare. The higher instance of tweets in both the Flood Level and Weather categories is because both conditions were watched carefully during the Red River floods; there was time to factor in the effects of weather and predict how it would affect flood level. For the OK wildfires, there was insufficient time to hold out hope for favorable weather predictions. Additionally, considerable information about current threat areas during floods can often be conveyed in flood level tweets that contain no specific mention of geographic location, which may suggest the examination of Flood Level in the RR data set as a near equivalent category to Fire Line/Hazard Location in the OK data set. Finally, length of the emergency event, coupled with the ability to prepare, explains the higher percentage of Volunteer Info tweets in the RR data set. One precaution residents of flood-prone areas take is to build temporary dikes. During the Red River floods, there were numerous requests for volunteers and many Twitterers broadcast that information. There was mention of volunteer information in the OK data set, but the nature of the fires provided little opportunity for volunteers to mitigate its effects.\nThough there are differences between the specific types of situational updates that were broadcast in each data set,\noverall, situational updates were distributed throughout the data collection periods for each event, and were concentrated during the height of each emergency. Using the E-Data viewer, we are able to visualize how tweets containing different situational features presented over the course of our collection period.\nFigure 6 shows a visualization of situational updates as they occurred during the OK fires. Of the on-topic tweets, 56% include situational update information over the six-day data collection period. Each dot represents one tweet. User streams run horizontally; the left side of the screen represents the first day of data collection, and the right side the last day.\nIn Figure 7, we see a similar visualization of situational updates during the RR floods. 49% of the on-topic tweets include situational update information over a 51-day collection period. Though it is perhaps unsurprising that situational update tweets are concentrated during the height\nof each emergency, it is nevertheless important to visually convey to readers the amount of information that was broadcast during each event that may contribute to situational awareness."
+    }, {
+      "heading" : "Additional Characteristics of Tweeted Information",
+      "text" : "We have reported on geo-location, location-referencing information and situational update categories to initiate the discussion on how these data serve as a foundation for building concepts and tools that can be employed in future emergency events that may help affected communities establish or further situational awareness. We now explain additional characteristics of the data that contribute to our understanding of Twitter behavior during emergency, and also provide support for the eventual implementation of automatic methods for extracting and organizing such data."
+    }, {
+      "heading" : "High Yield Twitterers",
+      "text" : "The features of Twitter behavior described thus far enable us to begin describing the role of High Yield Twitterers under emergency conditions. Having only 140 characters per tweet means that, for the concerned user, every character be thoughtfully considered. Twitterers who broadcasted a high percentage of tweets with geo-location and situational update information often fall into the category of High Yield Twitterers, which describes users who carefully construct tweets to report as much relevant information as possible within the allotted space. Examples of such tweets are: Fire Warning for Love Co. People east of Oswalt rd near Mariette to evacuate to the east.\nHighway 18 closed in Wyndmere, water over I-94 @BuffAlice exit. Lots of roads with water over 1 or 2 lanes in southeast ND and west MN.\nThese tweets include specific information about warnings, evacuations and road conditions and their locations. They may help those who read them assess their circumstances. They are the type of tweets people may watch for in “realtime” during future emergency events.\nPerhaps these Twitterers are aware of their public role—or what they want their public role to be— and design tweets to be read by a larger audience. The “recipient design” [26] of tweets involves creating content-rich tweets that contribute to the “big picture” situational awareness.\nRe-Tweeted Information Redistributed information in the form of retweets is an additional phenomenon in the microblogosphere. A retweet is a convention of Twitterers that passes on a previously broadcasted tweet, similar to an email forward. Typically, tweets forwarded via the retweet convention are deemed especially interesting or noteworthy. In the OK and RR data sets, we calculated the percentage of all situational update and non-situational update tweets, geo-location and nongeo-location tweets that are retweets (Fig. 8).\nIn the OK data set, 12.9% of tweets that contain situational update tweets are retweets, while only 8.9% of on-topic\ntweets that do not contain situational updates are retweets. In the RR set, 14.7% of situational update tweets are retweets, and 10.8% of on-topic tweets that do not contain situational updates are retweets. For both events, situational updates are more likely to be retweets than other on-topic tweets. Using CHI square tests, this difference was found to be significant for the RR event at p<.01. The p value was slightly higher (.08) for the OK fires, due to the smaller sample size.\nIn addition, geo-location tweets are also more likely to be be retweets than tweets that do not contain geo-location information. In the OK data set, 15% of geo-location tweets are retweets, and 8.6% of tweets that do not contain geolocation information are retweets. In the RR set, 17.8% of tweets that contain geo-location information are retweets, while 11.6% of tweets that do not contain geo-location information are retweets. For both events, this retweet difference for geo-location information was found to be significant at p<.01. This demonstrates that tweets containing geo-location and situational update information are more likely than other tweets to be retweets, indicating a preference among Twitterers to pass along this type of information."
+    }, {
+      "heading" : "Markedness",
+      "text" : "An additional phenomenon we noted, particularly in the RR data set, is that of “markedness,” which is important when considering the development of information extraction (IE) techniques. For the purposes of this research, we use “markedness” to explain how certain places, landmarks or items become taken-for-granted and expected when referred to in more general terms. The RR data set was collected based on search terms “red river” and “redriver”, and within this data set, if someone mentioned “the river” or “the flood level” it was commonly understood to be about the Red River, which makes the Red River “unmarked”— no detail is necessary when referring to it. For example, one Twitter user writes: The river is now over 40 feet and there has been a breach in the dike; neighborhood a few blocks south of us is evacuating.\nConversely, the Sheyenne River, a tributary of the Red River, was also a flood concern, but it was referred to by its name, and not as “the river” since that term was understood\nto apply to the Red River. So, it is necessary to “mark” the Sheyenne River because it is the lesser-known river in this particular data set, as seen here: The Sheyenne River went up 10 feet in 12 hours…\nWe predict this phenomenon will happen in future emergencies, and is something to be mindful of regarding data extraction. Awareness of what information becomes unmarked and is tacitly understood by users is essential to analyzing CMC during emergency; finding methods to track this phenomenon will further our ability to examine and understand these data as thoroughly as possible."
+    }, {
+      "heading" : "DISCUSSION",
+      "text" : "Throughout this paper, we provide an examination of Twitter data with respect to geo-location, locationreferencing and situational update information in two natural hazards-based data sets. We also draw attention to the fact that Twitterers in the two events under study are broadcasting similar types of information but to varying degrees depending upon emergency type. Furthermore, we consider additional characteristics of tweets that may serve to enhance situational awareness."
+    }, {
+      "heading" : "Microblog-Enhanced Situational Features",
+      "text" : "We point to these analyses as a way to begin identifying content features of CMC that can be used toward the development of IE techniques in the emergency domain. As we explain above, geo-location and location-referencing data are perhaps the easiest to identify and automatically extract. Next steps involve characterizing CMC to describe the features of situational awareness we mark as situational update information. To that end, we have developed an outline (Fig. 9) that identifies features to inform systems that enhance situational awareness.\nHigh-level features are shown in dark gray rectangles. Some of the high-level features include sub-features, shown in the light gray ovals. For example, Preparation and Response to Warning both have ‘personal’ and ‘community’ sub-features, which is a helpful distinction when we consider the different audiences who may benefit from Twitter data generated during an emergency. Tweets that broadcast community-level activity serve to indicate a strategic, broad-level view of where resources are being used and/or are needed. For example, in the RR data set we read: Moorhead is putting in a contingency dike on the western edge of the city near the Red River.\nTweets that are personal in nature may serve a more locally tactical role, such as this tweet from the OK data set: a simple spark can burn down a whole neighborhood. I watered the yard and roof and hope for the best.\nExamples such as these indicate that based on who is seeking information, different types of information may be broadcast and sought depending upon the intended audience or the role of the information seeker.\nThe outline represents a construct that has evolved from analysis of our coding scheme and fleshes out standard information categories used in emergency response. We do not propose it as a definitive conceptualization of situational features that occur during emergency; rather, it represents an accounting of how Twitter communications elaborate standard information categories used in emergency management. The outline should evolve into a framework as different characteristics of other kinds of hazards and emergencies are included."
+    }, {
+      "heading" : "CONCLUSION",
+      "text" : "Improving situational awareness in emergency situations through automatic methods requires an understanding of the information communicated by those affected. Our analysis of Twitter data during the Spring 2009 Red River Floods and Oklahoma grass fires events identifies features of information generated during emergencies, and leads to the development of a working framework to inform the design and implementation of software systems that employ information extraction strategies. The hope is for such systems to be used by members of the public and emergency responders in their quests to improve situational awareness during emergency events."
+    }, {
+      "heading" : "ACKNOWLEDGMENTS",
+      "text" : "This work is supported by the US National Science Foundation IIS-0546315 and IIS-0910586 but does not represent the views of the NSF. We thank Sophia B. Liu, Kenneth M. Anderson and reviewers for assistance."
+    } ],
+    "references" : [ {
+      "title" : "Organized Behavior in Disaster",
+      "author" : [ "R.R. Dynes" ],
+      "venue" : "Lexington, MA: Heath,",
+      "citeRegEx" : "2",
+      "shortCiteRegEx" : "2",
+      "year" : 1970
+    }, {
+      "title" : "The Benefits of Facebook 'Friends': Exploring the Relationship Between College Students' Use of Conline Social Networks and Social Capital",
+      "author" : [ "N. Ellison", "C. Steinfield", "C. Lampe" ],
+      "venue" : "Computer-Mediated Communication 12,",
+      "citeRegEx" : "3",
+      "shortCiteRegEx" : "3",
+      "year" : 2007
+    }, {
+      "title" : "Toward a Theory of Situation Awareness in Dymanic Systems",
+      "author" : [ "M.R. Endsley" ],
+      "venue" : "Human Factors 37,",
+      "citeRegEx" : "4",
+      "shortCiteRegEx" : "4",
+      "year" : 1995
+    }, {
+      "title" : "Theoretical Underpinnings of Situation Awareness: A Critical Review, in Situation Awareness Analysis and Measurement, M.R.D.J.G",
+      "author" : [ "M.R. Endsley" ],
+      "venue" : "Endsley, Editor",
+      "citeRegEx" : "5",
+      "shortCiteRegEx" : "5",
+      "year" : 2000
+    }, {
+      "title" : "Social Networks that Matter: Twitter Under the Microscope",
+      "author" : [ "B.A. Huberman", "D.M. Romero", "F. Wu" ],
+      "venue" : null,
+      "citeRegEx" : "8",
+      "shortCiteRegEx" : "8",
+      "year" : 2008
+    }, {
+      "title" : "SiteSeeing\" in Disaster: An Examination of On-Line Social Convergence",
+      "author" : [ "A. Hughes", "L. Palen", "J. Sutton", "S. Liu", "S. Vieweg" ],
+      "venue" : "ISCRAM Conference",
+      "citeRegEx" : "9",
+      "shortCiteRegEx" : "9",
+      "year" : 2008
+    }, {
+      "title" : "Twitter Adoption and Use in Mass Convergence and Emergency Events",
+      "author" : [ "A.L. Hughes", "L. Palen" ],
+      "venue" : "In Proc. ISCRAM",
+      "citeRegEx" : "10",
+      "shortCiteRegEx" : "10",
+      "year" : 2009
+    }, {
+      "title" : "Looking At', 'Looking Up' or 'Keeping Up With' People? Motives and Uses of Facebook",
+      "author" : [ "A.N. Joinson" ],
+      "venue" : "In Proc. CHI",
+      "citeRegEx" : "12",
+      "shortCiteRegEx" : "12",
+      "year" : 2008
+    }, {
+      "title" : "Reconsidering Convergence and Converger Legitimacy in Response to the World Trade Center Disaster",
+      "author" : [ "Kendra", "J.M.T.W" ],
+      "venue" : "Research in Social Problems and Public Policty",
+      "citeRegEx" : "14",
+      "shortCiteRegEx" : "14",
+      "year" : 2003
+    }, {
+      "title" : "A Face(book) in the Crowd: Social Searching vs. Social Browsing",
+      "author" : [ "C. Lampe", "N. Ellison", "C. Steinfield" ],
+      "venue" : "In Proc. CSCW",
+      "citeRegEx" : "16",
+      "shortCiteRegEx" : "16",
+      "year" : 2006
+    }, {
+      "title" : "In Search of the Bigger Picture: The Emergent Role of On-Line Photo Sharing in Times of Disaster",
+      "author" : [ "S. Liu", "L. Palen", "J. Sutton", "A. Hughes", "S. Vieweg" ],
+      "venue" : "ISCRAM Conference",
+      "citeRegEx" : "17",
+      "shortCiteRegEx" : "17",
+      "year" : 2008
+    }, {
+      "title" : "Federal Help Sought for Oklahoma Wildfire Victims",
+      "author" : [ "M. McNutt" ],
+      "venue" : "April 23,",
+      "citeRegEx" : "18",
+      "shortCiteRegEx" : "18",
+      "year" : 2009
+    }, {
+      "title" : "Questions in, Knowledge in?: A Study of Naver's Question Answering Community",
+      "author" : [ "K.K. Nam", "M.S. Ackerman", "L.A. Adamic" ],
+      "venue" : "In Proc. CHI",
+      "citeRegEx" : "19",
+      "shortCiteRegEx" : "19",
+      "year" : 2009
+    }, {
+      "title" : "Red River Will Crest Again in FargoMoorhead in Late April",
+      "author" : [ "NOAA Forecasters" ],
+      "venue" : "Apr 3,",
+      "citeRegEx" : "20",
+      "shortCiteRegEx" : null,
+      "year" : 2009
+    }, {
+      "title" : "A Vision for Technology-Mediated Public Participation and Assistance in Mass Emergencies and Disasters",
+      "author" : [ "L. Palen", "K. Anderson", "G. Mark", "J. Martin", "D. Sicker", "D. Grunwald" ],
+      "venue" : "University of Colorado manuscript",
+      "citeRegEx" : "21",
+      "shortCiteRegEx" : "21",
+      "year" : 2010
+    }, {
+      "title" : "The Emergence of Online Widescale Interaction in Unexpected Events: Assistance, Alliance & Retreat",
+      "author" : [ "L. Palen", "S. Vieweg" ],
+      "venue" : "In Proc. CSCW",
+      "citeRegEx" : "22",
+      "shortCiteRegEx" : "22",
+      "year" : 2008
+    }, {
+      "title" : "Crisis in a Networked World: Features of Computer-Mediated Communication in the April",
+      "author" : [ "L. Palen", "S. Vieweg", "S. Liu", "A.L. Hughes" ],
+      "venue" : "Virginia Tech Event. Social Science Computer Review Special Issue on E-Social Science",
+      "citeRegEx" : "23",
+      "shortCiteRegEx" : "23",
+      "year" : 2007
+    }, {
+      "title" : "Online Community Response to Major Disaster: A Study of Tianya Forum in the 2008 Sichuan Earthquake",
+      "author" : [ "Y. Qu", "P.F. Wu", "X. Wang" ],
+      "venue" : "In Proc. Hawaii International Conference on System Sciences",
+      "citeRegEx" : "24",
+      "shortCiteRegEx" : "24",
+      "year" : 2009
+    }, {
+      "title" : "Model-based Measurement of Situation Awareness",
+      "author" : [ "W.S.N. Reilly", "S.L. Guarino", "B. Kellihan" ],
+      "venue" : "In Proc. Winter Simulation Conference",
+      "citeRegEx" : "25",
+      "shortCiteRegEx" : "25",
+      "year" : 2007
+    }, {
+      "title" : "A Simplest Systematics for the Organization of Turn-Taking for Conversation Author(s)",
+      "author" : [ "H. Sacks", "E.M. Schegloff", "G. Jefferson" ],
+      "venue" : "Language 50,",
+      "citeRegEx" : "26",
+      "shortCiteRegEx" : "26",
+      "year" : 1974
+    }, {
+      "title" : "Situation Awareness: A Critical but Ill-Defined Phenomenon",
+      "author" : [ "N.B. Sarter", "D.D. Woods" ],
+      "venue" : "The International Journal of Aviation Psychology 1,",
+      "citeRegEx" : "28",
+      "shortCiteRegEx" : "28",
+      "year" : 1991
+    }, {
+      "title" : "A Geologist's Persepective on the Red River of the North: History, Geography, and Planning/Management Issues",
+      "author" : [ "D.P. Schwert" ],
+      "venue" : "In Proc. Int'l Water Conference",
+      "citeRegEx" : "29",
+      "shortCiteRegEx" : "29",
+      "year" : 2003
+    }, {
+      "title" : "Finding Community Through Information and Communication Technology in Disaster Events",
+      "author" : [ "I. Shklovski", "L. Palen", "J. Sutton" ],
+      "venue" : "In Proc. CSCW",
+      "citeRegEx" : "30",
+      "shortCiteRegEx" : "30",
+      "year" : 2008
+    }, {
+      "title" : "Manitoba Coping with Thirdworst Flood of Century",
+      "author" : [ "J. Skerritt", "B. Redekop" ],
+      "venue" : "Apr 14,",
+      "citeRegEx" : "31",
+      "shortCiteRegEx" : "31",
+      "year" : 2009
+    }, {
+      "title" : "Information behavior in dynamic group work contexts: interwoven situational awareness, dense social networks and contested collaboration in command and control",
+      "author" : [ "D.H. Sonnenwald", "L.G. Pierce" ],
+      "venue" : "Information Processing and Management",
+      "citeRegEx" : "32",
+      "shortCiteRegEx" : "32",
+      "year" : 2000
+    }, {
+      "title" : "E-Data Visualization for Qualitative Research",
+      "author" : [ "C. Starbird" ],
+      "venue" : "Interactive Poster Presented at CSCW",
+      "citeRegEx" : "33",
+      "shortCiteRegEx" : "33",
+      "year" : 2008
+    }, {
+      "title" : "Chatter on the Red: What Hazards Threat Reveals about the Social Life of Microblogged Information",
+      "author" : [ "K. Starbird", "L. Palen", "A.L. Hughes", "S. Vieweg" ],
+      "venue" : "In Proc. CSCW",
+      "citeRegEx" : "34",
+      "shortCiteRegEx" : "34",
+      "year" : 2010
+    }, {
+      "title" : "Backchannels on the Front Lines: Emergent Use of Social Media in the 2007 Southern California Fires",
+      "author" : [ "J. Sutton", "L. Palen", "I. Shklovski" ],
+      "venue" : "In Proc. ISCRAM",
+      "citeRegEx" : "35",
+      "shortCiteRegEx" : "35",
+      "year" : 2008
+    }, {
+      "title" : "Collective Intelligence in Disaster: Examination of the Phenomenon in the Aftermath of the 2007 Virginia Tech Shooting",
+      "author" : [ "S. Vieweg", "L. Palen", "S. Liu", "A. Hughes", "J. Sutton" ],
+      "venue" : "In Proc. ISCRAM",
+      "citeRegEx" : "37",
+      "shortCiteRegEx" : "37",
+      "year" : 2008
+    } ],
+    "referenceMentions" : [ {
+      "referenceID" : 26,
+      "context" : "It offers ways to retrieve, produce and spread information; the nature of that sharing has a lifecycle of information production and consumption that is rapid and repetitive [34].",
+      "startOffset" : 174,
+      "endOffset" : 178
+    }, {
+      "referenceID" : 14,
+      "context" : "This medium is also seen as a place for “harvesting” information during a crisis event to determine what is happening on the ground [21].",
+      "startOffset" : 132,
+      "endOffset" : 136
+    }, {
+      "referenceID" : 20,
+      "context" : "Our aim is to support what time- and safety-critical domains refer to as situational awareness [28], an individually as well as socially cognitive state of understanding “the big picture” during critical situations.",
+      "startOffset" : 95,
+      "endOffset" : 99
+    }, {
+      "referenceID" : 20,
+      "context" : "Defined by Sarter and Woods as “all knowledge that is accessible and can be integrated into a coherent picture, when required, to assess and cope with a situation,” [28] the SA literature informs our research through the recognition that “reliable information is often an elusive target” [25].",
+      "startOffset" : 165,
+      "endOffset" : 169
+    }, {
+      "referenceID" : 18,
+      "context" : "Defined by Sarter and Woods as “all knowledge that is accessible and can be integrated into a coherent picture, when required, to assess and cope with a situation,” [28] the SA literature informs our research through the recognition that “reliable information is often an elusive target” [25].",
+      "startOffset" : 288,
+      "endOffset" : 292
+    }, {
+      "referenceID" : 18,
+      "context" : "Much of the literature focuses on military and aviation operations [25, 27, 28], but SA is also studied in domains such as education, weather and emergency response [5, 13].",
+      "startOffset" : 67,
+      "endOffset" : 79
+    }, {
+      "referenceID" : 20,
+      "context" : "Much of the literature focuses on military and aviation operations [25, 27, 28], but SA is also studied in domains such as education, weather and emergency response [5, 13].",
+      "startOffset" : 67,
+      "endOffset" : 79
+    }, {
+      "referenceID" : 3,
+      "context" : "Much of the literature focuses on military and aviation operations [25, 27, 28], but SA is also studied in domains such as education, weather and emergency response [5, 13].",
+      "startOffset" : 165,
+      "endOffset" : 172
+    }, {
+      "referenceID" : 18,
+      "context" : "Uncertainty is often the norm in such situations, but many are working toward reducing uncertainty through the use of tools that can help assess the reliability of information [25].",
+      "startOffset" : 176,
+      "endOffset" : 180
+    }, {
+      "referenceID" : 2,
+      "context" : "An additional point to consider regarding this body of research is that though much of it focuses on individual SA, some researchers investigate team or group SA [4, 32].",
+      "startOffset" : 162,
+      "endOffset" : 169
+    }, {
+      "referenceID" : 24,
+      "context" : "An additional point to consider regarding this body of research is that though much of it focuses on individual SA, some researchers investigate team or group SA [4, 32].",
+      "startOffset" : 162,
+      "endOffset" : 169
+    }, {
+      "referenceID" : 24,
+      "context" : "work examines teams of pilots and military personnel focused on a specific exercise or known goal, but is pertinent here in that it addresses individuals who must “work together to collect, analyze, synthesize and disseminate information” [32].",
+      "startOffset" : 239,
+      "endOffset" : 243
+    }, {
+      "referenceID" : 2,
+      "context" : "Endsley’s theory [4] is helpful because it addresses how SA is achieved and invoked by those in stressful situations through contribution of information from different sources.",
+      "startOffset" : 17,
+      "endOffset" : 20
+    }, {
+      "referenceID" : 24,
+      "context" : "Further, in their study of a command and control exercise for army battalions, Sonnenwald and Pierce explain the processes of intragroup and intergroup SA, and the importance of information exchange to create “common situational awareness” [32].",
+      "startOffset" : 240,
+      "endOffset" : 244
+    }, {
+      "referenceID" : 1,
+      "context" : "Social Media & Emergencies Interaction over and within what are increasingly being referred to as social media sites and applications is of rapidly growing interest to human-computer interaction research communities [3, 12, 16], though attention to computer-mediated communication has always been a core interest.",
+      "startOffset" : 216,
+      "endOffset" : 227
+    }, {
+      "referenceID" : 7,
+      "context" : "Social Media & Emergencies Interaction over and within what are increasingly being referred to as social media sites and applications is of rapidly growing interest to human-computer interaction research communities [3, 12, 16], though attention to computer-mediated communication has always been a core interest.",
+      "startOffset" : 216,
+      "endOffset" : 227
+    }, {
+      "referenceID" : 9,
+      "context" : "Social Media & Emergencies Interaction over and within what are increasingly being referred to as social media sites and applications is of rapidly growing interest to human-computer interaction research communities [3, 12, 16], though attention to computer-mediated communication has always been a core interest.",
+      "startOffset" : 216,
+      "endOffset" : 227
+    }, {
+      "referenceID" : 1,
+      "context" : "Studies of social media sites include, for example, the use of social networking sites and their relation to social capital [3]; the differences between how users employ techniques such as “social surfing” and “social browsing” [16]; and the motivation and rewards for users who frequent social networking sites [12].",
+      "startOffset" : 124,
+      "endOffset" : 127
+    }, {
+      "referenceID" : 9,
+      "context" : "Studies of social media sites include, for example, the use of social networking sites and their relation to social capital [3]; the differences between how users employ techniques such as “social surfing” and “social browsing” [16]; and the motivation and rewards for users who frequent social networking sites [12].",
+      "startOffset" : 228,
+      "endOffset" : 232
+    }, {
+      "referenceID" : 7,
+      "context" : "Studies of social media sites include, for example, the use of social networking sites and their relation to social capital [3]; the differences between how users employ techniques such as “social surfing” and “social browsing” [16]; and the motivation and rewards for users who frequent social networking sites [12].",
+      "startOffset" : 312,
+      "endOffset" : 316
+    }, {
+      "referenceID" : 15,
+      "context" : "Existing research concerning social media use in emergencies includes studies of Facebook use during the 2007 Virginia Tech and the 2008 Northern Illinois University shootings [22, 23, 37] and other social media during the 2007 southern California wildfires [30, 35].",
+      "startOffset" : 176,
+      "endOffset" : 188
+    }, {
+      "referenceID" : 16,
+      "context" : "Existing research concerning social media use in emergencies includes studies of Facebook use during the 2007 Virginia Tech and the 2008 Northern Illinois University shootings [22, 23, 37] and other social media during the 2007 southern California wildfires [30, 35].",
+      "startOffset" : 176,
+      "endOffset" : 188
+    }, {
+      "referenceID" : 28,
+      "context" : "Existing research concerning social media use in emergencies includes studies of Facebook use during the 2007 Virginia Tech and the 2008 Northern Illinois University shootings [22, 23, 37] and other social media during the 2007 southern California wildfires [30, 35].",
+      "startOffset" : 176,
+      "endOffset" : 188
+    }, {
+      "referenceID" : 22,
+      "context" : "Existing research concerning social media use in emergencies includes studies of Facebook use during the 2007 Virginia Tech and the 2008 Northern Illinois University shootings [22, 23, 37] and other social media during the 2007 southern California wildfires [30, 35].",
+      "startOffset" : 258,
+      "endOffset" : 266
+    }, {
+      "referenceID" : 27,
+      "context" : "Existing research concerning social media use in emergencies includes studies of Facebook use during the 2007 Virginia Tech and the 2008 Northern Illinois University shootings [22, 23, 37] and other social media during the 2007 southern California wildfires [30, 35].",
+      "startOffset" : 258,
+      "endOffset" : 266
+    }, {
+      "referenceID" : 15,
+      "context" : "This work shows that “widescale” computer mediated communication involves self-organizing behavior that can produce accurate results, often in advance of official communications [22, 23, 35, 37].",
+      "startOffset" : 178,
+      "endOffset" : 194
+    }, {
+      "referenceID" : 16,
+      "context" : "This work shows that “widescale” computer mediated communication involves self-organizing behavior that can produce accurate results, often in advance of official communications [22, 23, 35, 37].",
+      "startOffset" : 178,
+      "endOffset" : 194
+    }, {
+      "referenceID" : 27,
+      "context" : "This work shows that “widescale” computer mediated communication involves self-organizing behavior that can produce accurate results, often in advance of official communications [22, 23, 35, 37].",
+      "startOffset" : 178,
+      "endOffset" : 194
+    }, {
+      "referenceID" : 28,
+      "context" : "This work shows that “widescale” computer mediated communication involves self-organizing behavior that can produce accurate results, often in advance of official communications [22, 23, 35, 37].",
+      "startOffset" : 178,
+      "endOffset" : 194
+    }, {
+      "referenceID" : 17,
+      "context" : "found that local citizens used a popular online forum to organize information and to express their emotions about the disaster [24].",
+      "startOffset" : 127,
+      "endOffset" : 131
+    }, {
+      "referenceID" : 5,
+      "context" : "This research shows that members of the public use social media to support the gathering and dispersal of relevant, useful information, and online destinations like Twitter and other Internet forums support such disaster-related citizen participation [9, 17].",
+      "startOffset" : 251,
+      "endOffset" : 258
+    }, {
+      "referenceID" : 10,
+      "context" : "This research shows that members of the public use social media to support the gathering and dispersal of relevant, useful information, and online destinations like Twitter and other Internet forums support such disaster-related citizen participation [9, 17].",
+      "startOffset" : 251,
+      "endOffset" : 258
+    }, {
+      "referenceID" : 4,
+      "context" : "look at how users interact with their Twitter social network [8].",
+      "startOffset" : 61,
+      "endOffset" : 64
+    }, {
+      "referenceID" : 6,
+      "context" : "Analysis of Twitter activity in the 2008 American Democratic and Republication National Conventions shows that those who newly adopted Twitter during these events were more likely to continue to use it for other purposes [10].",
+      "startOffset" : 221,
+      "endOffset" : 225
+    }, {
+      "referenceID" : 26,
+      "context" : "Recent research has examined under conditions of hazards threat how the “Twitterverse” is self-organizing through generative, synthetic and derivative information activity, and how these activities differ with respect to location to the event and Twitterer affiliation [34].",
+      "startOffset" : 269,
+      "endOffset" : 273
+    }, {
+      "referenceID" : 21,
+      "context" : "Many disastrous floods have affected the region [29].",
+      "startOffset" : 48,
+      "endOffset" : 52
+    }, {
+      "referenceID" : 13,
+      "context" : "Shortly after the first crest, the National Weather Service warned that a second crest, potentially higher and more devastating, would be coming in mid- to late April [20].",
+      "startOffset" : 167,
+      "endOffset" : 171
+    }, {
+      "referenceID" : 23,
+      "context" : "Residents of Winnipeg experienced an extended flood threat with flash flooding and evacuations [31].",
+      "startOffset" : 95,
+      "endOffset" : 99
+    }, {
+      "referenceID" : 11,
+      "context" : "Close to 270 buildings were destroyed—228 of which were homes—and over 100,000 acres were burned [18].",
+      "startOffset" : 97,
+      "endOffset" : 101
+    }, {
+      "referenceID" : 26,
+      "context" : "The terms red river and redriver were used for pulling Red River Flood tweets, and the terms oklahoma, okfire, grass fire and grassfire were used for pulling Oklahoma Grassfire tweets (the Red River data collection activity is described in greater length in [34]).",
+      "startOffset" : 258,
+      "endOffset" : 262
+    }, {
+      "referenceID" : 25,
+      "context" : "Using the E-Data Viewer (EDV), an in-house software application for studying large data sets [33], we parsed, visualized and coded each data set.",
+      "startOffset" : 93,
+      "endOffset" : 97
+    }, {
+      "referenceID" : 26,
+      "context" : "In a focused study of the Red River event reported elsewhere [34], we describe macro-level microblogging activity which focuses on the original sources of information, i.",
+      "startOffset" : 61,
+      "endOffset" : 65
+    }, {
+      "referenceID" : 0,
+      "context" : "We focus here on two variables that may help anticipate differences in Twitter behavior in other emergencies: 1) the differences between flood hazard features and wildfire hazard features 2) the differences in behavior between people who are in the warning phase of a disaster—which involves anticipating an emergency, engaging in preventive measures and consulting with others [2]—and those who are in the impact phase—which is when people “hold on” until the event has passed and comprehend the far-reaching affects of the emergency [2].",
+      "startOffset" : 378,
+      "endOffset" : 381
+    }, {
+      "referenceID" : 0,
+      "context" : "We focus here on two variables that may help anticipate differences in Twitter behavior in other emergencies: 1) the differences between flood hazard features and wildfire hazard features 2) the differences in behavior between people who are in the warning phase of a disaster—which involves anticipating an emergency, engaging in preventive measures and consulting with others [2]—and those who are in the impact phase—which is when people “hold on” until the event has passed and comprehend the far-reaching affects of the emergency [2].",
+      "startOffset" : 535,
+      "endOffset" : 538
+    }, {
+      "referenceID" : 0,
+      "context" : "Red River residents experienced a long period of warning [2] leading up to the first crest and in anticipation of a second.",
+      "startOffset" : 57,
+      "endOffset" : 60
+    }, {
+      "referenceID" : 0,
+      "context" : "Therefore, most of the OK tweets were collected during the stages of impact and recovery [2].",
+      "startOffset" : 89,
+      "endOffset" : 92
+    }, {
+      "referenceID" : 8,
+      "context" : "Additionally, Kendra and Wachtendorf’s [14] work on types of social convergence that emerge in disasters guided our development of the coding scheme.",
+      "startOffset" : 39,
+      "endOffset" : 43
+    }, {
+      "referenceID" : 19,
+      "context" : "The “recipient design” [26] of tweets involves creating content-rich tweets that contribute to the “big picture” situational awareness.",
+      "startOffset" : 23,
+      "endOffset" : 27
+    } ],
+    "year" : 2010,
+    "abstractText" : "We analyze microblog posts generated during two recent, concurrent emergency events in North America via Twitter, a popular microblogging service. We focus on communications broadcast by people who were “on the ground” during the Oklahoma Grassfires of April 2009 and the Red River Floods that occurred in March and April 2009, and identify information that may contribute to enhancing situational awareness (SA). This work aims to inform next steps for extracting useful, relevant information during emergencies using information extraction (IE) techniques. Author",
+    "creator" : "PScript5.dll Version 5.2.2"
+  }
+}

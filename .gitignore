@@ -3,6 +3,8 @@
 
 sample_pdfs/*.pdf
 output/*
+science-parse-test/science-parse/*
+datasets/*
 
 ##### Python template from GitHub
 # Byte-compiled / optimized / DLL files

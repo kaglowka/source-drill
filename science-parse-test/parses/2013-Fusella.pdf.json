@@ -1,0 +1,665 @@
+{
+  "name" : "2013-Fusella.pdf",
+  "metadata" : {
+    "source" : "CRF",
+    "title" : "Dynamic Systems Theory in Cognitive Science: Major Elements, Applications, and Debates Surrounding a Revolutionary Meta- Theory",
+    "authors" : [ "Paul V. Fusella", "Paul Fusella" ],
+    "emails" : [ ],
+    "sections" : [ {
+      "heading" : null,
+      "text" : "Dynamical  Psychology  2013  –  dynapsyc.org  "
+    }, {
+      "heading" : "Dynamic Systems Theory in Cognitive Science: Major Elements, Applications, and Debates Surrounding a Revolutionary MetaTheory",
+      "text" : "Paul V. Fusella\nJanuary 15, 2013\n© Paul Fusella"
+    }, {
+      "heading" : "Introduction",
+      "text" : "“It is the theory that decides what we can observe.” -Albert Einstein\nDynamic Systems Theory (DST) is a broad theoretical framework imported from the physical sciences and used in psychology and cognitive science in the past several decades that provides an alternative to the computational and information-processing approach that has governed main stream cognitive science since the dawn of the cognitive revolution in the midtwentieth century (Beer, 2000; van Gelder & Port, 1995; van Gelder, 1998; Spivey, 2007). DST views all psychological processes and capacities as dynamic systems which are best described as complex, non-linear, self-organizing and emergent and whereby cognition develops over the lifecourse and occurs over real-time as a probable description of many possible alternatives instead of linear-assembly-of-symbolic-processes (Spivey, 2007; van Gelder & Port, 1995). Psychological capacities are viewed as emerging as more complex unique forms from prior simpler states, moving from chaotic to more stable trajectories in a theoretical state-space that culminate in the manifestation of a specific thought in real-time or a developmental phenomenon over ontogenesis (Spivey, 2006, Thelen & Smith, 1994; van Geert, 1998). There is a sensitivity to initial conditions and a determination by multiple causality, whereby psychological phenomena, be it a developmental capacity or cognition more generally, are softly-assembled (Thelen & Smith, 2003).\nThis overarching and revolutionary view for cognitive science has been in the works for quite some time perhaps since the cybernetics movement in the mid-20th century but has become more popular in recent years and has been referred to by a number of different and related labels\nreflecting related ideas and ranging from chaos theory to complexity theory to nonlinear dynamical systems theory. These titles all refer to similar ideas but have subtle and nuanced differences. I choose to use the term dynamic systems theory because this is the term used by most cognitive scientists who subscribe to this viewpoint and who refer to their movement as the dynamical view in cognitive science and refer to themselves as dynamicists so I will continue with that tradition although the lexicon and conceptual hallmarks used are shared by all these related viewpoints.\nSpecifically, what I mean by the DST approach in cognitive science (and later to what I refer to as the Complexity Theory (CT) approach) is something also related to work in theoretical computer science and artificial intelligence and empirical and theoretical work done there that applies to some distinct intelligent systems but particularly what it can say about the human mind as an intelligent system. Siegelmann (1997, 2003), Bringsford (2004), Kempis (1991), and Penrose (1990) have described the quintessential hallmark of the DST approach of this particular form of intelligent system as being trans-Turing (or super-Turing) and which possesses hyper-computational capabilities;-that is brains and other certain forms of intelligent systems perform processes that go above and beyond the Turing-limit with it’s symbolic-serialprocessing of the traditional digital computer metaphor that has hallmarked much of the work done in cognitive science and which has been motivated by the information-processing (or computational) perspective. By computationalism I am referring to what has been the dominate theoretical framework in cognitive science since its inception, which has been motivated by the development of the digital computer and principally the work of Alan Turing and the Turingmachine, and which uses as a metaphor for the mind, a symbolic-algorithmic-serial-processingdigital-computer that computes at or below the Turing-limit.\nThe argument made by most dynamicists is that DST is a more suitable theoretical framework for situating psychological phenomena because it has achieved success in accounting for other phenomena in the natural world as diverse as meteorological phenomena to kinematics of the human body. The brain and mind are part of the natural world so logically they too can be accounted for by the dynamical view and perhaps more completely and accurately than the traditional computational and information-processing approach with its use of the digital computer as the metaphor for mind. The mind is an abstraction for the neurological underpinnings in the brain and these are not machines they are biological organs made up of cells and organic molecules and they are part of the natural world and could arguably be better accounted for by a meta-theory that has been successful in capturing the diverse natural phenomena that dynamic systems theory has been able to do. I am echoing the argument made by the dynamicists and arguing for a paradigm shift in the sense that Kuhn (1962) described, specifically in cognitive science, as a move away-from the computational, toward a dynamical theoretical framework and paradigm with an recognition that the computations made by the human mind are trans-Turing (or super-Turing) and go above and beyond the Turing-limit of the traditional information-processing approach.\nAdopting DST reconciles a lot of the debates in cognitive science surrounding the phenomena that is investigated from monism vs. dualism, nativism vs. empiricism, and subjectivity vs. objectivity, not to mention the various anomalies discovered as a result of adopting a computational viewpoint. DST reorganizes the way that phenomena are studied and conceptualized;-where some such as Varela, Thompson, and Rosch (1991) have argued for first\nperson methods in the study of consciousness utilizing methods from traditional Buddhist psychology and which reflects a post-positivist view of how science is conducted. However, others including Spivey (2007), Beer (2000), Thelen and Smith (1994), van Gelder and Port (1995), and Schoner (2008) continue to work empirically with a positivist empirical framework in studying various psychological capacities from a DST perspective and these are the mainstream in the field. Thus, be it the manner in which phenomena are empirically investigated or the manner in which theories are constructed, DST is beginning to be accepted as a viable alternative to the 20th century traditions of computationalism and positivism. DST provides an account of cognitive phenomena that is dynamical, embodied, completely situated and ecologically-grounded and the ways that cognitive scientists go about conducting research and theory building is likely to be influenced by these fundamental aspects to this meta-theory.\nIn this paper, I will set out to provide an overview of the dynamical approach in cognitive science reviewing the more important work that has been done in recent decades and especially at the turn of the 21rst century. I will focus on a review of two recent debates that were published recently: one in 1998 in the journal Behavioral and Brain Sciences and the other in 2012 in TopiCS in Cognitive Science where contributing scientists debate the legitimacy of the dynamical view. During the review of these debates I will touch on the different facets of DST including work done in embodied cognition and ecologically grounded cognitive phenomena and also work that has been done in applying DST to experiments in psycholinguistics wherein the role of the body, the context, and the environment are united in one framework that is guided by DST.\nDuring this review of the work in the application of DST in cognitive science and reviewing the various formal debates that showed up in peer reviewed journals and discussing them critically, I will echo what others have proclaimed in the past and make the argument that DST is ultimately a more suitable theoretical framework for guiding empirical research and theory building in cognitive science and should at some point in the not so distant future, but especially for moving the field forward in this new century, replace the outdated computational and information-processing approach which appears to have run its course. DST has much promise in providing an overarching and unifying theoretical framework for the cognitive sciences but like anything new it is met with staunch criticisms and rejection. However, the more people that join this movement the more the basic principles embodied in the DST approach will become grounded in empirical evidence. I will begin to conclude the review with a recap of the major controversies that adopting DST provokes from its criticizers and will finish with my modest vision for the future role DST can play in reorganizing the way that science is conducted in the cognitive sciences building off the work that has been done in dynamical cognition from the beginning and reacting against and incorporating within it the good that came from the traditional approaches in cognitive science into the future of what this revolutionary metatheory means for cognitive science."
+    }, {
+      "heading" : "The Debate and Commentary Published in Behavioral and Brain Sciences in 1998",
+      "text" : "This debate and open peer commentary was started off by van Gelder (1998) with his overview for the application of dynamic systems theory (DST) in cognitive science. He explains\nthat at the core of the dynamical approach is the dynamical hypothesis which roughly asserts that cognitive agents are dynamical systems and could be understood as such. There are two component hypotheses to the dynamical hypothesis;-1) the nature hypothesis which states that cognitive agents are dynamical systems and 2) the knowledge hypothesis which states that cognitive agents can be understood dynamically. The basic intention of his starting point article for this publication was to describe the dynamical hypothesis as an open scientific hypothesis, provide an overview for why cognition could be thought of in a dynamical way, and provide rebuttals to some of the more popular retorts to the dynamical hypothesis. He concludes with the pronouncement that continued work in dynamically oriented cognitive science will be the only way to prove or discount this fundamental hypothesis and contrasts the dynamical view with the leading contender-the computational view, with its computational hypothesis, which has dominated much of the theoretical and empirical work done in cognitive science since the beginning of the field (van Gelder, 1998).\nThe ensuing articles in this publication were basically open peer commentaries responding to van Gelder’s (1998) starting point article. The second entry was done by Bechtel (1998) where he targeted van Gelder’s distinction between the dynamical hypothesis and the computation hypothesis as a difference between change-versus-state and geometry-versus-order. Bechtel (1998) claims these fundamental distinctions point to an underlying at odds that these competing viewpoints have in terms of classical mechanism. He goes on to argue that in fact the dynamical and mechanist views are allies whereby mechanisms can identify components of a system whose properties open up a dynamical understanding and analysis ultimately, of the variables defined by those properties (Brechtel, 1998).\nThe third article in this volume was done by Beer (1998) where he applauded van Gelder’s (1998) starting point article with its declaration that DST is a revolutionary paradigm for the cognitive sciences. However, Beer (1998) contends the point that van Gelder (1998) made regarding the competition that the dynamical view has with the traditional computational view and explains that the mathematical formalisms provided by the two frameworks will never get at what a cognitive agent is;-they can only model cognitive processes. He argues instead for empirical work done with model agents citing some of his own work to support this notion that instead of arguing about the overarching theoretical definitions of either viewpoint one must investigate model agents particularly with work done in artificial intelligence (AI) and intelligent technologies. Beer (1998) does agree with van Gelder (1998) ultimately however, that DST does provide a revolutionary framework for investigating those model agents without the anomalies that develop when adopting the computational viewpoint. Finally, Beer (1998) suggests that adopting DST can contribute to progress made not only in cognitive models and processes per se but in development over the life-course and evolution over human history where adaptive behaviors give rise to more evolved cognitive processes that unfold dynamically.\nThe fourth article in the volume was done by open supporters of the computational view and criticized van Gelder’s (1998) dynamical hypothesis as untestable and utterly intuitive. Beaisby, Cooper, and Franks (1998) contend that van Gelder (1998) presented his dynamical hypothesis as a novel law of qualitative structure (LQS) to compete with Newell and Simon’s (1976) physical symbols systems hypothesis (PSSH) and in doing so did not provide the necessary constraints for the nature and knowledge hypotheses that compromise the dynamical hypothesis, leaving any understanding of the nature of cognition given by DST mere intuition. It\nis intuition in their view because unlike the PSSH the dynamical hypothesis fails to provide the necessary and sufficient conditions for cognition. Moreover, they claim that the imprecision in the statements of the dynamical hypothesis makes it unfalsifiable and therefore not a true scientific hypothesis. With that said even these authors believe that something can be benefited in cognitive science from the adoption of the dynamical systems view point despite their criticisms.\nTwo articles later in this volume another criticism is leveled at van Gelder’s (1998) claims by Chater and Hahn (1998) who contend that van Gelder’s (1998) specifications of the dynamical hypothesis does not improve upon previous notions. They argue that all three key attributes of the dynamical system that van Gelder (1998) described apply to Turing machines and as a result are too general. Moreover, they contend that even if a more restricted version of the dynamical hypothesis were to be adopted it would still be too underspecified to be posited as an interesting claim in cognitive science (Chater & Hahn, 1998).\nChrisley (1998) follows in this volume with an article that also criticizes van Gelder’s (1998) claims with five basic assertions. The first is that van Gelder’s claim that the dynamical view is not in total opposition to the computational one is not in true standing with an anticomputational approach. Secondly, that there are problems with the assertion that dynamical systems allow for nonrepresentational aspects to computation that digital computation cannot. Thirdly, that van Gelder (1998) only addresses one of the two senses of the claim that “cognition is computation”. Fourthly, the manner in which van Gelder (1998) characterizes dynamical systems share problems of universal realizability and traditional notions of computation;-and finally, the fifth point made in this article criticized van Gelder (1998) for providing a dynamical hypothesis which cannot tell us what cognition is because instantiating a dynamic system is neither necessary nor sufficient for being a cognitive agent (Chrisley, 1998).\nIn the next article Crutchfield (1998) argues that dynamical systems is not at odds with computation because it is not enough for cognition, nor can it substitute the informationprocessing approach in explaining brain-behavior relations. He argues that DST and computation are not at odds additionally but are quite compatible. They are compatible because any dynamic system can be analyzed in terms of its inherent information-processing capacities and components (Crutchfield, 1998).\nDavids and Bennett (1998) provide another commentary which follows those above and includes an argument for needed amendments to van Gelder’s (1998) that include issues of embodiment and ecological context in which a dynamic cognitive system operates. They phrase these requirements as a need for the biological constraints that are necessary in the dynamical view to truly provide an alternative to the computational approach. This would include, they explain, an understanding of the structural organization of the underlying nervous system as a dynamic system and how it functions. Additionally, they suggest what is needed is a theoretical approach which accounts for the embodiment of cognition as well as its contextually grounded nature (Davids & Bennett, 1998).\nThe next entry in this volumes commentary is by none other than the great cognitive scientist and philosopher Daniel Dennett (1998). It is a short entry but one worth mentioning because he raises an interesting claim;-namely that DST and the dynamical view and the claims\nmade regarding these issues in cognitive science by van Gelder (1998) is nothing new or revolutionary as van Gelder (1998) might claim. He argues that they are not revolutionary because the main stance van Gelder (1998) takes against representationalism is not supported or supportable and that his more mildly advocated stance in favor of DST as a supplement to representationalism is worthwhile but not new or revolutionary at all in that it’s been argued before (Dennett, 1998). It appears that Dennett (1998) disagrees with certain claims made by van Gelder (1998) regarding representationalism and the dynamic viewpoint but finds DST as an adjunct conceptual device to representationalism a worthwhile notion.\nThe next noteworthy entry was contributed by Eliasmith (1998) where he advocates the use of dynamical systems thinking in cognitive science but finds certain aspects to van Gelder’s (1998) dynamicism problematic. He argues that there is much to support certain of van Gelder’s claims for adopting dynamical models and this support has come mostly from the work done on connectionism and connectionist modeling. However, he also states that van Gelder’s dynamicism comes with some unique aspects which prove to be problematic;-namely the emphasis on continuity, proclaiming low-dimensional models superior, and in essence dismissing representationalism in understanding human cognition (Eliasmith, 1998). Although he levels these thee criticisms at van Gelder, he volunteers that to say cognitive systems are dynamical systems, as van Gelder (1998) does, is essentially right citing the work that has been done in connectionist modeling.\nFrench and Thomas (1998) follow with another commentary that basically supports the dynamical view citing work in connectionist modeling that has opened up the issues that van Gelder (1998) raised in his starting point article. They claim that the dynamical hypothesis provides nothing new in terms of the potential implications for cognitive science again claiming what connectionism has done already. They contend that van Gelder’s (1998) argument basically is an attack on traditional symbolic artificial intelligence (AI) and only echoes what those in the connectionist community have been arguing for decades;-namely to use and adopt dynamically evolving recurrent neural network models of cognition (French & Thomas, 1998).\nHeath (1998) follows a few entries later with an article that supports van Gelder’s (1998) mission. Heath (1998) argues that although cognitive psychology continues to be dominated by computationalism, there are interests in dynamical cognition emerging in recent years. He cites work done in developmental psychology as well in cognitive psychology and particularly psycholinguistics that models phenomena according to the principles of DST. He concludes the article by suggesting that continued work in dynamical psychology is the only way to ever verify whether dynamicism or computationalism is the right way to go in the future;-echoing van Gelder’s (1998) point and suggesting that processing differences reflected in either view (be it parallel or distributed) might ultimately prove to be domain specific. In all, he concludes, the dynamical view is immensely promising (Heath, 1998).\nHorgan and Tienson (1998) follow with an article that reframes the lead article by van Gelder. They contend that van Gelder’s dynamical hypothesis is a specific case of the general dynamic hypothesis they put forth. They argue that van Gelder’s special case of the general dynamical hypothesis (i.e. the dynamical hypothesis) and its specifications make it easy to overlook important alternative dynamical approaches in cognitive science (Horgan & Tienson, 1998). Moreover, they conclude with the contention that connectionist models typically conform\nto the general but not to van Gelder’s special case of a dynamic hypothesis.\nKeijzer, Ben, and van der Heijden (1998) submit the next entry that is particularly important. They contend that van Gelder’s core distinction between the mind as a dynamical system and the mind as a computer is missing the point. They instead argue that at the heart of the matter is the need to ground theory and empirical work in cognitive science that takes into account the neural underpinnings of cognition, the embodied nature of cognition, and the environmentally situated nature of cognition. They conclude that embodied cognition is very much compatible with the dynamical viewpoint however it is also compatible with the traditional computational approach (Keijzer, Ben, & van der Heijden, 1998).\nMitchell (1998) continues this commentary on the possibility of an compatibility between dynamical systems and traditional computationalism. She, however, restructures this argument by framing it in the traditional debate in evolutionary biology concerning the relative importance of the distinction between theories of structure versus theories of change. She says that a complete account of cognitive process will consist of an adherence to both these distinctions and will consist of both dynamical and computational approaches (Mitchell, 1998). What is important according to Mitchell (1998) is that an approach in cognitive science is adopted that searches for the emergence of functional information-processing structures in complex dynamical systems fusing both orientations ultimately within one theoretical framework.\nThe remaining articles in this volume’s open peer commentary continue to respond to van Gelder’s (1998) opening target article. Mulhauser (1998) says van Gelder’s vision and the tension he identifies existing between the traditional computational view and the newer dynamical view is at the heart of theory building in the field and can potentially transform the way science is done in cognitive science. Noelle (1998) suggests that encouraging more of a unified notion in the dynamical hypothesis to include different notion of cognition in different domains alleviates any testability problems that exist with the current form of the hypothesis. O’Brien (1998) contends that van Gelder’s portrayal of the dynamical view not being a mainstream paradigm in cognitive science and that computationalism is-is reflected in the core aspect of his argument where a distinction is made between DST and computationalism. This is not the case according to O’Brien (1998) who suggests that the computational hypothesis is not as dominant as it once was and that the dynamical hypothesis isn’t as neglected as it may seem to be.\nThe debate in this volume concludes with a counter-response by van Gelder to all of the peer commentaries described here that were all basically a reaction to his opening target article regarding the dynamical hypothesis which essentially put forth an overarching vision for the way that DST should be imported into cognitive science. He concludes this debate with his counterresponse which consists of various responses to the criticisms leveled at his opening article. This includes a reply to issues such as the definition of a dynamical system and digital computer; the dynamical hypothesis as a law of qualitative structure; the dynamical hypothesis as an ontological claim; the level at which the dynamical hypothesis is generated; the role of representation in a DST account of cognition; the falsifiability of the dynamical hypothesis; and the novelty and importance of the dynamical view in cognitive science (van Gelder, 1998b). Van Gelder (1998b) concludes that the basic tenets and facets of the dynamical hypothesis will remain intact but with some minor adjustment and clarifications in response to the leveled\ncriticisms."
+    }, {
+      "heading" : "The Debate and Commentary Published in TopiCS in Cognitive Science in 2012",
+      "text" : "Gray (2012) opens up the debate in this publication’s volume dedicated to the application of Complexity Theory (CT) in cognitive science with an introductory article where he provides an over of the issue’s debate. He outlines this volumes debate by describing how it involved the publication of certain articles that provide theoretical and empirical examples of work done in cognitive science which is guided by CT first. Then he describes how following those articles will be several entries which provide a commentary on the CT approach in cognitive science by scientists who provide a critique of the work done which uses CT. Gray (2012) says this issue has stirred much debate and controversy among the journal’s editorial board and was thus as a result chosen to be the publications first great debate which is the new style format adopted by TopiCS.\nThe first article was done by Van Orden and Stephen (2012) wherein they describe the challenges and major hallmarks of adopting the CT viewpoint in cognitive science. They lay out the major issues concerning the CT approach in cognitive science that the following target articles make concrete. Some of the main issues discussed are the notions of qualitative change in cognitive activity and whether the following target articles as examples of empirical work in cognitive science that utilize CT demonstrate sufficiently the cornerstone conceptual hallmarks of CT. They conclude that the new phenomena discovered by complexity scientists point to a need to organize the way in which some of the fundamental aspects of work in cognitive science are done (Van Orden & Stephen, 2012).\nThe first target article was done by Gibbs and Van Orden (2012) where they take a dynamical systems theory or complexity theory approach to the pragmatics of spoken language. They explain that traditional thinking about pragmatics considers the verbal behavior as dependent on specialized knowledge or modularity which has been ineffective in explaining the regularity and variability of speech. Their portrayal of pragmatics involves a complex systems account of spoken language and involves appeals to concepts like self-organized criticality which takes into account the history of utterances and details of the situation surrounding the context in which the words are spoken in a conversation. According to this view of speech there is less emphasis on specialized knowledge and modularity and more of an emphasis on the complex coordination or coupling between speakers and their communicative tasks (Gibbs & Van Orden, 2012).\nThe second target article was done by Riley, Shockley, and Van Orden (2012) wherein they describe work that integrates bodily action and cognitive processes. They explain that at the heart of this integration, which definitely sounds like embodied cognition although they don’t use this term, is the concept of self-organization which is a conceptual hallmark of CT. In certain areas of cognitive science there are examples of cognition that happen ultrafast with extreme context sensitivity with scale-free variation in measurement. The authors argue that these phenomena need to be illuminated by the concepts of complex dynamical systems thinking;-which includes the concept of self-organization for which bodily activity has been\nportrayed. In this way action and cognition can be seen as emergent, defying the traditional brain-mind dichotomy comprised of the details of the history of the organism, the context and environment in which the organism is situated, and functioning along a scale-free form of selforganization (Riley, Shockley, & Van Orden, 2012).\nThe third target article was contributed by Silberstein and Chemero (2012) and consisted of a theoretical treatment of the role that complex systems can play in portraying what they call extended cognitive systems. From their view cognitive systems are heterogenous consisting of interdependence between brain, body, and niche;-nonlinearly coupled to one another. They proclaim that this treatment of cognitive systems promises advance in methodological and conceptual concerns. The article focuses on two of these concerns;-namely that calling for interdependence among brain, body, and niche relieves one from any need for invoking representationalism or computationalism. The second is that from this viewpoint cognition and consciousness can be understood as a single phenomenon without any lip service paid to philosophical issues of qualia and the hard-problem of consciousness. What the authors refer to as extended-phenomenological-cognitive-systems are relational and dynamical entities and are interdependently interacting heterogenous components that operate at multiple spatial and temporal scales (Silberstein & Chemero, 2012).\nThe fourth and final target article for this volume’s issue was entered by Dixon, Holden, Mirman, and Stephen (2012) and describes a view for cognitive science that is influenced by complex systems thinking that moves away from information exchange toward a situation of cognition within a formalism of energy flow. Accordingly, they describe that cognitive processes exhibit a fractal relationship, or power-law relationship between size and time-scale. These fractals reflect a flow of energy at all scales comprising cognitive activity. The cognitive system overall exhibits not just a single power-law relationship between fluctuation size and time scale but involves multi-fracticality over time and space. This phenomenon of multi-fracticality provides new insights into changes in energy flow in a cognitive system. They cite empirical evidence from work done in developmental psychology where multi-fracticality is employed to understand abnormal developmental outcomes and as predictors of cognitive change. The ultimate point to this entry made by the authors is that multi-fracticality can provide new insights into the nature of energy flow in a cognitive system which drives the emergence of new forms of cognitive structure (Dixon, Holden, Mirman, & Stephen, 2012).\nWhat followed these target point empirical and theoretical articles was an open peer commentary format for the remaining portion of the volume’s issue and which began the formal counter-debate. The first commentary was by van Rooij (2012) who points out how the theme running through all of the target point articles was an argument for CT in cognitive science and an opposition to computationalism. Van Rooij (2012) believes that computationalism faces some challenges and the extent to which the articles of CT in this volume address those challenges with self-organizing principles only goes so far. He critiques the hypothesis that brain and body configure to satisfy task and environmental constraints because it is known that some systems exist wherein no appropriate configuration of constraints exists, be it modular, central-executive, or self-organized, and that could be determined in the right amount of time. The challenge for CT, he argues, is to account for self-organization and brain-and-body configurations for tasks in an experimental paradigm and conceptual model (van Rooij, 2012). He proposes one such to conclude his entry.\nIn the next article Eliasmith (2012) criticizes the starting point articles in favor of CT for not providing any substance to the claim that what they have put forth calls for a revolution in cognitive science. He examines the main claim from each paper and argues that what they provide does not call for a revolution at all. Instead what they identify as newly illuminated phenomena in cognitive science from the perspective of CT all can be accounted for by traditional computationalism (Eliasmith, 2012). He feels there is much to do about nothing regarding all the excitement from those cognitive scientists advocating CT.\nBotvinick (2012), follows with his argument and criticism that CT comes in two types of breeds one which is more fundamentalist in nature, the other more pragmatic. The fundamentalist dynamicists can often come off as more rhetorical than practical and this is a theoretical and methodological turn off for him. He does suggest, however, that CT has done much for cognitive science and has done so for quite some time. It’s just that the more extreme forms of the CT viewpoint lack the substantive vigor and as a result are more bark than bite so to speak. CT while having made some good contributions to the field more often than not triggers more reservations than it makes strides in empirical and theoretical concerns for cognitive science (Botvinick, 2012).\nThe fourth commentary article was contributed by Wagenmakers, van der Maas, and Farrell (2012) where they criticize the complexity viewpoint of not accomplishing all that much over the course of its importation in cognitive science. They argue that the CT camp has made promises of advances, used colorful language for their cause, and have come up with some complex statistical analyses of phenomena but whose fundamental purpose remains unclear. CT, according to these authors has failed to provide concrete insights into the basic components of cognition and the entire enterprise is at danger of becoming a “philosophical enterprise in futility.” (Wagenmakers, van der Maas, & Farrell, 2012, p. 87). They conclude that CT can only be successful if it provides models of cognitive processes that are falsifiable, that can make concrete predictions, and that can be compared to the traditional computational approach (Wagenmakers, van der Maas, & Farrell, 2012). They contend, that thus far, CT has failed in these respects.\nIn the final article for this volume’s issue on the great debate of complexity theory in cognitive science, the authors who began the debate submitted another article to address the criticisms leveled at the approach they advocate. Stephen and Van Orden (2012) argue that most of the criticisms stem from a misunderstanding of what it means for a theory to provide an explanatory account of cognitive phenomena. They contend that traditional cognitive science was reliant on component-dominant dynamics of a decomposable system operating on principles of computation to create cognitive process. The CT viewpoint is reliant on interaction-dominant dynamics among components of a cognitive system and this is now supported by a swath of empirical work done in cognitive science. They conclude that the criticisms, in fact, have little substance, and that the commentary failed to address the significant advances made by the importation of complex systems into cognitive science that have yielded theory-driven predictions (Stephen & Van Orden, 2012)."
+    }, {
+      "heading" : "Conclusion",
+      "text" : "These debates reflect the core elements, applications, and controversies surrounding the\ndynamical approach in cognitive science. They provide a nice account of the concerns raised by those for and against dynamic systems theory in cognitive science. I think that most of the criticisms can be chalked up to those in the computational camp suspicious of DST because it is simply too new and represents an approach that is promising yet underdeveloped. The more that succeeding generations of cognitive scientists gravitate to the dynamical view the more grounded in empirical evidence the theoretical framework will be. DST needs to not only challenge the alternative viewpoints but incorporate into its view and mission what is accurate and relevant about those traditional views. Computationalism is fundamentally flawed because it ignores aspects to cognitive phenomena that DST views as at the essence of cognition such as its embodied, dynamically oriented, and ecologically situated nature and the fact that it possesses hyper-computational capabilities and is fundamentally trans-Turing (or super-Turing). Moreover, all that is needed methodologically, empirically, and theoretically is in the dynamicists toolbox.\nThe theoretical and empirical work already done in cognitive science (that is done from the perspective of DST) represents too much evidence to ignore. However, cognitive science is so steeply ingrained in the computational approach and the limits of the Turing machine that it is essentially all that is known and it is all that is accepted in the field as mainstream. DST going up against computationalism is like David going up against Goliath. It is outnumbered, overpowered, and relegated to an inferior position in contemporary cognitive science, however its basic principles cannot be denied. DST has been able to model diverse phenomena in nature because it is simply more compatible with nature. Once cognitive scientists accept the fact that the mind is not a digital computer but a hyper-computer that is part of nature and which essentially is a manifestation of the underlying activity of the nervous system;- a nervous system which is in the body and inseparable from it, and in and part of the world and inseparable from it, and operates not like a symbolic-serial-information-processing digital computer, but like a dynamical system that is trans-Turing, hyper-computing, and is emergent and chaotically selforganizes over-time, not until this major and fundamental paradigm shift happens will cognitive science be truly liberated from 20th century traditions and open up the door for DST to reorganize the future for a truly unified cognitive science with accurate portrayals of human cognition."
+    } ],
+    "references" : [ {
+      "title" : "Dynamicists versus Computationalists: Whither Mechanists",
+      "author" : [ "W. Bechtel" ],
+      "venue" : "Behavioral and Brain Sciences,",
+      "citeRegEx" : "Bechtel,? \\Q1998\\E",
+      "shortCiteRegEx" : "Bechtel",
+      "year" : 1998
+    }, {
+      "title" : "Framing the Debate Between Computational and Dynamical Approaches to Cognitive Science",
+      "author" : [ "R.D. Beer" ],
+      "venue" : "Behavioral and Brain Sciences,",
+      "citeRegEx" : "Beer,? \\Q1998\\E",
+      "shortCiteRegEx" : "Beer",
+      "year" : 1998
+    }, {
+      "title" : "Dynamical Approaches to Cognitive Science",
+      "author" : [ "R.D. Beer" ],
+      "venue" : "Trends in Cognitive Science,",
+      "citeRegEx" : "Beer,? \\Q2000\\E",
+      "shortCiteRegEx" : "Beer",
+      "year" : 2000
+    }, {
+      "title" : "Commentary: Why I am Not a Dynamicist",
+      "author" : [ "M. Botvinick" ],
+      "venue" : "Topics in cognitive Science,",
+      "citeRegEx" : "Botvinick,? \\Q2012\\E",
+      "shortCiteRegEx" : "Botvinick",
+      "year" : 2012
+    }, {
+      "title" : "Why the Dynamical Hypothesis Cannot",
+      "author" : [ "N. Braisby", "R. Cooper", "B. Franks" ],
+      "venue" : null,
+      "citeRegEx" : "Braisby et al\\.,? \\Q1998\\E",
+      "shortCiteRegEx" : "Braisby et al\\.",
+      "year" : 1998
+    }, {
+      "title" : "The Modal Argument for Hyper-computing Minds",
+      "author" : [ "S. Bringsjord", "K. Arkoudas" ],
+      "venue" : "Theoretical Computer Science,",
+      "citeRegEx" : "Bringsjord and Arkoudas,? \\Q2004\\E",
+      "shortCiteRegEx" : "Bringsjord and Arkoudas",
+      "year" : 2004
+    }, {
+      "title" : "What is the Dynamical Hypothesis",
+      "author" : [ "N. Chater", "U. Hahn" ],
+      "venue" : "Behavioral and Brain Sciences,",
+      "citeRegEx" : "Chater and Hahn,? \\Q1998\\E",
+      "shortCiteRegEx" : "Chater and Hahn",
+      "year" : 1998
+    }, {
+      "title" : "What Might Dynamical Intentionality Be",
+      "author" : [ "R.L. Chrisley" ],
+      "venue" : "If Not Computation? Behavioral and Brain Sciences,",
+      "citeRegEx" : "Chrisley,? \\Q1998\\E",
+      "shortCiteRegEx" : "Chrisley",
+      "year" : 1998
+    }, {
+      "title" : "Dynamical Embodiments of Computation in Cognitive Processes",
+      "author" : [ "J.P. Crutchfield" ],
+      "venue" : "Behavioral and Brain Sciences,",
+      "citeRegEx" : "Crutchfield,? \\Q1998\\E",
+      "shortCiteRegEx" : "Crutchfield",
+      "year" : 1998
+    }, {
+      "title" : "The Dynamical Hypothesis: the Role of Biological Constraints on Cognition",
+      "author" : [ "K. Davids", "S. Bennett" ],
+      "venue" : "Behavioral and Brain Sciences,",
+      "citeRegEx" : "Davids and Bennett,? \\Q1998\\E",
+      "shortCiteRegEx" : "Davids and Bennett",
+      "year" : 1998
+    }, {
+      "title" : "Revolution, No! Reform, Si",
+      "author" : [ "D.C. Dennett" ],
+      "venue" : "Behavioral and Brain Sciences,",
+      "citeRegEx" : "Dennett,? \\Q1998\\E",
+      "shortCiteRegEx" : "Dennett",
+      "year" : 1998
+    }, {
+      "title" : "Multifractal Dynamics in the Emergence of Cognitive Structure",
+      "author" : [ "J.A. Dixon", "J.G. Holden", "D. Mirman", "D.G. Stephen" ],
+      "venue" : "Topics in Cognitive Science,",
+      "citeRegEx" : "Dixon et al\\.,? \\Q2012\\E",
+      "shortCiteRegEx" : "Dixon et al\\.",
+      "year" : 2012
+    }, {
+      "title" : "Dynamical Models and van Gelder’s Dynamicism: Two Different Things",
+      "author" : [ "C. Eliasmith" ],
+      "venue" : "Behavioral and Brain Sciences,",
+      "citeRegEx" : "Eliasmith,? \\Q1998\\E",
+      "shortCiteRegEx" : "Eliasmith",
+      "year" : 1998
+    }, {
+      "title" : "The Complex Systems Approach: Rhetoric or Revolution",
+      "author" : [ "C. Eliasmith" ],
+      "venue" : "Topics in Cognitive Science,",
+      "citeRegEx" : "Eliasmith,? \\Q2012\\E",
+      "shortCiteRegEx" : "Eliasmith",
+      "year" : 2012
+    }, {
+      "title" : "The Dynamical Hypothesis: One Battle Behind",
+      "author" : [ "R.M. French", "E. Thomas" ],
+      "venue" : "Behavioral and Brain Sciences,",
+      "citeRegEx" : "French and Thomas,? \\Q1998\\E",
+      "shortCiteRegEx" : "French and Thomas",
+      "year" : 1998
+    }, {
+      "title" : "Pragmatic Choice in Conversation",
+      "author" : [ "R.W. Gibbs", "G. Van Orden" ],
+      "venue" : "Topics in Cognitive Science,",
+      "citeRegEx" : "Gibbs and Orden,? \\Q2012\\E",
+      "shortCiteRegEx" : "Gibbs and Orden",
+      "year" : 2012
+    }, {
+      "title" : "Great Debate on the Complex Systems Approach to Cognitive Science",
+      "author" : [ "W.D. Gray" ],
+      "venue" : "Topics in cognitive Science,",
+      "citeRegEx" : "Gray,? \\Q2012\\E",
+      "shortCiteRegEx" : "Gray",
+      "year" : 2012
+    }, {
+      "title" : "Cognitive Dynamics: A Psychological Perspective",
+      "author" : [ "R.A. Heath" ],
+      "venue" : "Behavioral and Brain Sciences,",
+      "citeRegEx" : "Heath,? \\Q1998\\E",
+      "shortCiteRegEx" : "Heath",
+      "year" : 1998
+    }, {
+      "title" : "Resisting the Tyranny of Terminology: the General Dynamical Hypothesis in Cognitive Science",
+      "author" : [ "T. Horgan", "J. Tienson" ],
+      "venue" : "Behavioral and Brain Sciences,",
+      "citeRegEx" : "Horgan and Tienson,? \\Q1998\\E",
+      "shortCiteRegEx" : "Horgan and Tienson",
+      "year" : 1998
+    }, {
+      "title" : "Self-Modifying Systems in Biology and Cognitive Science: a New Framework for Dynamics, Information and Complexity (p. 543)",
+      "author" : [ "G. Kampis" ],
+      "venue" : null,
+      "citeRegEx" : "Kampis,? \\Q1991\\E",
+      "shortCiteRegEx" : "Kampis",
+      "year" : 1991
+    }, {
+      "title" : "The Dynamics of What",
+      "author" : [ "F.A. Keijzer", "S. Ben", "L. van der Heijden" ],
+      "venue" : "Behavioral and Brain Sciences,",
+      "citeRegEx" : "Keijzer et al\\.,? \\Q1998\\E",
+      "shortCiteRegEx" : "Keijzer et al\\.",
+      "year" : 1998
+    }, {
+      "title" : "The Structure of Scientific Revolutions",
+      "author" : [ "T.S. Kuhn" ],
+      "venue" : null,
+      "citeRegEx" : "Kuhn,? \\Q1962\\E",
+      "shortCiteRegEx" : "Kuhn",
+      "year" : 1962
+    }, {
+      "title" : "Theories of Structure versus Theories of Change",
+      "author" : [ "M. Mitchell" ],
+      "venue" : "Behavioral and Brain Sciences,",
+      "citeRegEx" : "Mitchell,? \\Q1998\\E",
+      "shortCiteRegEx" : "Mitchell",
+      "year" : 1998
+    }, {
+      "title" : "Nature’s Subtlety Undermines the Empirical Relevance of Both Dynamical and Computational Hypothesis",
+      "author" : [ "G.R. Muhauser" ],
+      "venue" : "Behavioral and Brain Sciences,",
+      "citeRegEx" : "Muhauser,? \\Q1998\\E",
+      "shortCiteRegEx" : "Muhauser",
+      "year" : 1998
+    }, {
+      "title" : "Computer Science as Empirical Inquiry: Symbols and Search",
+      "author" : [ "S. Newell", "J. Simon" ],
+      "venue" : "Communications of the Associations for Computing Machinery,",
+      "citeRegEx" : "Newell and Simon,? \\Q1976\\E",
+      "shortCiteRegEx" : "Newell and Simon",
+      "year" : 1976
+    }, {
+      "title" : "Is the Dynamical Hypothesis Falsifiable? On Unification in Theories of Cognition",
+      "author" : [ "D.C. Noelle" ],
+      "venue" : "Behavioral and Brain Sciences,",
+      "citeRegEx" : "Noelle,? \\Q1998\\E",
+      "shortCiteRegEx" : "Noelle",
+      "year" : 1998
+    }, {
+      "title" : "Digital Computers versus Dynamical Systems: A Conflation of Distinctions",
+      "author" : [ "G. O’Brien" ],
+      "venue" : "Behavioral and Brain Sciences,",
+      "citeRegEx" : "O.Brien,? \\Q1998\\E",
+      "shortCiteRegEx" : "O.Brien",
+      "year" : 1998
+    }, {
+      "title" : "The Emperor's New Mind (pp. 369-385)",
+      "author" : [ "R. Penrose", "M. Jackson" ],
+      "venue" : null,
+      "citeRegEx" : "Penrose and Jackson,? \\Q1990\\E",
+      "shortCiteRegEx" : "Penrose and Jackson",
+      "year" : 1990
+    }, {
+      "title" : "Learning from the Body About the Mind",
+      "author" : [ "M.A. Riley", "K. Shockley", "G. Van Orden" ],
+      "venue" : "Topics in Cognitive Science,",
+      "citeRegEx" : "Riley et al\\.,? \\Q2012\\E",
+      "shortCiteRegEx" : "Riley et al\\.",
+      "year" : 2012
+    }, {
+      "title" : "Complexity and Extended PhenomenologicalCognitive Systems",
+      "author" : [ "M. Silberstein", "A. Chemero" ],
+      "venue" : "Topics in Cognitive Science,",
+      "citeRegEx" : "Silberstein and Chemero,? \\Q2012\\E",
+      "shortCiteRegEx" : "Silberstein and Chemero",
+      "year" : 2012
+    }, {
+      "title" : "Dynamical Systems Approaches to Cognition",
+      "author" : [ "G. Schoner" ],
+      "venue" : null,
+      "citeRegEx" : "Schoner,? \\Q2008\\E",
+      "shortCiteRegEx" : "Schoner",
+      "year" : 2008
+    }, {
+      "title" : "Computation beyond the Turing limit",
+      "author" : [ "H.T. Siegelmann" ],
+      "venue" : "Neural Networks and Analog Computation,",
+      "citeRegEx" : "Siegelmann,? \\Q1997\\E",
+      "shortCiteRegEx" : "Siegelmann",
+      "year" : 1997
+    }, {
+      "title" : "Neural and super-Turing computing",
+      "author" : [ "H.T. Siegelmann" ],
+      "venue" : "Minds and Machines,",
+      "citeRegEx" : "Siegelmann,? \\Q2003\\E",
+      "shortCiteRegEx" : "Siegelmann",
+      "year" : 2003
+    }, {
+      "title" : "Continuous Dynamics in Real-Time Cognition",
+      "author" : [ "M.J. Spivey", "R. Dale" ],
+      "venue" : "Current Directions in Psychological Science,",
+      "citeRegEx" : "Spivey and Dale,? \\Q2006\\E",
+      "shortCiteRegEx" : "Spivey and Dale",
+      "year" : 2006
+    }, {
+      "title" : "The Continuity of Mind",
+      "author" : [ "M.J. Spivey" ],
+      "venue" : null,
+      "citeRegEx" : "Spivey,? \\Q2007\\E",
+      "shortCiteRegEx" : "Spivey",
+      "year" : 2007
+    }, {
+      "title" : "Searching for General Principles in Cognitive Performance: Reply to Commentators",
+      "author" : [ "D.G. Stephen", "G. Van Orden" ],
+      "venue" : "Topics in Cognitive",
+      "citeRegEx" : "Stephen and Orden,? \\Q2012\\E",
+      "shortCiteRegEx" : "Stephen and Orden",
+      "year" : 2012
+    }, {
+      "title" : "A Dynamic Systems Approach to the Development of Cognition and Action",
+      "author" : [ "E. Thelen", "L.B. Smith" ],
+      "venue" : null,
+      "citeRegEx" : "Thelen and Smith,? \\Q1994\\E",
+      "shortCiteRegEx" : "Thelen and Smith",
+      "year" : 1994
+    }, {
+      "title" : "Development as a Dynamic System",
+      "author" : [ "E. Thelen", "L.B. Smith" ],
+      "venue" : "Trends in Cognitive Science,",
+      "citeRegEx" : "Thelen and Smith,? \\Q2003\\E",
+      "shortCiteRegEx" : "Thelen and Smith",
+      "year" : 2003
+    }, {
+      "title" : "A Dynamic Systems Model of Basic Developmental Mechanisms: Piaget, Vygotsky, and Beyond",
+      "author" : [ "P. van Geert" ],
+      "venue" : "Psychological Review,",
+      "citeRegEx" : "Geert,? \\Q1998\\E",
+      "shortCiteRegEx" : "Geert",
+      "year" : 1998
+    }, {
+      "title" : "Mind as Motion: Explorations in the Dynamics of Cognition",
+      "author" : [ "T. van Gelder", "R.F. Port" ],
+      "venue" : "Massachusetts Institute of Technology",
+      "citeRegEx" : "Gelder and Port,? \\Q1995\\E",
+      "shortCiteRegEx" : "Gelder and Port",
+      "year" : 1995
+    }, {
+      "title" : "The Dynamical Hypothesis in Cognitive Science",
+      "author" : [ "T. van Gelder" ],
+      "venue" : "Behavioral and Brain Sciences,",
+      "citeRegEx" : "Gelder,? \\Q1998\\E",
+      "shortCiteRegEx" : "Gelder",
+      "year" : 1998
+    }, {
+      "title" : "Disentangling Dynamics, Computation, and Cognition",
+      "author" : [ "T. van Gelder" ],
+      "venue" : "Behavioral and Brain Sciences,",
+      "citeRegEx" : "Gelder,? \\Q1998\\E",
+      "shortCiteRegEx" : "Gelder",
+      "year" : 1998
+    }, {
+      "title" : "Is Cognitive Science Usefully Cast as Complexity Science",
+      "author" : [ "G. Van Orden", "D.G. Stephen" ],
+      "venue" : "Topics in Cognitive Science,",
+      "citeRegEx" : "Orden and Stephen,? \\Q2012\\E",
+      "shortCiteRegEx" : "Orden and Stephen",
+      "year" : 2012
+    }, {
+      "title" : "Self-Organization Takes Time Too",
+      "author" : [ "I. Van Rooij" ],
+      "venue" : "Topics in Cognitive Science,",
+      "citeRegEx" : "Rooij,? \\Q2012\\E",
+      "shortCiteRegEx" : "Rooij",
+      "year" : 2012
+    }, {
+      "title" : "The Embodied Mind: Cognitive Science and Human Experience",
+      "author" : [ "F.J. Varela", "E. Thompson", "E. Rosch" ],
+      "venue" : null,
+      "citeRegEx" : "Varela et al\\.,? \\Q1991\\E",
+      "shortCiteRegEx" : "Varela et al\\.",
+      "year" : 1991
+    }, {
+      "title" : "Abstract Concepts Require Concrete Models: Why Cognitive Scientists Have Not Yet Embraced Nonlinearly Coupled, Dynamical, Self-Organized Critical, Synergistic, Scale-Free, Exquisitely Context-Sensitive, Interaction-Dominant, Multifractal",
+      "author" : [ "E. Wagenmaker", "H.L.J. van der Maas", "S. Farrell" ],
+      "venue" : "Interdependent Brain-Body-Niche Systems. Topics in Cognitive Science,",
+      "citeRegEx" : "Wagenmaker et al\\.,? \\Q2012\\E",
+      "shortCiteRegEx" : "Wagenmaker et al\\.",
+      "year" : 2012
+    } ],
+    "referenceMentions" : [ {
+      "referenceID" : 2,
+      "context" : "Dynamic Systems Theory (DST) is a broad theoretical framework imported from the physical sciences and used in psychology and cognitive science in the past several decades that provides an alternative to the computational and information-processing approach that has governed main stream cognitive science since the dawn of the cognitive revolution in the midtwentieth century (Beer, 2000; van Gelder & Port, 1995; van Gelder, 1998; Spivey, 2007).",
+      "startOffset" : 376,
+      "endOffset" : 445
+    }, {
+      "referenceID" : 34,
+      "context" : "Dynamic Systems Theory (DST) is a broad theoretical framework imported from the physical sciences and used in psychology and cognitive science in the past several decades that provides an alternative to the computational and information-processing approach that has governed main stream cognitive science since the dawn of the cognitive revolution in the midtwentieth century (Beer, 2000; van Gelder & Port, 1995; van Gelder, 1998; Spivey, 2007).",
+      "startOffset" : 376,
+      "endOffset" : 445
+    }, {
+      "referenceID" : 34,
+      "context" : "DST views all psychological processes and capacities as dynamic systems which are best described as complex, non-linear, self-organizing and emergent and whereby cognition develops over the lifecourse and occurs over real-time as a probable description of many possible alternatives instead of linear-assembly-of-symbolic-processes (Spivey, 2007; van Gelder & Port, 1995).",
+      "startOffset" : 332,
+      "endOffset" : 371
+    }, {
+      "referenceID" : 31,
+      "context" : "Siegelmann (1997, 2003), Bringsford (2004), Kempis (1991), and Penrose (1990) have described the quintessential hallmark of the DST approach of this particular form of intelligent system as being trans-Turing (or super-Turing) and which possesses hyper-computational capabilities;-that is brains and other certain forms of intelligent systems perform processes that go above and beyond the Turing-limit with it’s symbolic-serialprocessing of the traditional digital computer metaphor that has hallmarked much of the work done in cognitive science and which has been motivated by the information-processing (or computational) perspective.",
+      "startOffset" : 0,
+      "endOffset" : 43
+    }, {
+      "referenceID" : 31,
+      "context" : "Siegelmann (1997, 2003), Bringsford (2004), Kempis (1991), and Penrose (1990) have described the quintessential hallmark of the DST approach of this particular form of intelligent system as being trans-Turing (or super-Turing) and which possesses hyper-computational capabilities;-that is brains and other certain forms of intelligent systems perform processes that go above and beyond the Turing-limit with it’s symbolic-serialprocessing of the traditional digital computer metaphor that has hallmarked much of the work done in cognitive science and which has been motivated by the information-processing (or computational) perspective.",
+      "startOffset" : 0,
+      "endOffset" : 58
+    }, {
+      "referenceID" : 31,
+      "context" : "Siegelmann (1997, 2003), Bringsford (2004), Kempis (1991), and Penrose (1990) have described the quintessential hallmark of the DST approach of this particular form of intelligent system as being trans-Turing (or super-Turing) and which possesses hyper-computational capabilities;-that is brains and other certain forms of intelligent systems perform processes that go above and beyond the Turing-limit with it’s symbolic-serialprocessing of the traditional digital computer metaphor that has hallmarked much of the work done in cognitive science and which has been motivated by the information-processing (or computational) perspective.",
+      "startOffset" : 0,
+      "endOffset" : 78
+    }, {
+      "referenceID" : 21,
+      "context" : "I am echoing the argument made by the dynamicists and arguing for a paradigm shift in the sense that Kuhn (1962) described, specifically in cognitive science, as a move away-from the computational, toward a dynamical theoretical framework and paradigm with an recognition that the computations made by the human mind are trans-Turing (or super-Turing) and go above and beyond the Turing-limit of the traditional information-processing approach.",
+      "startOffset" : 101,
+      "endOffset" : 113
+    }, {
+      "referenceID" : 31,
+      "context" : "However, others including Spivey (2007), Beer (2000), Thelen and Smith (1994), van Gelder and Port (1995), and Schoner (2008) continue to work empirically with a positivist empirical framework in studying various psychological capacities from a DST perspective and these are the mainstream in the field.",
+      "startOffset" : 26,
+      "endOffset" : 40
+    }, {
+      "referenceID" : 1,
+      "context" : "However, others including Spivey (2007), Beer (2000), Thelen and Smith (1994), van Gelder and Port (1995), and Schoner (2008) continue to work empirically with a positivist empirical framework in studying various psychological capacities from a DST perspective and these are the mainstream in the field.",
+      "startOffset" : 41,
+      "endOffset" : 53
+    }, {
+      "referenceID" : 1,
+      "context" : "However, others including Spivey (2007), Beer (2000), Thelen and Smith (1994), van Gelder and Port (1995), and Schoner (2008) continue to work empirically with a positivist empirical framework in studying various psychological capacities from a DST perspective and these are the mainstream in the field.",
+      "startOffset" : 41,
+      "endOffset" : 78
+    }, {
+      "referenceID" : 1,
+      "context" : "However, others including Spivey (2007), Beer (2000), Thelen and Smith (1994), van Gelder and Port (1995), and Schoner (2008) continue to work empirically with a positivist empirical framework in studying various psychological capacities from a DST perspective and these are the mainstream in the field.",
+      "startOffset" : 41,
+      "endOffset" : 106
+    }, {
+      "referenceID" : 1,
+      "context" : "However, others including Spivey (2007), Beer (2000), Thelen and Smith (1994), van Gelder and Port (1995), and Schoner (2008) continue to work empirically with a positivist empirical framework in studying various psychological capacities from a DST perspective and these are the mainstream in the field.",
+      "startOffset" : 41,
+      "endOffset" : 126
+    }, {
+      "referenceID" : 40,
+      "context" : "This debate and open peer commentary was started off by van Gelder (1998) with his overview for the application of dynamic systems theory (DST) in cognitive science.",
+      "startOffset" : 60,
+      "endOffset" : 74
+    }, {
+      "referenceID" : 39,
+      "context" : "The ensuing articles in this publication were basically open peer commentaries responding to van Gelder’s (1998) starting point article.",
+      "startOffset" : 97,
+      "endOffset" : 113
+    }, {
+      "referenceID" : 0,
+      "context" : "The second entry was done by Bechtel (1998) where he targeted van Gelder’s distinction between the dynamical hypothesis and the computation hypothesis as a difference between change-versus-state and geometry-versus-order.",
+      "startOffset" : 29,
+      "endOffset" : 44
+    }, {
+      "referenceID" : 0,
+      "context" : "The second entry was done by Bechtel (1998) where he targeted van Gelder’s distinction between the dynamical hypothesis and the computation hypothesis as a difference between change-versus-state and geometry-versus-order. Bechtel (1998) claims these fundamental distinctions point to an underlying at odds that these competing viewpoints have in terms of classical mechanism.",
+      "startOffset" : 29,
+      "endOffset" : 237
+    }, {
+      "referenceID" : 1,
+      "context" : "The third article in this volume was done by Beer (1998) where he applauded van Gelder’s (1998) starting point article with its declaration that DST is a revolutionary paradigm for the cognitive sciences.",
+      "startOffset" : 45,
+      "endOffset" : 57
+    }, {
+      "referenceID" : 1,
+      "context" : "The third article in this volume was done by Beer (1998) where he applauded van Gelder’s (1998) starting point article with its declaration that DST is a revolutionary paradigm for the cognitive sciences.",
+      "startOffset" : 45,
+      "endOffset" : 96
+    }, {
+      "referenceID" : 1,
+      "context" : "The third article in this volume was done by Beer (1998) where he applauded van Gelder’s (1998) starting point article with its declaration that DST is a revolutionary paradigm for the cognitive sciences. However, Beer (1998) contends the point that van Gelder (1998) made regarding the competition that the dynamical view has with the traditional computational view and explains that the mathematical formalisms provided by the two frameworks will never get at what a cognitive agent is;-they can only model cognitive processes.",
+      "startOffset" : 45,
+      "endOffset" : 226
+    }, {
+      "referenceID" : 1,
+      "context" : "The third article in this volume was done by Beer (1998) where he applauded van Gelder’s (1998) starting point article with its declaration that DST is a revolutionary paradigm for the cognitive sciences. However, Beer (1998) contends the point that van Gelder (1998) made regarding the competition that the dynamical view has with the traditional computational view and explains that the mathematical formalisms provided by the two frameworks will never get at what a cognitive agent is;-they can only model cognitive processes.",
+      "startOffset" : 45,
+      "endOffset" : 268
+    }, {
+      "referenceID" : 1,
+      "context" : "Beer (1998) does agree with van Gelder (1998) ultimately however, that DST does provide a revolutionary framework for investigating those model agents without the anomalies that develop when adopting the computational viewpoint.",
+      "startOffset" : 0,
+      "endOffset" : 12
+    }, {
+      "referenceID" : 1,
+      "context" : "Beer (1998) does agree with van Gelder (1998) ultimately however, that DST does provide a revolutionary framework for investigating those model agents without the anomalies that develop when adopting the computational viewpoint.",
+      "startOffset" : 0,
+      "endOffset" : 46
+    }, {
+      "referenceID" : 1,
+      "context" : "Beer (1998) does agree with van Gelder (1998) ultimately however, that DST does provide a revolutionary framework for investigating those model agents without the anomalies that develop when adopting the computational viewpoint. Finally, Beer (1998) suggests that adopting DST can contribute to progress made not only in cognitive models and processes per se but in development over the life-course and evolution over human history where adaptive behaviors give rise to more evolved cognitive processes that unfold dynamically.",
+      "startOffset" : 0,
+      "endOffset" : 250
+    }, {
+      "referenceID" : 39,
+      "context" : "The fourth article in the volume was done by open supporters of the computational view and criticized van Gelder’s (1998) dynamical hypothesis as untestable and utterly intuitive.",
+      "startOffset" : 106,
+      "endOffset" : 122
+    }, {
+      "referenceID" : 39,
+      "context" : "The fourth article in the volume was done by open supporters of the computational view and criticized van Gelder’s (1998) dynamical hypothesis as untestable and utterly intuitive. Beaisby, Cooper, and Franks (1998) contend that van Gelder (1998) presented his dynamical hypothesis as a novel law of qualitative structure (LQS) to compete with Newell and Simon’s (1976) physical symbols systems hypothesis (PSSH) and in doing so did not provide the necessary constraints for the nature and knowledge hypotheses that compromise the dynamical hypothesis, leaving any understanding of the nature of cognition given by DST mere intuition.",
+      "startOffset" : 106,
+      "endOffset" : 215
+    }, {
+      "referenceID" : 39,
+      "context" : "The fourth article in the volume was done by open supporters of the computational view and criticized van Gelder’s (1998) dynamical hypothesis as untestable and utterly intuitive. Beaisby, Cooper, and Franks (1998) contend that van Gelder (1998) presented his dynamical hypothesis as a novel law of qualitative structure (LQS) to compete with Newell and Simon’s (1976) physical symbols systems hypothesis (PSSH) and in doing so did not provide the necessary constraints for the nature and knowledge hypotheses that compromise the dynamical hypothesis, leaving any understanding of the nature of cognition given by DST mere intuition.",
+      "startOffset" : 106,
+      "endOffset" : 246
+    }, {
+      "referenceID" : 24,
+      "context" : "Beaisby, Cooper, and Franks (1998) contend that van Gelder (1998) presented his dynamical hypothesis as a novel law of qualitative structure (LQS) to compete with Newell and Simon’s (1976) physical symbols systems hypothesis (PSSH) and in doing so did not provide the necessary constraints for the nature and knowledge hypotheses that compromise the dynamical hypothesis, leaving any understanding of the nature of cognition given by DST mere intuition.",
+      "startOffset" : 163,
+      "endOffset" : 189
+    }, {
+      "referenceID" : 39,
+      "context" : "Two articles later in this volume another criticism is leveled at van Gelder’s (1998) claims by Chater and Hahn (1998) who contend that van Gelder’s (1998) specifications of the dynamical hypothesis does not improve upon previous notions.",
+      "startOffset" : 70,
+      "endOffset" : 86
+    }, {
+      "referenceID" : 6,
+      "context" : "Two articles later in this volume another criticism is leveled at van Gelder’s (1998) claims by Chater and Hahn (1998) who contend that van Gelder’s (1998) specifications of the dynamical hypothesis does not improve upon previous notions.",
+      "startOffset" : 96,
+      "endOffset" : 119
+    }, {
+      "referenceID" : 6,
+      "context" : "Two articles later in this volume another criticism is leveled at van Gelder’s (1998) claims by Chater and Hahn (1998) who contend that van Gelder’s (1998) specifications of the dynamical hypothesis does not improve upon previous notions.",
+      "startOffset" : 96,
+      "endOffset" : 156
+    }, {
+      "referenceID" : 6,
+      "context" : "Two articles later in this volume another criticism is leveled at van Gelder’s (1998) claims by Chater and Hahn (1998) who contend that van Gelder’s (1998) specifications of the dynamical hypothesis does not improve upon previous notions. They argue that all three key attributes of the dynamical system that van Gelder (1998) described apply to Turing machines and as a result are too general.",
+      "startOffset" : 96,
+      "endOffset" : 327
+    }, {
+      "referenceID" : 7,
+      "context" : "Fourthly, the manner in which van Gelder (1998) characterizes dynamical systems share problems of universal realizability and traditional notions of computation;-and finally, the fifth point made in this article criticized van Gelder (1998) for providing a dynamical hypothesis which cannot tell us what cognition is because instantiating a dynamic system is neither necessary nor sufficient for being a cognitive agent (Chrisley, 1998).",
+      "startOffset" : 420,
+      "endOffset" : 436
+    }, {
+      "referenceID" : 8,
+      "context" : "In the next article Crutchfield (1998) argues that dynamical systems is not at odds with computation because it is not enough for cognition, nor can it substitute the informationprocessing approach in explaining brain-behavior relations.",
+      "startOffset" : 20,
+      "endOffset" : 39
+    }, {
+      "referenceID" : 8,
+      "context" : "any dynamic system can be analyzed in terms of its inherent information-processing capacities and components (Crutchfield, 1998).",
+      "startOffset" : 109,
+      "endOffset" : 128
+    }, {
+      "referenceID" : 10,
+      "context" : "The next entry in this volumes commentary is by none other than the great cognitive scientist and philosopher Daniel Dennett (1998). It is a short entry but one worth mentioning because he raises an interesting claim;-namely that DST and the dynamical view and the claims",
+      "startOffset" : 117,
+      "endOffset" : 132
+    }, {
+      "referenceID" : 10,
+      "context" : "He argues that they are not revolutionary because the main stance van Gelder (1998) takes against representationalism is not supported or supportable and that his more mildly advocated stance in favor of DST as a supplement to representationalism is worthwhile but not new or revolutionary at all in that it’s been argued before (Dennett, 1998).",
+      "startOffset" : 329,
+      "endOffset" : 344
+    }, {
+      "referenceID" : 39,
+      "context" : "made regarding these issues in cognitive science by van Gelder (1998) is nothing new or revolutionary as van Gelder (1998) might claim.",
+      "startOffset" : 56,
+      "endOffset" : 70
+    }, {
+      "referenceID" : 39,
+      "context" : "made regarding these issues in cognitive science by van Gelder (1998) is nothing new or revolutionary as van Gelder (1998) might claim.",
+      "startOffset" : 56,
+      "endOffset" : 123
+    }, {
+      "referenceID" : 39,
+      "context" : "made regarding these issues in cognitive science by van Gelder (1998) is nothing new or revolutionary as van Gelder (1998) might claim. He argues that they are not revolutionary because the main stance van Gelder (1998) takes against representationalism is not supported or supportable and that his more mildly advocated stance in favor of DST as a supplement to representationalism is worthwhile but not new or revolutionary at all in that it’s been argued before (Dennett, 1998).",
+      "startOffset" : 56,
+      "endOffset" : 220
+    }, {
+      "referenceID" : 10,
+      "context" : "He argues that they are not revolutionary because the main stance van Gelder (1998) takes against representationalism is not supported or supportable and that his more mildly advocated stance in favor of DST as a supplement to representationalism is worthwhile but not new or revolutionary at all in that it’s been argued before (Dennett, 1998). It appears that Dennett (1998) disagrees with certain claims made by van Gelder (1998) regarding representationalism and the dynamic viewpoint but finds DST as an adjunct conceptual device to representationalism a worthwhile notion.",
+      "startOffset" : 330,
+      "endOffset" : 377
+    }, {
+      "referenceID" : 10,
+      "context" : "He argues that they are not revolutionary because the main stance van Gelder (1998) takes against representationalism is not supported or supportable and that his more mildly advocated stance in favor of DST as a supplement to representationalism is worthwhile but not new or revolutionary at all in that it’s been argued before (Dennett, 1998). It appears that Dennett (1998) disagrees with certain claims made by van Gelder (1998) regarding representationalism and the dynamic viewpoint but finds DST as an adjunct conceptual device to representationalism a worthwhile notion.",
+      "startOffset" : 330,
+      "endOffset" : 433
+    }, {
+      "referenceID" : 12,
+      "context" : "However, he also states that van Gelder’s dynamicism comes with some unique aspects which prove to be problematic;-namely the emphasis on continuity, proclaiming low-dimensional models superior, and in essence dismissing representationalism in understanding human cognition (Eliasmith, 1998).",
+      "startOffset" : 274,
+      "endOffset" : 291
+    }, {
+      "referenceID" : 12,
+      "context" : "The next noteworthy entry was contributed by Eliasmith (1998) where he advocates the use of dynamical systems thinking in cognitive science but finds certain aspects to van Gelder’s (1998) dynamicism problematic.",
+      "startOffset" : 45,
+      "endOffset" : 62
+    }, {
+      "referenceID" : 12,
+      "context" : "The next noteworthy entry was contributed by Eliasmith (1998) where he advocates the use of dynamical systems thinking in cognitive science but finds certain aspects to van Gelder’s (1998) dynamicism problematic.",
+      "startOffset" : 45,
+      "endOffset" : 189
+    }, {
+      "referenceID" : 12,
+      "context" : "The next noteworthy entry was contributed by Eliasmith (1998) where he advocates the use of dynamical systems thinking in cognitive science but finds certain aspects to van Gelder’s (1998) dynamicism problematic. He argues that there is much to support certain of van Gelder’s claims for adopting dynamical models and this support has come mostly from the work done on connectionism and connectionist modeling. However, he also states that van Gelder’s dynamicism comes with some unique aspects which prove to be problematic;-namely the emphasis on continuity, proclaiming low-dimensional models superior, and in essence dismissing representationalism in understanding human cognition (Eliasmith, 1998). Although he levels these thee criticisms at van Gelder, he volunteers that to say cognitive systems are dynamical systems, as van Gelder (1998) does, is essentially right citing the work that has been done in connectionist modeling.",
+      "startOffset" : 45,
+      "endOffset" : 848
+    }, {
+      "referenceID" : 17,
+      "context" : "In all, he concludes, the dynamical view is immensely promising (Heath, 1998).",
+      "startOffset" : 64,
+      "endOffset" : 77
+    }, {
+      "referenceID" : 17,
+      "context" : "Heath (1998) argues that although cognitive psychology continues to be dominated by computationalism, there are interests in dynamical cognition emerging in recent years.",
+      "startOffset" : 0,
+      "endOffset" : 13
+    }, {
+      "referenceID" : 17,
+      "context" : "Heath (1998) argues that although cognitive psychology continues to be dominated by computationalism, there are interests in dynamical cognition emerging in recent years. He cites work done in developmental psychology as well in cognitive psychology and particularly psycholinguistics that models phenomena according to the principles of DST. He concludes the article by suggesting that continued work in dynamical psychology is the only way to ever verify whether dynamicism or computationalism is the right way to go in the future;-echoing van Gelder’s (1998) point and suggesting that processing differences reflected in either view (be it parallel or distributed) might ultimately prove to be domain specific.",
+      "startOffset" : 0,
+      "endOffset" : 562
+    }, {
+      "referenceID" : 22,
+      "context" : "She says that a complete account of cognitive process will consist of an adherence to both these distinctions and will consist of both dynamical and computational approaches (Mitchell, 1998).",
+      "startOffset" : 174,
+      "endOffset" : 190
+    }, {
+      "referenceID" : 38,
+      "context" : "The remaining articles in this volume’s open peer commentary continue to respond to van Gelder’s (1998) opening target article.",
+      "startOffset" : 88,
+      "endOffset" : 104
+    }, {
+      "referenceID" : 38,
+      "context" : "The remaining articles in this volume’s open peer commentary continue to respond to van Gelder’s (1998) opening target article. Mulhauser (1998) says van Gelder’s vision and the tension he identifies existing between the traditional computational view and the newer dynamical view is at the heart of theory building in the field and can potentially transform the way science is done in cognitive science.",
+      "startOffset" : 88,
+      "endOffset" : 145
+    }, {
+      "referenceID" : 25,
+      "context" : "Noelle (1998) suggests that encouraging more of a unified notion in the dynamical hypothesis to include different notion of cognition in different domains alleviates any testability problems that exist with the current form of the hypothesis.",
+      "startOffset" : 0,
+      "endOffset" : 14
+    }, {
+      "referenceID" : 25,
+      "context" : "Noelle (1998) suggests that encouraging more of a unified notion in the dynamical hypothesis to include different notion of cognition in different domains alleviates any testability problems that exist with the current form of the hypothesis. O’Brien (1998) contends that van Gelder’s portrayal of the dynamical view not being a mainstream paradigm in cognitive science and that computationalism is-is reflected in the core aspect of his argument where a distinction is made between DST and computationalism.",
+      "startOffset" : 0,
+      "endOffset" : 258
+    }, {
+      "referenceID" : 26,
+      "context" : "not the case according to O’Brien (1998) who suggests that the computational hypothesis is not as dominant as it once was and that the dynamical hypothesis isn’t as neglected as it may seem to be.",
+      "startOffset" : 26,
+      "endOffset" : 41
+    }, {
+      "referenceID" : 40,
+      "context" : "The debate in this volume concludes with a counter-response by van Gelder to all of the peer commentaries described here that were all basically a reaction to his opening target article regarding the dynamical hypothesis which essentially put forth an overarching vision for the way that DST should be imported into cognitive science. He concludes this debate with his counterresponse which consists of various responses to the criticisms leveled at his opening article. This includes a reply to issues such as the definition of a dynamical system and digital computer; the dynamical hypothesis as a law of qualitative structure; the dynamical hypothesis as an ontological claim; the level at which the dynamical hypothesis is generated; the role of representation in a DST account of cognition; the falsifiability of the dynamical hypothesis; and the novelty and importance of the dynamical view in cognitive science (van Gelder, 1998b). Van Gelder (1998b) concludes that the basic tenets and facets of the dynamical hypothesis will remain intact but with some minor adjustment and clarifications in response to the leveled",
+      "startOffset" : 67,
+      "endOffset" : 958
+    }, {
+      "referenceID" : 42,
+      "context" : "The first article was done by Van Orden and Stephen (2012) wherein they describe the challenges and major hallmarks of adopting the CT viewpoint in cognitive science.",
+      "startOffset" : 34,
+      "endOffset" : 59
+    }, {
+      "referenceID" : 29,
+      "context" : "The third target article was contributed by Silberstein and Chemero (2012) and consisted of a theoretical treatment of the role that complex systems can play in portraying what they call extended cognitive systems.",
+      "startOffset" : 44,
+      "endOffset" : 75
+    }, {
+      "referenceID" : 43,
+      "context" : "The first commentary was by van Rooij (2012) who points out how the theme running through all of the target point articles was an argument for CT in cognitive science and an opposition to computationalism.",
+      "startOffset" : 32,
+      "endOffset" : 45
+    }, {
+      "referenceID" : 43,
+      "context" : "The first commentary was by van Rooij (2012) who points out how the theme running through all of the target point articles was an argument for CT in cognitive science and an opposition to computationalism. Van Rooij (2012) believes that computationalism faces some challenges and the extent to which the articles of CT in this volume address those challenges with self-organizing principles only goes so far.",
+      "startOffset" : 32,
+      "endOffset" : 223
+    }, {
+      "referenceID" : 13,
+      "context" : "Instead what they identify as newly illuminated phenomena in cognitive science from the perspective of CT all can be accounted for by traditional computationalism (Eliasmith, 2012).",
+      "startOffset" : 163,
+      "endOffset" : 180
+    }, {
+      "referenceID" : 12,
+      "context" : "In the next article Eliasmith (2012) criticizes the starting point articles in favor of CT for not providing any substance to the claim that what they have put forth calls for a revolution in cognitive science.",
+      "startOffset" : 20,
+      "endOffset" : 37
+    }, {
+      "referenceID" : 3,
+      "context" : "CT while having made some good contributions to the field more often than not triggers more reservations than it makes strides in empirical and theoretical concerns for cognitive science (Botvinick, 2012).",
+      "startOffset" : 187,
+      "endOffset" : 204
+    } ],
+    "year" : 2013,
+    "abstractText" : "Dynamic Systems Theory (DST) is a broad theoretical framework imported from the physical sciences and used in psychology and cognitive science in the past several decades that provides an alternative to the computational and information-processing approach that has governed main stream cognitive science since the dawn of the cognitive revolution in the midtwentieth century (Beer, 2000; van Gelder & Port, 1995; van Gelder, 1998; Spivey, 2007). DST views all psychological processes and capacities as dynamic systems which are best described as complex, non-linear, self-organizing and emergent and whereby cognition develops over the lifecourse and occurs over real-time as a probable description of many possible alternatives instead of linear-assembly-of-symbolic-processes (Spivey, 2007; van Gelder & Port, 1995). Psychological capacities are viewed as emerging as more complex unique forms from prior simpler states, moving from chaotic to more stable trajectories in a theoretical state-space that culminate in the manifestation of a specific thought in real-time or a developmental phenomenon over ontogenesis (Spivey, 2006, Thelen & Smith, 1994; van Geert, 1998). There is a sensitivity to initial conditions and a determination by multiple causality, whereby psychological phenomena, be it a developmental capacity or cognition more generally, are softly-assembled (Thelen & Smith, 2003).",
+    "creator" : "Word"
+  }
+}

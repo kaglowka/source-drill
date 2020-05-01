@@ -1,0 +1,529 @@
+{
+  "name" : "2000,Beer.pdf",
+  "metadata" : {
+    "source" : "CRF",
+    "title" : null,
+    "authors" : [ ],
+    "emails" : [ ],
+    "sections" : [ {
+      "heading" : null,
+      "text" : "The conceptual framework that we bring to the study of cognition can have profound empirical consequences on the practice of cognitive science. It influences the phenomena we choose to study, the questions we ask about these phenomena, the experiments we perform, and the ways in which we interpret the results of these experiments. Until relatively recently, there was ‘only one game in town’1 – the computational hypothesis that underlying cognition is the purely formal manipulation of quasi-linguistic symbolic representations by syntactic rules1–3. However, in the mid-1980s, the theoretical imagination of cognitive science was significantly expanded by the proliferation of connectionist models4–6. More recently, there has been a growing interest in dynamical approaches to cognitive science7–12. Drawing upon the mathematical tools of dynamical systems theory (see Box 1), a dynamical analysis of a cognitive process seeks to understand the unfolding of that process over time and the multiple internal and external influences whose interplay shapes this unfolding. In this article, I will briefly review three rather different examples of this dynamical approach to cognition. I will then compare and contrast this approach with the more traditional symbolic and connectionist approaches, and briefly discuss some of the contributions that dynamical ideas are making to ongoing debates about the foundations of cognitive science.\nThe lexical and grammatical structure of language Language, that quintessentially human cognitive skill, is often seen as the strongest argument against non-symbolic approaches to cognition13,14. However, despite its symbolic character, language understanding and production are essentially temporal events, with preceding words strongly influencing the interpretation or selection of later ones. For this reason,\nlanguage has been a major focus of dynamical modeling, ranging from models of the temporal structure of speech perception and production15,16 to more abstract models of grammatical structure17–19. A good illustration of the development of a connectionist approach to language in which dynamical notions play a fundamental role is provided by the work of Elman20. Elman’s models utilize simple recurrent networks21, a variation of multilayer feedforward networks in which the hidden layer also receives inputs from a set of context units that hold the state of the hidden units from the previous time step. Such networks are non-autonomous discrete-time dynamical systems (see Box 1).\nIn one experiment, Elman used backpropagation to train a simple recurrent network to predict subsequent words in a sentence using a corpus of 10 000 short sentences formed from a vocabulary of 29 nouns and verbs21. Predicting word order requires the network to learn the frequency of occurrence of each possible successor word for each possible context, a task that demands a memory of previously seen words and an understanding of the grammatical structure of language. After training, a hierarchical cluster analysis of the hidden-unit activations for each word averaged across all contexts revealed that the trained network developed an internal dynamics whose organization reflected grammatical category and meaning. Specifically, it exhibited a major division into nouns and verbs, and subdivisions into animate and inanimate nouns and transitive, intransitive and optionally transitive verbs, and so on. However, a finer analysis that did not average over context revealed small but systematic differences between different senses and roles of words (e.g. ‘boy’ as subject versus ‘boy’ as object). Thus, a network state did not correspond to a word per se, as a traditional representational\n91\nDynamical approaches to cognitive science\nRandall D. Beer\nDynamical ideas are beginning to have a major impact on cognitive science, from\nfoundational debates to daily practice. In this article, I review three contrasting\nexamples of work in this area that address the lexical and grammatical structure of\nlanguage, Piaget’s classic ‘A-not-B’ error, and active categorical perception in an\nembodied, situated agent. From these three examples, I then attempt to articulate the\nmajor differences between dynamical approaches and more traditional symbolic and\nconnectionist approaches. Although the three models reviewed here vary considerably\nin their details, they share a focus on the unfolding trajectory of a system’s state and\nthe internal and external forces that shape this trajectory, rather than the\nrepresentational content of its constituent states or the underlying physical\nmechanisms that instantiate the dynamics. In some work, this dynamical viewpoint is\naugmented with a situated and embodied perspective on cognition, forming a\npromising unified theoretical framework for cognitive science broadly construed.\nR.D. Beer is at the Department of Electrical Engineering and Computer Science, and the Department of Biology, Case Western Reserve University, Cleveland, OH 44106, USA.\ntel: +1 216 368 2816 fax: +1 216 368 2801 e-mail: beer@ eecs.cwru.edu http://vorlon.cwru. edu/~beer\nReviewB e e r – D y n a m i c a l a p r o a c h e s t o c o g n i t i v e s c i e n c e\n1364-6613/00/$ – see front matter © 2000 Elsevier Science Ltd. All rights reserved. PII: S1364-6613(99)01440-0\nT r e n d s i n C o g n i t i v e S c i e n c e s – V o l . 4 , N o . 3 , M a r c h 2 0 0 0\nanalysis might expect, but rather to the outcome of processing a word within a particular context.\nIn a second experiment, Elman extended this work to longer and more complex sentences with long-distance dependencies involving number agreement, verb argument structure, and relative clauses22. The dynamics of a network trained on the prediction task was then examined by plotting projections of the trajectories of hidden-unit activation produced by sample sentences. The trajectory produced by the sentence ‘Boy who chases boy chases boy’ is shown in Fig. 1. Note that occurrences of the same word at different points in the sentence leave the network in different states. These differences in network state correspond to the network’s memory of the information required to process long-distance dependencies correctly. Because the local dynamics at each point determine the effect that subsequent words can have on\nthe network state, grammatical constraints are manifested in the structure of the network dynamics itself. Thus, as a sentence is processed, each word drives the network along one of the different trajectories allowed by the dynamics at that point, with context manifested as variations in state that influence subsequent processing.\nThe network can also process more deeply embedded clauses. Interestingly, its performance degrades with embedding depth more quickly on centered-embedded sentences (e.g. ‘Witch that tiger that tinman hears sees tames lion’) than on right-branching sentences (e.g. ‘Tinman hears tiger that sees witch that tames lion’), a pattern that is also observed in human language understanding23. More recent work has explored the linguistic capabilities of recurrent networks in greater depth and has provided a more detailed understanding of how dynamics can be harnessed to solve language problems24.\nReview B e e r – D y n a m i c a l a p r o a c h e s t o c o g n i t i v e s c i e n c e\n92 T r e n d s i n C o g n i t i v e S c i e n c e s – V o l . 4 , N o . 3 , M a r c h 2 0 0 0\nBecause the terminology of dynamical systems theory is likely to be unfamiliar to many cognitive scientists, I will briefly review it here. (More comprehensive but still novice-friendly introductions can be found in Refs a and b.)\nThe concept of a dynamical system is very general. Loosely speaking, a dynamical system is a mathematical object that unambiguously describes how the state of some system evolves over time. More formally, a dynamical system is a triple <T, S, ft> consisting of an ordered time set T, a state space S, and an evolution operator ft : S→S that transforms an initial state x0 [ S at time t0 [ T to another state xt [ S at time t [ T. The time set T may be continuous or discrete. The state space S may be numerical or symbolic, continuous or discrete or a hybrid of the two, and it may be finite- or infinite-dimensional depending on the number of variables required to fully describe the state of the system. ft may be given explicitly or defined implicitly, it may be deterministic or stochastic and it may have inputs (non-autonomous) or not (autonomous). Sets of differential or difference equations, cellular automata, finite state machines and Turing machines are all examples of dynamical systems. Dynamical systems theory offers a\nFig. I. Some basic concepts from dynamical systems theory. (a) A vector field showing the instantaneous direction and magnitude of change at each point in the state space. (b) A flow showing representative solution trajectories of the system. (c) A phase portrait showing the limit sets, their stabilities, and their basins of attraction. Dots denote equilibrium points and the circular blue trajectory is a limit cycle. Stable limit sets are colored blue, unstable limit sets are red and saddle limit sets are green. The other blue trajectory and the red trajectory correspond to the stable and unstable manifolds, respectively, of the saddle point. The stable manifold of the saddle point separates the basin of attraction of the limit cycle (light gray) from the basin of attraction of the stable equilibrium point (dark gray). (d) A bifurcation diagram showing how the y2 projection of the phase portrait changes as a parameter p1 is varied. The color conventions are the same as in (c) except that bifurcation points are shown as black dots. The parameter slice corresponding to the phase portrait in (c) is shown as a dashed line. (e) A parameter chart showing regions of parameter space with distinct phase portraits as two parameters (p1, p2) are varied. Identically colored regions have qualitatively similar phase portraits. The parameter slice corresponding to the bifurcation diagram in (d) is shown as a dashed line.\nBox 1. A brief introduction to dynamical systems theory\nThe A-not-B error in infant reaching Work on motor behavior, especially within the ecological psychology tradition, has a long history of dynamical thinking9,25–29, and some of this work has begun to probe developmental questions of strong cognitive interest7. For example, Thelen, Schöner, Scheier and Smith30 have developed a dynamical model of Piaget’s classic ‘A-not-B’ error in infants of 7–12 months of age31. In this task, an infant is faced with two similar opaque containers with lids (Fig. 2). Initially, an infant is trained to reach reliably for an object hidden in container A shortly after they observe it being hidden there. If the object is now hidden in container B in full view of the infant and a short delay is imposed, the majority of 7–12-month-old infants will still attempt to retrieve the object from container A. Piaget originally interpreted this error in terms of an immature concept of object permanence. However, numerous experimental studies have demonstrated that this error is remarkably sensitive to context32. For example, infants are less likely to make the A-not-B error if (1) the two containers are made visually distinct, (2) there is no delay between hiding and reaching, (3) the infant is highly interested in the object being hidden (e.g. a cookie), or (4) the infant’s posture changes between the A trials and the B trial. Another intriguing observation is that fewer infants make the A-not-B error if they are only required to look to the correct container rather than reach for it. Such patterns of context sensitivity must be explained by any contending theory of the A-not-B error. In order to account for these observations, Smith and Thelen7 sketched a dynamical model that was subsequently fleshed out in collaboration with Schöner and Scheier30 using a general dynamical theory of motor programming33. The core of the model is a one-dimensional field that gives the\nB e e r – D y n a m i c a l a p r o a c h e s t o c o g n i t i v e s c i e n c e\n93 T r e n d s i n C o g n i t i v e S c i e n c e s – V o l . 4 , N o . 3 , M a r c h 2 0 0 0\nReview\nwide variety of tools for visualizing and analysing the temporal behavior of such systems.\nConsider a particular two-dimensional continuous-time dynamical system from Ref. c, where ft is given implicitly by two autonomous differential equations y.1 = f1 (y1,y2) and y . 2 = f2 (y1,y2). These two differential equations define a vector field, which assigns an instantaneous direction and magnitude of change to each point in the state space (Fig. Ia). Starting from some initial state, the sequence of states generated by the action of the dynamics is called a solution trajectory. Such a trajectory has the property that its tangent at each point is given by the vector field at that point. The set of all possible solution trajectories is called the flow, which graphically illustrates the action of the evolution operator ft (Fig. Ib). Unfortunately, explicit expressions for the solutions to most nonlinear sets of differential equations are not available. It was the great insight of Henri Poincaré, the father of the modern qualitative or geometric theory of dynamical systems, that a great deal of information about the flow of a dynamical system can be extracted without having an explicit expression for its solution trajectories.\nOf particular interest is the possible long-term behavior of a dynamical system. Over time, the state of many dynamical systems eventually ends up in a small subset of the state space called a limit set. A limit set is invariant with respect to the dynamics, so that if the system’s state ever falls on a limit set, the dynamics will act to keep it there indefinitely. Two simple types of limits sets are equilibrium points and limit cycles. An equilibrium point is a limit set consisting of a single point, producing a constant behavior (dots in Fig. Ic), while a limit cycle is a trajectory that closes on itself, producing an endless rhythmic behavior (closed blue curve in Fig. Ic). For stable limit sets or attractors, all nearby trajectories converge to the limit set, so that small perturbations away from the limit set will return there (blue equilibrium point and blue limit cycle in Fig. Ic). In contrast, any perturbation from an unstable limit set will not return to that limit set, but will instead be carried elsewhere by the dynamics (red equilibrium point in Fig. Ic). Finally, saddle limit sets are generally unstable, but have some special directions that are stable (green equilibrium point in Fig. Ic; the stable directions are indicated by the incoming blue curves).\nIn general, a dynamical system will possess multiple limit sets, with each attractor surrounded by a set of points that converge to it over time. This set of points is called its basin of attraction. In\nFig. Ic, the dark gray region is the basin of attraction of the blue equilibrium point and the light gray region is the basin of attraction of the blue limit cycle. Note how the two trajectories near the middle of the right side of Fig. Ib end up in very different final locations. This is because the upper trajectory begins in the basin of attraction of the blue equilibrium point, while the lower trajectory begins in the basin of attraction of the limit cycle. A global characterization of all the limit sets of a dynamical system and their stabilities and basins of attraction is called a phase portrait (Fig. Ic). Such a portrait summarizes the different dynamical behaviors that a system can exhibit and where in its state space these different behaviors can be found.\nIf the flow depends on parameters, then it will change as those parameters are varied. In general, the flow will change smoothly. However, at bifurcation points, the topological type of the flow can change drastically even as the parameters are smoothly varied, with limit sets appearing, disappearing, or changing their stability. A bifurcation diagram illustrates how the phase portrait of a dynamical system depends on a parameter (Fig. Id). Here bifurcation points are shown as black dots. At small values of p1, only a single stable equilibrium point occurs (upper blue line). As p1 increases, a pair of equilibrium points appear, one unstable (red curve) and one saddle (green cruve). At still larger values of p1, a stable limit cycle appears (gray region bounded by blue curve). This is the situation corresponding to Fig. Ic. Finally, as p1 is increased even further, the size of the limit cycle shrinks to zero, leaving two stable equilibrium points separated by a saddle point. If two parameters are varied simultaneously, then regions of parameter space that exhibit different phase portraits may exist, and the boundaries between these distinct regions correspond to bifurcations. A map of the layout of these regions in parameter space and the boundaries between them is called a parameter chart (Fig. Ie). Together, bifurcation diagrams and parameter charts describe the range of dynamical behavior that a system is capable of producing and how that behavior changes as parameters are varied.\nReferences\na Abraham, R.H. and Shaw, C.D. (1992) Dynamics: The Geometry of\nBehavior, Addison–Wesley\nb Strogatz, S.H. (1994) Nonlinear Dynamics and Chaos, Addison–Wesley c Beer, R.D (1995) On the dynamics of small continuous-time recurrent\nneural networks. Adapt. Behav. 3, 469–509\nprobability of reaching in a given direction. This ‘movement planning field’ (Fig. 2, light blue) receives two inputs describing the visual appearance of the scene: a constant ‘task input’ with peaks at A and B representing the two containers (Fig. 2, green), and a ‘specific input’ with a transient peak at either A or B representing the visual cue used to draw the infant’s attention to the target object (Fig. 2, red). In addition, the movement planning field receives input from a one-dimensional ‘memory field’ that maintains a memory of recent reaches (Fig. 2, dark blue). The movement planning field also has a resting level that affects its ability to generate self-sustaining activity, as well as a source of noise. The model is thus an infinite-dimensional, continuous-time, stochastic, nonautonomous dynamical system (it is infinite-dimensional because its state is described by two continuous one-dimensional fields rather than a discrete set of state variables).\nWhen the resting level of the field is low, the model produces the A-not-B error (Fig. 2, non-cooperative regime). In order to model the effects of training, the task input has an initial bias favoring A that decreases in subsequent trials. Initially, the model is exposed to repeated A trials by cueing it with a specific input with a peak at A. This produces a strong tendency to reach to A in the movement planning field and a memory of previous reaches to A in the memory field. Then, the model is cued with a specific input with a peak at B and a delay is imposed. Although the movement planning field initially develops a peak at B, this peak quickly decays over time, and the memory of earlier reaches to A dominates. Interestingly, when the resting level of the movement\nplanning field is high (Fig. 2, cooperative regime), the initial peak at B does not decay and the error is not produced.\nThus, this model suggests that the A-not-B error is due to an immature goal-directed reaching system rather than an immature concept of object permanence. On this dynamical account, the A-not-B error arises from the inability of the movement planning field to sustain a visually cued reach in a novel direction in the presence of a sufficiently strong memory of previous reaches. This suggests that the ability of the movement planning field to generate self-sustaining activity might be an important developmental parameter. The model can also account for the observed contextual effects (e.g. no error occurs when the delay between visual cue and reach is removed because the initial peak at B does not have to be sustained). It also makes several novel predictions (e.g. if the error arises from the general properties of goal-directed reaching, then it should be possible to observe it in older children as well if the visual cue is sufficiently weak and brief, the visual scene is sufficiently ambiguous, and the delay is sufficiently long).\nActive categorical perception in an evolved model agent Dynamical approaches in autonomous agents and robotics have also been an active area of research over the past ten years34–38. Of particular interest to the present discussion is work in which an evolutionary approach to the design of dynamical ‘nervous systems’ for model agents34,36 is applied to the study of ‘minimally cognitive behavior’ (the simplest behavior that begins to raise questions of cognitive interest39–41). The dynamics of the evolved agents are then analyzed10,42. Studying simpler models that exhibit the basic features of a situated cognitive agent, but that are amenable to detailed experimental and theoretical analysis, is a powerful strategy for exploring the implications of a dynamical perspective43.\nIn one study, a model agent was evolved to visually discriminate between two classes of objects of the same size, specifically, to catch circles and avoid diamonds39. The agent could move back and forth along a horizontal line while objects fell towards it from above (Fig. 3a). Using seven rays, the agent could sense the distance to each point of intersection between a ray and a falling object. The agent was controlled by a 14-neuron, continuous-time recurrent neural network44. The parameters of the neural network were set by an evolutionary algorithm45 so as to minimize the final horizontal separation for circles and maximize the final horizontal separation for diamonds.\nOn this task, the best agent achieved an average performance of 99% on 100 random trials. The strategy that this agent used was first to foveate and then actively scan any object that appeared in its field of view. As the object neared, the agent would either decrease the amplitude of the scan until the object was centered (if it was a circle) or make a large avoidance movement (if it was a diamond) (results shown in Fig. 3b). Given the coarse resolution of the agent’s seven rays, it is likely that active scanning accentuates the small differences between a circle and a diamond. Interestingly, active control of gaze direction has become an important theme in vision research46,47. Probing the agent with a class of objects that smoothly interpolated between circles and diamonds revealed a sigmoidal classification curve with a relatively sharp transition, a classic characteristic of categorical perception48. Experiments\nReview B e e r – D y n a m i c a l a p r o a c h e s t o c o g n i t i v e s c i e n c e\n94 T r e n d s i n C o g n i t i v e S c i e n c e s – V o l . 4 , N o . 3 , M a r c h 2 0 0 0\ntrends in Cognitive Sciences\nboy\nwho\nchases\nboychases\nboy\nPrincipal component 1\nP rin\nci pa\nl c om\npo ne\nnt 1\n1\nFig. 1. A projection of the trajectory of a word prediction network as the sentence ‘boy who chases boy chases boy’ is processed. As each word is presented to the network, the state of activation of each of the hidden units changes. However, because of the large number of hidden units (70 in this case), this trajectory of hidden-unit activation cannot be directly plotted. Instead, a suitable two-dimensional projection is found using a technique known as ‘principal components analysis’ (PCA). By rotating the original coordinate axes, PCA finds a new set of axes which are ordered according to the amount of variance they account for. As shown here, projecting the 70-dimensional activation trajectory down to two principle components is sufficient to visualize the basic response. Note that occurrences of the same word in different contexts within the sentence leave the network in different states, which in turn affect the network’s response to subsequent words. (Modified from Ref. 20.)\nwith a variety of objects demonstrated that object width was the primary feature used in the discrimination.\nHow does the dynamics of the evolved neural network allow this agent to achieve such an accurate discrimination with such coarse sensors? The neural circuit is a 14-dimensional, non-autonomous, continuous-time dynamical system, while the entire coupled system comprising the neural circuit, the agent’s body and the object is a 16-dimensional, autono-\nmous, hybrid dynamical system. Although it is impossible to visualize directly such high-dimensional dynamics, carefully chosen projections can provide important insights.\nFor example, we can understand how the agent’s behavior arises from the interaction between the movement of its body, the movement of the object, and the dynamics of the evolved neural circuit by superimposing plots of the agent’s motion on a depiction of the effects of the network dynamics on\nB e e r – D y n a m i c a l a p r o a c h e s t o c o g n i t i v e s c i e n c e\n95 T r e n d s i n C o g n i t i v e S c i e n c e s – V o l . 4 , N o . 3 , M a r c h 2 0 0 0\nReview\ntrends in Cognitive Sciences\nMovement planning\nfield\nMovement planning\nfield\nTask input\nSpecific input\nA B\nMemory field\nA B\nA B\nCooperative regime\nNon-cooperative regime\n* * *\n* * *\nA B A B A B\nFig. 2. B trial of the A-not-B task. The three main stages of a trial are illustrated at the top and corresponding plots of the state of the various fields in the model at each stage are shown below. The plots give the level of activity of each field as a function of horizontal position in the workspace: task input field (green), specific input field (red), memory field (dark blue) and movement planning field (light blue). Initially, the model is exposed to repeated A trials (not shown), resulting in a memory of previous reaches to A (as indicated by the peak at A in the left dark blue memory field plot). Then the B trial begins. First, the object (yellow star) is hidden in container B in full sight of the infant. Second, a delay is imposed. Third, the apparatus is pushed towards the infant and the infant reaches to one of the containers to retrieve the object. When the resting level of the movement planning field is low (non-cooperative regime), a high initial peak at B decays over time (asterisks) to a reach to A and the model produces the A-not-B error. When the resting level of the movement planning field is high (cooperative regime), it is able to sustain the peak at B (asterisks) and the model produces a correct reach to B. (Modified from Ref. 30.)\nthat motion. Figure 3b shows the motion of a falling object through the agent’s field of view as the agent moves back and forth while catching circles (left) or avoiding diamonds (right). Note how the initial states are separated into two distinct bundles of trajectories as the interaction proceeds. The trajectories are color-coded according to whether their instantaneous horizontal velocity is directed towards (blue) or away (red) from the centerline. These trajectories are superimposed on the steady-state horizontal velocity field, which shows the steady-state horizontal velocity generated by the neural circuit for an object fixed at each point in the agent’s field of view. (These fields are color-coded in the same manner as the trajectories.) If the interaction were frozen at any point along a trajectory, then the instantaneous horizontal velocity would approach the steady-state value over time. However, as both the agent and the object are moving, the instantaneous velocity lags behind the steady-state value. Note how a red avoidance behavior often persists for some time after entering a blue, centering region, and vice versa. This subtle interplay between sensory input and internal state is crucial to accurate discrimination. For circles, the blue centering regions in the steady-state velocity field repeatedly turn the trajectory bundles back towards the cen-\nter until the object becomes trapped in the central black region of no movement and is caught. On the other hand, for diamonds the central red avoidance region is much larger and penetrates much higher in the agent’s field of view, ultimately pushing the trajectories away from the center until the object is avoided.\nDynamical, symbolic and connectionist approaches to cognition How does a dynamical approach to cognition differ from the more familiar symbolic and connectionist approaches? It might be argued that to distinguish dynamical approaches from these other approaches is mistaken for any of the following reasons: dynamical models can be simulated on digital computers49, dynamical models can be given a computational description50, Turing machines can be described as discretetime dynamical systems over the integers51, dynamical models can be represented as connectionist networks52, and at least some connectionist networks are dynamical systems6. However, this is a bit like arguing that there is no difference between classical and relativistic mechanics because both are expressed using differential equations and both can be simulated on a digital computer. Clearly the important issues in that case were which differential equations were proposed, what theoretical entities those equations described, and, most importantly, the fundamentally different conceptions of space, time and the nature of the gravitational force that Newton and Einstein offered.\nLikewise, regardless of the mathematical formalism or modeling technology employed, dynamical, symbolic and connectionist approaches differ markedly in the theoretical vocabulary and style of explanation that each brings to bear on cognitive phenomena53. A typical symbolic model is expressed as a program that takes as input a symbolic description of a problem to be solved. Then, using the system’s general knowledge about the domain in which it operates (also symbolically represented), this description is manipulated in a purely syntactic fashion in order to obtain a solution to the problem1–3. Here, the explanatory focus is on the structure and content of the representations employed and the nature and efficiency of the algorithms used. Typical connectionist models, on the other hand, are expressed as layered networks of simple, neuron-like elements that are trained to transform a numerical input representation into a numerical output representation4–6. In this case, the explanatory focus is on the network architecture, the learning algorithm, and the intermediate distributed representations that are developed.\nBy contrast, a typical dynamical model is expressed as a set of differential or difference equations that describe how the system’s state changes over time. Here, the explanatory focus is on the structure of the space of possible trajectories and the internal and external forces that shape the particular trajectory that unfolds over time, rather than on the physical nature of the underlying mechanisms that instantiate this dynamics. On this view, inputs do not uniquely specify an internal state that describes some external state of affairs. Rather, they serve as a source of perturbations to the system’s intrinsic dynamics. For example, in the A-not-B model, the focus is on the response of the movement planning field to the perturbation provided by the transient specific input\nReview B e e r – D y n a m i c a l a p r o a c h e s t o c o g n i t i v e s c i e n c e\n96 T r e n d s i n C o g n i t i v e S c i e n c e s – V o l . 4 , N o . 3 , M a r c h 2 0 0 0\nFig. 3. Dynamical analysis of an evolved model agent for catching circles and avoiding diamonds. (a) The basic scenario. The agent can move back and forth horizontally while objects fall towards it from above. It uses an array of seven sensors to sense the distance to an object. (b) The movement of an evolved model agent for object discrimination on 24 circle trials (left) and 24 diamond trials (right). Here x is the horizontal position of the object relative to the agent (with zero at the center) and y is the relative vertical position (with zero at the bottom). The trajectories are color-coded according to the instantaneous horizontal velocity, with blue corresponding to a centering motion and red corresponding to an avoidance motion. The intensity of the color is proportional to the magnitude of the velocity, with black corresponding to a velocity of zero. These trajectories are superimposed on steady-state horizontal velocity fields, which show what the long-term horizontal velocity of the agent would be if an object were fixed at each point in its field of view. The steady-state velocity fields are color-coded in the same way as the trajectories, except that green indicates areas where the dynamics are multistable. In these cases, the steady-state velocity adopted depends on which basin of attraction (see Box 1) the transient trajectory finds itself within. Note that if an object were frozen at any point along a trajectory, the color of the trajectory would approach the color of the steady-state velocity field at that point over time.\n(Fig. 2, red plots). Likewise, a system’s internal state does not necessarily have any straightforward interpretation as a representation of an external state of affairs. Rather, at each instant in time, the internal state specifies the effects that a given perturbation can have on the unfolding trajectory. For example, in Elman’s model, grammatical context is manifested by the differing effects that a word can have depending on the state of the network when the word is encountered (Fig. 1). The different states that result from encountering the same word in different contexts in turn differ in their response to subsequent words. In this way, an agent’s past experiences influence its future interactions through its internal state, on multiple time scales. Thus, there are real conceptual differences between how a dynamicist, a computationalist and a connectionist approach a cognitive agent, differences that can have substantial empirical consequences in practice.\nAlthough the major differences in outlook between dynamical, symbolic and connectionist approaches are clear enough, there is considerable fuzziness at the borders. For example, work with recurrent connectionist networks is clearly dynamical to the extent that it emphasizes the unfolding trajectory, rather than the nature and architecture of the underlying ‘neuron-like’ elements and their representational roles. More fundamentally, there is a great deal of controversy over exactly what a representation or a computation is. Some have argued that, although objectivist, symbolic notions of representation and computation might be inapplicable to dynamical models, suitably distributed, analog, context-dependent and action-oriented notions will be applicable54–57. However, great care must be taken in generalizing these notions. If any internal state is a representation and any systematic process is a computation, then a computational theory of mind loses its empirical force58. Regardless of how these debates are ultimately resolved, it is clear that dynamical ideas are forcing a critical evaluation of the notions of representation and computation within cognitive science.\nCognition and the dynamics of situated, embodied action Although a dynamical approach can certainly stand alone, it is most powerful and distinctive when coupled with a situated, embodied perspective on cognition59–63. From this perspective, the principal aim of a situated agent is to take action appropriate to its circumstances and goals, and cognition is merely one resource among many in service of this objective. Other important resources include the physical properties of an agent’s body, the structure of its immediate environment (including artifacts such as shopping lists, calendars and computers, etc.) and its social context. In this sense, cognition can extend beyond an agent’s brain to be distributed over a system of people and objects within an environment62,63. A very strong parallel emphasis on situated and embodied action has also emerged in artificial intelligence and robotics64–68.\nIn a dynamical approach to situated action, an agent’s nervous system, its body and its environment are viewed as coupled dynamical systems10 (Fig. 4). Given that bodies and nervous systems co-evolve with their environments, and only the behavior of complete animals is subjected to selection, the need for such a tightly coupled perspective should not be surprising. The focus here is on continuously engaging an environment with a body so as to stabilize appropriate\ncoordinated patterns of behavior, rather than the sequential sense–think–act processing cycle that is typical of computational approaches. For example, there is a very real sense in which the evolved model ‘nervous system’ for object discrimination described above does not itself know the difference between circles and diamonds. It is only when embodied in its particular body and situated in the environment in which it evolved that the distinction between circles and diamonds arises over time through the continuous interaction of these components. Because, as noted above, the internal state of the agent’s dynamics plays such an essential role in structuring its behavior, this is no mere return to stimulus–response behaviorism. Rather, the working hypothesis of the dynamical approach is that, through increasingly sophisticated uses of internal state to mediate between perception and action, more cognitive behavior emerges from the dynamics of situated action. Thus, by supplying a common language for cognition, for the neurophysiological processes that support it, for noncognitive human behavior, and for the adaptive behavior of simpler animals, a dynamical approach holds the promise of providing a unified theoretical framework for cognitive science, as well as an understanding of the emergence of cognition in development and evolution.\nConclusions My primary goals in this review have been threefold. First, I have tried to communicate a sense of the practice of dynamical approaches to cognition by describing in some detail three rather different examples. These examples also demonstrate that dynamical approaches are beginning to engage substantive empirical questions in cognitive science. Second, I have argued that, although there may be a great deal of overlap between the modeling technologies and mathematical formalisms employed by dynamical, symbolic and connectionist approaches to cognition, there are very real differences in the conceptual frameworks they offer. Furthermore, these theoretical differences can have profound empirical consequences,\nB e e r – D y n a m i c a l a p r o a c h e s t o c o g n i t i v e s c i e n c e\n97 T r e n d s i n C o g n i t i v e S c i e n c e s – V o l . 4 , N o . 3 , M a r c h 2 0 0 0\nReview\ntrends in Cognitive Sciences\nBody\nEnvironment\nNervous system\nFig. 4. A dynamical perspective on a situated, embodied agent. The nervous system, body and environment are each conceptualized as dynamical systems, which are in constant interaction with each other.\ninfluencing the phenomena that are considered to be cognitive, the questions asked about these phenomena, the experiments performed, and the ways in which the results of these experiments are interpreted. Third, I have tried to show how, regardless of the eventual fate of the dynamical approach as an alternative or an adjunct to more traditional approaches, dynamical ideas are forcing a much-needed critical evaluation of the notions of representation and computation in cognitive science. They are also contributing to a more general broadening of cognitive science from its historically narrow focus on disembodied, language-like reasoning to embodied, situated action.\nAcknowledgements This work was supported in part by grant RG0084/1997-B from the Human Frontier Science Program. I would like to thank Dr Hillel Chiel for fruitful discussions and for his comments on an earlier draft of this paper. Thanks also to Andy Clark, Jeff Elman, Linda Smith, Esther Thelen and an anonymous reviewer for feedback that improved the final paper.\nReferences\n1 Fodor, J.A. (1975) The Language of Thought, Harvard University Press 2 Newell, A. and Simon, H.A. (1976) Computer science as empirical inquiry:\nsymbols and search. Commun. ACM 19, 113–126\n3 Pylyshyn, Z.W. (1984) Computation and Cognition, MIT Press 4 Rumelhart, D.E., McClelland, J.L. and The PDP Research Group (1986)\nParallel Distributed Processing, Vol. 1: Foundations, MIT Press\n5 McClelland, J.L., Rumelhart, D.E. and The PDP Research Group (1986)\nParallel Distributed Processing, Vol. 2: Psychological and Biological Models, MIT Press 6 Smolensky, P. (1988) On the proper treatment of connectionism.\nBehav. Brain Sci. 11, 1–74\n7 Thelen, E. and Smith, L.B. (1994) A Dynamic Systems Approach to the\nDevelopment of Cognition and Action, MIT Press\n8 van Gelder, T. (1995) What might cognition be, if not computation?\nJ. Philos. XCI, 345–381\n9 Kelso, J.A.S. (1995) Dynamic Patterns, MIT Press\n10 Beer, R.D. (1995) A dynamical systems perspective on agent–environment\ninteraction. Artif. Intell. 72, 173–215\n11 Port, R.F. and van Gelder, T., eds (1995) Mind as Motion, MIT Press 12 van Gelder, T. (1998) The dynamical hypothesis in cognitive science.\nBehav. Brain Sci. 21, 615–665\n13 Fodor, J.A. and Pylyshyn, Z.W. (1988) Connectionism and cognitive\narchitecture: a critical analysis. Cognition 28, 3–71\n14 Pinker, S. and Prince, A. (1988) On language and connectionism: analysis\nof a parallel distributed processing model of language acquisition. Cognition 28, 73–193 15 Port, R.F. et al. (1995) Naive time, temporal patterns and human audition. In\nMind as Motion (Port, R.F. and van Gelder, T., eds), pp. 339–371, MIT Press 16 Browman, C.P. and Goldstein, L. (1995) Dynamics and articulatory\nphonology. In Mind as Motion (Port, R.F. and van Gelder, T., eds), pp. 175–193, MIT Press\n17 Pollack, J.B. (1991) The induction of dynamical recognizers. Machine\nLearn. 7, 227–252\n18 Seigelmann, H.T. (1999) Neural Networks and Analog Computation:\nBeyond the Turing Limit, Springer-Verlag\n19 Petitot, J. (1995) Morphodynamics and attractor syntax: constituency\nin visual perception and cognitive grammar. In Mind as Motion (Port, R.F. and van Gelder, T., eds), pp. 227–281, MIT Press 20 Elman, J.L. (1995) Language as a dynamical system. In Mind as Motion\n(Port, R.F. and van Gelder, T., eds), pp. 195–225, MIT Press\n21 Elman, J.L. (1990) Finding structure in time. Cognit. Sci. 14, 179–211 22 Elman, J.L. (1991) Distributed representations, simple recurrent networks,\nand grammatical structure. Machine Learn. 7, 195–225\n23 Weckerly, J. and Elman, J.L. (1992) A PDP approach to processing center-\nembedded sentences. In Proc. 14th Annu. Conf. Cognit. Sci. Soc., pp. 414–419, Erlbaum 24 Rodriguez, P. et al. (1999) A recurrent neural network that learns to\ncount. Connection Sci. 11, 5–40\n25 Kugler, P.N. and Turvey, M.T. (1987) Information, Natural Law, and the\nSelf-Assembly of Rhythmic Movement, Erlbaum\n26 Schöner, G. and Kelso, J.A.S. (1988) Dynamic pattern generation in\nbehavioral and neural systems. Science 239, 1513–1520\n27 Grossberg, S. and Kuperstein, M. (1989) Neural Dynamics of Adaptive\nSensory–Motor Control, Pergamon Press\n28 Bizzi, E. et al. (1991) Computations underlying the execution of\nmovement: a biological perspective. Science 253, 287–291\n29 Warren, W.H.J. (1995) Self motion: visual perception and visual control.\nIn Perception of Space and Motion (Epstein, W. and Rogers, S., eds), pp. 263–325, Academic Press 30 Thelen, E. et al. The dynamics of embodiment: a field theory of infant\nperseverative reaching. Behav. Brain Sci. (in press)\n31 Piaget, J. (1954) The Construction of Reality in the Child, MIT Press 32 Smith, L.B. et al. (1999) Knowing in the context of acting: the task\ndynamics of the A-not-B error. Psychol. Rev. 106, 235–260\n33 Schöner, G. et al. (1997) The dynamic neural field theory of motor\nprogramming: arm and eye movements. In Self-Organization, Computational Maps and Motor Control (Morasso, P.G. and Sanguineti, V., eds), pp. 271–310, Elsevier 34 Beer, R.D. and Gallagher, J.C. (1992) Evolving dynamical neural networks\nfor adaptive behavior. Adapt. Behav. 1, 91–122\n35 Smithers, T. (1992) Taking eliminative materialism seriously: a\nmethodology for autonomous systems research. In Toward a Practice of Autonomous Systems (Varela, F.J. and Bourgine, P., eds), pp. 31–40, MIT Press 36 Cliff, D. et al. (1993) Explorations in evolutionary robotics. Adapt. Behav.\n2, 73–110\n37 Schöner, G. et al. (1995) Dynamics of behavior: theory and applications\nfor autonomous robot architectures. Robotics Auton. Syst. 16, 213–245 38 Tani, J. and Nolfi, S. (1999) Learning to perceive the world as articulated:\nan approach for hierarchical learning in sensory–motor systems. Neural Netw. 12, 1131–1141 39 Beer, R.D. (1996) Toward the evolution of dynamical neural networks\nfor minimally cognitive behavior. In From Animals to Animats 4: Proc. 4th Int. Conf. on Simulation of Adaptive Behavior (Maes, P. et al., eds), pp. 421–429, MIT Press 40 Parisi, D. (1997) Artificial life and higher level cognition. Brain Cognit.\n34, 160–184\n41 Gallagher, J.C. and Beer, R.D. (1999) Evolution and analysis of dynamical\nneural networks for agents integrating vision, locomotion and shortterm memory. In Proc. Gen. Evol. Comput. Conf. (Banzhaf, W. et al., eds), pp. 1273–1280, Morgan Kaufmann 42 Husbands, P. et al. (1995) Circle in the round: state space attractors for\nevolved sighted robots. Robotics Auton. Syst. 15, 83–106\n43 Beer, R.D. (1997) The dynamics of adaptive behavior: a research program.\nRobotics Auton. Syst. 20, 257–289\n44 Beer, R.D. (1995) On the dynamics of small continuous-time recurrent\nneural networks. Adapt. Behav. 3, 469–509\n45 Mitchell, M. (1996) An Introduction to Genetic Algorithms, MIT Press 46 Ballard, D. (1991) Animate vision. Artif. Intell. 48, 57–86 47 Churchland, P.S. et al. (1994) A critique of pure vision. In Large-Scale\nNeuronal Theories of the Brain (Koch, C. and Davis, J., eds), pp. 23–60, MIT Press 48 Studdert-Kennedy, M. et al. (1970) Motor theory of speech perception:\nReview B e e r – D y n a m i c a l a p r o a c h e s t o c o g n i t i v e s c i e n c e\n98 T r e n d s i n C o g n i t i v e S c i e n c e s – V o l . 4 , N o . 3 , M a r c h 2 0 0 0\nOutstanding questions\n• Do dynamical, connectionist or symbolic conceptions of cognition offer the most powerful and parsimonious foundation for cognitive science, or will a hybrid of the three approaches be necessary? • Are the existing mathematical tools and theoretical vocabulary of dynamical systems theory sufficient for applications in cognitive science, or will significant extensions be required? • What is the proper formulation of representation and computation, if any, for situated, embodied dynamical agents? • How will a dynamical approach to situated action fare on more paradigmatically cognitive phenomena, such as off-line deliberative reasoning and language understanding?\nTo survive on today’s highways, a driver must have highly developed skills in visually\nguided collision avoidance. To play such games as cricket, tennis or baseball demands\naccurate, precise and reliable collision achievement. This review discusses evidence that\nsome of these tasks are performed by predicting where an object will be at some sharply\ndefined instant, several hundred milliseconds in the future, while other tasks are\nperformed by utilizing the fact that some of our motor actions change what we see in\nways that obey lawful relationships, and can therefore be learned. Several monocular and\nbinocular visual correlates of the direction of an object’s motion relative to the observer’s\nhead have been derived theoretically, along with visual correlates of the time to collision\nwith an approaching object. Although laboratory psychophysics can identify putative\nneural mechanisms by showing which of the known correlates are processed by the\nhuman visual system independently of other visual information, it is only field research\non, for example, driving, aviation and sport that can show which visual cues are actually\nused in these activities. This article reviews this research and describes a general\npsychophysically based rational approach to the design of such field studies.\nVisually guided collision avoidance and collision achievement\nDavid Regan and Robert Gray\na reply to Lane’s critical review. Psychol. Rev. 77, 234–249\n49 Garson, J.W. (1998) Why dynamical implementation matters. Behav.\nBrain Sci. 21, 641–642\n50 Crutchfield, J.P. (1998) Dynamical embodiments of computation in\ncognitive processes. Behav. Brain Sci. 21, 635\n51 Branicky, M.S. (1995) Universal computation and other capabilities of\nhybrid and continuous dynamical systems. Theor. Comput. Sci. 138, 67–100 52 Bridgeman, B. (1998) The dynamical model is a Perceptron. Behav.\nBrain Sci. 21, 631–632\n53 Beer, R.D. (1998) Framing the debate between computational and\ndynamical approaches to cognitive science. Behav. Brain Sci. 21, 630\n54 Clark, A. (1997) The dynamical challenge. Cognit. Sci. 21, 461–481 55 Mitchell, M. (1998) Theories of structure versus theories of change.\nBehav. Brain Sci. 21, 645–646\n56 Wheeler, M. and Clark, A. (1999) Genic representation: reconciling\ncontent and causal complexity. Br. J. Philos. Sci. 50, 103–135\n57 Clark, A. and Grush, R. (1999) Towards a cognitive robotics. Adapt.\nBehav. 7, 5–16\n58 Beer, R.D. (1995) Computational and dynamical languages for\nautonomous agents. In Mind as Motion (Port, R.F. and van Gelder, T., eds), pp. 121–147, MIT Press 59 Winograd, T. and Flores, F. (1986) Understanding Computers and\nCognition, Ablex\n60 Suchman, L. (1987) Plans and Situated Actions, Cambridge University\nPress\n61 Varela, F.J. et al. (1991) The Embodied Mind, MIT Press 62 Hutchins, E. (1995) Cognition in the Wild, MIT Press 63 Clark, A. (1997) Being There, MIT Press 64 Brooks, R.A. (1986) A robust layered control system for a mobile robot.\nIEEE J. Robotics Autom. RA-2, 14–23\n65 Agre, P. and Chapman, D. (1987) Pengi: an implementation of a theory\nof activity. In Proc. AAAI-87, pp. 268–272\n66 Kaelbling, L.P. and Rosenschein, S.J. (1990) Action and planning in\nembedded agents. Robotics Auton. Syst. 6, 35–48\n67 Beer, R.D. (1990) Intelligence as Adaptive Behavior, Academic Press 68 Clancey, W.J. (1997) Situated Cognition, Cambridge University Press\nB e e r – D y n a m i c a l a p r o a c h e s t o c o g n i t i v e s c i e n c e\nD. Regan is at the Departments of Psychology and Biology, York University, BSB, Room 375, 4700 Keele Street, North York, Ontario, Canada M3J 1P3. R. Gray is at Nissan Cambridge Basic Research, 4 Cambridge Center, Cambridge, MA 02142, USA.\ntel: +1 416 736 5627 fax: +1 416 736 5814 e-mail: dregan@ yorku.ca.\n99\nReview\n1364-6613/00/$ – see front matter © 2000 Elsevier Science Ltd. All rights reserved. PII: S1364-6613(99)01442-4\nT r e n d s i n C o g n i t i v e S c i e n c e s – V o l . 4 , N o . 3 , M a r c h 2 0 0 0\nWhat kinds of visual information are used by humans to avoid or achieve a collision? This question has driven a considerable body of research on a wide variety of topics, including highway safety, the design of flight simulators for training commercial airline pilots, and ballgames.\nOne approach to this issue breaks the problem into two parts: (1) how do we estimate the direction of an object’s motion in depth; and (2) how do we estimate time to collision (TTC)? Boxes 1 and 2 describe relevant visual correlates of these two quantities. Regarding the second part of the problem, many field studies seem to have been designed around the assumption that TTC is estimated entirely on the basis of ‘tau’ (Box 2). Wann1 made the strong criticism that many such field studies did not effectively test the tau hypothesis or indeed any rival hypothesis; in effect, the tau hypothesis was regarded as an axiom rather than an hypothesis. Tresilian has recently provided a critical review of this sub-topic2."
+    } ],
+    "references" : [ {
+      "title" : "Computer science as empirical inquiry",
+      "author" : [ "A. Newell", "H.A. Simon" ],
+      "venue" : null,
+      "citeRegEx" : "Newell and Simon,? \\Q1976\\E",
+      "shortCiteRegEx" : "Newell and Simon",
+      "year" : 1976
+    }, {
+      "title" : "A Dynamic Systems Approach",
+      "author" : [ "E. Thelen", "L.B. Smith" ],
+      "venue" : null,
+      "citeRegEx" : "Thelen and Smith,? \\Q1994\\E",
+      "shortCiteRegEx" : "Thelen and Smith",
+      "year" : 1994
+    }, {
+      "title" : "Mind as Motion",
+      "author" : [ "R.F. Port", "T. van Gelder" ],
+      "venue" : null,
+      "citeRegEx" : "Port and Gelder,? \\Q1995\\E",
+      "shortCiteRegEx" : "Port and Gelder",
+      "year" : 1995
+    }, {
+      "title" : "The dynamical hypothesis in cognitive science",
+      "author" : [ "T. van Gelder" ],
+      "venue" : null,
+      "citeRegEx" : "Gelder,? \\Q1998\\E",
+      "shortCiteRegEx" : "Gelder",
+      "year" : 1998
+    }, {
+      "title" : "On language and connectionism: analysis",
+      "author" : [ "S. Pinker", "A. Prince" ],
+      "venue" : null,
+      "citeRegEx" : "Pinker and Prince,? \\Q1988\\E",
+      "shortCiteRegEx" : "Pinker and Prince",
+      "year" : 1988
+    }, {
+      "title" : "Naive time, temporal patterns and human audition",
+      "author" : [ "Port", "R.F" ],
+      "venue" : null,
+      "citeRegEx" : "Port and R.F,? \\Q1995\\E",
+      "shortCiteRegEx" : "Port and R.F",
+      "year" : 1995
+    }, {
+      "title" : "Dynamics and articulatory",
+      "author" : [ "C.P. Browman", "L. Goldstein" ],
+      "venue" : null,
+      "citeRegEx" : "Browman and Goldstein,? \\Q1995\\E",
+      "shortCiteRegEx" : "Browman and Goldstein",
+      "year" : 1995
+    }, {
+      "title" : "The induction of dynamical recognizers",
+      "author" : [ "J.B. Pollack" ],
+      "venue" : "Machine Learn",
+      "citeRegEx" : "Pollack,? \\Q1991\\E",
+      "shortCiteRegEx" : "Pollack",
+      "year" : 1991
+    }, {
+      "title" : "Morphodynamics and attractor syntax: constituency in visual perception and cognitive grammar",
+      "author" : [ "J. Petitot" ],
+      "venue" : "In Mind as Motion (Port,",
+      "citeRegEx" : "Petitot,? \\Q1995\\E",
+      "shortCiteRegEx" : "Petitot",
+      "year" : 1995
+    }, {
+      "title" : "Language as a dynamical system",
+      "author" : [ "J.L. Elman" ],
+      "venue" : "In Mind as Motion (Port,",
+      "citeRegEx" : "Elman,? \\Q1995\\E",
+      "shortCiteRegEx" : "Elman",
+      "year" : 1995
+    }, {
+      "title" : "Finding structure in time",
+      "author" : [ "J.L. Elman" ],
+      "venue" : "Cognit. Sci",
+      "citeRegEx" : "Elman,? \\Q1990\\E",
+      "shortCiteRegEx" : "Elman",
+      "year" : 1990
+    }, {
+      "title" : "Distributed representations, simple recurrent networks, and grammatical structure",
+      "author" : [ "J.L. Elman" ],
+      "venue" : "Machine Learn",
+      "citeRegEx" : "Elman,? \\Q1991\\E",
+      "shortCiteRegEx" : "Elman",
+      "year" : 1991
+    }, {
+      "title" : "A PDP approach to processing centerembedded sentences",
+      "author" : [ "J. Weckerly", "J.L. Elman" ],
+      "venue" : "In Proc. 14th Annu. Conf. Cognit. Sci. Soc.,",
+      "citeRegEx" : "Weckerly and Elman,? \\Q1992\\E",
+      "shortCiteRegEx" : "Weckerly and Elman",
+      "year" : 1992
+    }, {
+      "title" : "A recurrent neural network that learns to count",
+      "author" : [ "P Rodriguez" ],
+      "venue" : "Connection Sci",
+      "citeRegEx" : "Rodriguez,? \\Q1999\\E",
+      "shortCiteRegEx" : "Rodriguez",
+      "year" : 1999
+    }, {
+      "title" : "Information, Natural Law, and the Self-Assembly of Rhythmic Movement",
+      "author" : [ "P.N. Kugler", "M.T. Turvey" ],
+      "venue" : null,
+      "citeRegEx" : "Kugler and Turvey,? \\Q1987\\E",
+      "shortCiteRegEx" : "Kugler and Turvey",
+      "year" : 1987
+    }, {
+      "title" : "Dynamic pattern generation in behavioral and neural systems",
+      "author" : [ "G. Schöner", "J.A.S. Kelso" ],
+      "venue" : "Science",
+      "citeRegEx" : "Schöner and Kelso,? \\Q1988\\E",
+      "shortCiteRegEx" : "Schöner and Kelso",
+      "year" : 1988
+    }, {
+      "title" : "Neural Dynamics of Adaptive Sensory–Motor",
+      "author" : [ "S. Grossberg", "M. Kuperstein" ],
+      "venue" : null,
+      "citeRegEx" : "Grossberg and Kuperstein,? \\Q1989\\E",
+      "shortCiteRegEx" : "Grossberg and Kuperstein",
+      "year" : 1989
+    }, {
+      "title" : "Computations underlying the execution of movement: a biological perspective",
+      "author" : [ "E Bizzi" ],
+      "venue" : "Science",
+      "citeRegEx" : "Bizzi,? \\Q1991\\E",
+      "shortCiteRegEx" : "Bizzi",
+      "year" : 1991
+    }, {
+      "title" : "Self motion: visual perception and visual control",
+      "author" : [ "W.H.J. Warren" ],
+      "venue" : "In Perception of Space and Motion (Epstein,",
+      "citeRegEx" : "Warren,? \\Q1995\\E",
+      "shortCiteRegEx" : "Warren",
+      "year" : 1995
+    }, {
+      "title" : "Knowing in the context of acting: the task dynamics of the A-not-B",
+      "author" : [ "Smith", "L.B" ],
+      "venue" : "error. Psychol",
+      "citeRegEx" : "Smith and L.B,? \\Q1999\\E",
+      "shortCiteRegEx" : "Smith and L.B",
+      "year" : 1999
+    }, {
+      "title" : "The dynamic neural field theory of motor programming: arm and eye movements. In Self-Organization, Computational Maps and Motor Control (Morasso, P.G",
+      "author" : [ "G Schöner" ],
+      "venue" : null,
+      "citeRegEx" : "Schöner,? \\Q1997\\E",
+      "shortCiteRegEx" : "Schöner",
+      "year" : 1997
+    }, {
+      "title" : "Evolving dynamical neural networks for adaptive behavior",
+      "author" : [ "R.D. Beer", "J.C. Gallagher" ],
+      "venue" : "Adapt. Behav",
+      "citeRegEx" : "Beer and Gallagher,? \\Q1992\\E",
+      "shortCiteRegEx" : "Beer and Gallagher",
+      "year" : 1992
+    }, {
+      "title" : "Taking eliminative materialism seriously: a methodology for autonomous systems research",
+      "author" : [ "T. Smithers" ],
+      "venue" : null,
+      "citeRegEx" : "Smithers,? \\Q1992\\E",
+      "shortCiteRegEx" : "Smithers",
+      "year" : 1992
+    }, {
+      "title" : "Explorations in evolutionary robotics",
+      "author" : [ "D 36 Cliff" ],
+      "venue" : "Adapt. Behav",
+      "citeRegEx" : "Cliff,? \\Q1993\\E",
+      "shortCiteRegEx" : "Cliff",
+      "year" : 1993
+    }, {
+      "title" : "Dynamics of behavior: theory and applications for autonomous robot architectures",
+      "author" : [ "G Schöner" ],
+      "venue" : "Robotics Auton. Syst",
+      "citeRegEx" : "Schöner,? \\Q1995\\E",
+      "shortCiteRegEx" : "Schöner",
+      "year" : 1995
+    }, {
+      "title" : "Learning to perceive the world as articulated: an approach for hierarchical learning in sensory–motor systems",
+      "author" : [ "J. Tani", "S. Nolfi" ],
+      "venue" : "Neural Netw",
+      "citeRegEx" : "Tani and Nolfi,? \\Q1999\\E",
+      "shortCiteRegEx" : "Tani and Nolfi",
+      "year" : 1999
+    }, {
+      "title" : "Toward the evolution of dynamical neural networks for minimally cognitive behavior",
+      "author" : [ "R.D. Beer" ],
+      "venue" : "In From Animals to Animats 4: Proc. 4th Int. Conf. on Simulation of Adaptive Behavior (Maes, P. et al., eds),",
+      "citeRegEx" : "Beer,? \\Q1996\\E",
+      "shortCiteRegEx" : "Beer",
+      "year" : 1996
+    }, {
+      "title" : "Artificial life and higher level cognition",
+      "author" : [ "D. Parisi" ],
+      "venue" : "Brain Cognit",
+      "citeRegEx" : "Parisi,? \\Q1997\\E",
+      "shortCiteRegEx" : "Parisi",
+      "year" : 1997
+    }, {
+      "title" : "Evolution and analysis of dynamical neural networks for agents integrating vision, locomotion and shortterm memory",
+      "author" : [ "J.C. Gallagher", "R.D. Beer" ],
+      "venue" : "In Proc. Gen. Evol. Comput. Conf. (Banzhaf, W. et al., eds),",
+      "citeRegEx" : "Gallagher and Beer,? \\Q1999\\E",
+      "shortCiteRegEx" : "Gallagher and Beer",
+      "year" : 1999
+    }, {
+      "title" : "Circle in the round: state space attractors for evolved sighted robots",
+      "author" : [ "P Husbands" ],
+      "venue" : "Robotics Auton. Syst",
+      "citeRegEx" : "Husbands,? \\Q1995\\E",
+      "shortCiteRegEx" : "Husbands",
+      "year" : 1995
+    }, {
+      "title" : "The dynamics of adaptive behavior: a research program",
+      "author" : [ "R.D. Beer" ],
+      "venue" : "Robotics Auton. Syst",
+      "citeRegEx" : "Beer,? \\Q1997\\E",
+      "shortCiteRegEx" : "Beer",
+      "year" : 1997
+    }, {
+      "title" : "On the dynamics of small continuous-time recurrent neural networks",
+      "author" : [ "R.D. Beer" ],
+      "venue" : "Adapt. Behav",
+      "citeRegEx" : "Beer,? \\Q1995\\E",
+      "shortCiteRegEx" : "Beer",
+      "year" : 1995
+    }, {
+      "title" : "An Introduction to Genetic Algorithms, MIT",
+      "author" : [ "M. Mitchell" ],
+      "venue" : null,
+      "citeRegEx" : "Mitchell,? \\Q1996\\E",
+      "shortCiteRegEx" : "Mitchell",
+      "year" : 1996
+    }, {
+      "title" : "A critique of pure vision. In Large-Scale Neuronal Theories of the Brain (Koch",
+      "author" : [ "Churchland", "P.S" ],
+      "venue" : null,
+      "citeRegEx" : "Churchland and P.S,? \\Q1994\\E",
+      "shortCiteRegEx" : "Churchland and P.S",
+      "year" : 1994
+    }, {
+      "title" : "Motor theory of speech perception",
+      "author" : [ "M Studdert-Kennedy" ],
+      "venue" : null,
+      "citeRegEx" : "Studdert.Kennedy,? \\Q1970\\E",
+      "shortCiteRegEx" : "Studdert.Kennedy",
+      "year" : 1970
+    }, {
+      "title" : "Why dynamical implementation matters",
+      "author" : [ "J.W. Garson" ],
+      "venue" : "Behav. Brain Sci",
+      "citeRegEx" : "Garson,? \\Q1998\\E",
+      "shortCiteRegEx" : "Garson",
+      "year" : 1998
+    }, {
+      "title" : "Universal computation and other capabilities of hybrid and continuous dynamical systems",
+      "author" : [ "M.S. Branicky" ],
+      "venue" : "Theor. Comput. Sci",
+      "citeRegEx" : "Branicky,? \\Q1995\\E",
+      "shortCiteRegEx" : "Branicky",
+      "year" : 1995
+    }, {
+      "title" : "Framing the debate between computational and dynamical approaches to cognitive science",
+      "author" : [ "R.D. Beer" ],
+      "venue" : "Behav. Brain Sci",
+      "citeRegEx" : "Beer,? \\Q1998\\E",
+      "shortCiteRegEx" : "Beer",
+      "year" : 1998
+    }, {
+      "title" : "The dynamical challenge",
+      "author" : [ "A. Clark" ],
+      "venue" : "Cognit. Sci",
+      "citeRegEx" : "Clark,? \\Q1997\\E",
+      "shortCiteRegEx" : "Clark",
+      "year" : 1997
+    }, {
+      "title" : "Theories of structure versus theories of change",
+      "author" : [ "M. Mitchell" ],
+      "venue" : "Behav. Brain Sci",
+      "citeRegEx" : "Mitchell,? \\Q1998\\E",
+      "shortCiteRegEx" : "Mitchell",
+      "year" : 1998
+    }, {
+      "title" : "Genic representation: reconciling content and causal complexity",
+      "author" : [ "M. Wheeler", "A. Clark" ],
+      "venue" : "Br. J. Philos. Sci",
+      "citeRegEx" : "Wheeler and Clark,? \\Q1999\\E",
+      "shortCiteRegEx" : "Wheeler and Clark",
+      "year" : 1999
+    }, {
+      "title" : "Towards a cognitive robotics",
+      "author" : [ "A. Clark", "R. Grush" ],
+      "venue" : "Adapt. Behav",
+      "citeRegEx" : "Clark and Grush,? \\Q1999\\E",
+      "shortCiteRegEx" : "Clark and Grush",
+      "year" : 1999
+    }, {
+      "title" : "Computational and dynamical languages for autonomous agents",
+      "author" : [ "R.D. Beer" ],
+      "venue" : "In Mind as Motion (Port,",
+      "citeRegEx" : "Beer,? \\Q1995\\E",
+      "shortCiteRegEx" : "Beer",
+      "year" : 1995
+    }, {
+      "title" : "Understanding Computers and Cognition, Ablex",
+      "author" : [ "T. Winograd", "F. Flores" ],
+      "venue" : null,
+      "citeRegEx" : "Winograd and Flores,? \\Q1986\\E",
+      "shortCiteRegEx" : "Winograd and Flores",
+      "year" : 1986
+    }, {
+      "title" : "The Embodied Mind, MIT",
+      "author" : [ "Varela", "F.J" ],
+      "venue" : null,
+      "citeRegEx" : "Varela and F.J,? \\Q1991\\E",
+      "shortCiteRegEx" : "Varela and F.J",
+      "year" : 1991
+    }, {
+      "title" : "A robust layered control system for a mobile robot",
+      "author" : [ "R.A. Brooks" ],
+      "venue" : "IEEE J. Robotics Autom",
+      "citeRegEx" : "Brooks,? \\Q1986\\E",
+      "shortCiteRegEx" : "Brooks",
+      "year" : 1986
+    }, {
+      "title" : "Pengi: an implementation of a theory of activity",
+      "author" : [ "P. Agre", "D. Chapman" ],
+      "venue" : "In Proc. AAAI-87,",
+      "citeRegEx" : "Agre and Chapman,? \\Q1987\\E",
+      "shortCiteRegEx" : "Agre and Chapman",
+      "year" : 1987
+    }, {
+      "title" : "Action and planning in embedded agents",
+      "author" : [ "L.P. Kaelbling", "S.J. Rosenschein" ],
+      "venue" : "Robotics Auton. Syst",
+      "citeRegEx" : "Kaelbling and Rosenschein,? \\Q1990\\E",
+      "shortCiteRegEx" : "Kaelbling and Rosenschein",
+      "year" : 1990
+    } ],
+    "referenceMentions" : [ {
+      "referenceID" : 26,
+      "context" : "(1994) Nonlinear Dynamics and Chaos, Addison–Wesley c Beer, R.D (1995) On the dynamics of small continuous-time recurrent",
+      "startOffset" : 54,
+      "endOffset" : 71
+    }, {
+      "referenceID" : 3,
+      "context" : "8 van Gelder, T. (1995) What might cognition be, if not computation?",
+      "startOffset" : 6,
+      "endOffset" : 24
+    }, {
+      "referenceID" : 26,
+      "context" : "(1995) Dynamic Patterns, MIT Press 10 Beer, R.D. (1995) A dynamical systems perspective on agent–environment",
+      "startOffset" : 38,
+      "endOffset" : 56
+    }, {
+      "referenceID" : 3,
+      "context" : "and van Gelder, T., eds (1995) Mind as Motion, MIT Press 12 van Gelder, T.",
+      "startOffset" : 8,
+      "endOffset" : 31
+    }, {
+      "referenceID" : 3,
+      "context" : "and van Gelder, T., eds (1995) Mind as Motion, MIT Press 12 van Gelder, T. (1998) The dynamical hypothesis in cognitive science.",
+      "startOffset" : 8,
+      "endOffset" : 82
+    }, {
+      "referenceID" : 7,
+      "context" : "175–193, MIT Press 17 Pollack, J.B. (1991) The induction of dynamical recognizers.",
+      "startOffset" : 22,
+      "endOffset" : 43
+    }, {
+      "referenceID" : 8,
+      "context" : "19 Petitot, J. (1995) Morphodynamics and attractor syntax: constituency",
+      "startOffset" : 3,
+      "endOffset" : 22
+    }, {
+      "referenceID" : 9,
+      "context" : "21 Elman, J.L. (1990) Finding structure in time. Cognit. Sci. 14, 179–211 22 Elman, J.L. (1991) Distributed representations, simple recurrent networks,",
+      "startOffset" : 3,
+      "endOffset" : 96
+    }, {
+      "referenceID" : 9,
+      "context" : "and Elman, J.L. (1992) A PDP approach to processing center-",
+      "startOffset" : 4,
+      "endOffset" : 23
+    }, {
+      "referenceID" : 13,
+      "context" : "24 Rodriguez, P. et al. (1999) A recurrent neural network that learns to",
+      "startOffset" : 3,
+      "endOffset" : 31
+    }, {
+      "referenceID" : 17,
+      "context" : "28 Bizzi, E. et al. (1991) Computations underlying the execution of",
+      "startOffset" : 3,
+      "endOffset" : 27
+    }, {
+      "referenceID" : 18,
+      "context" : "29 Warren, W.H.J. (1995) Self motion: visual perception and visual control.",
+      "startOffset" : 3,
+      "endOffset" : 25
+    }, {
+      "referenceID" : 20,
+      "context" : "33 Schöner, G. et al. (1997) The dynamic neural field theory of motor",
+      "startOffset" : 3,
+      "endOffset" : 29
+    }, {
+      "referenceID" : 26,
+      "context" : "34 Beer, R.D. and Gallagher, J.C. (1992) Evolving dynamical neural networks",
+      "startOffset" : 3,
+      "endOffset" : 41
+    }, {
+      "referenceID" : 22,
+      "context" : "35 Smithers, T. (1992) Taking eliminative materialism seriously: a",
+      "startOffset" : 3,
+      "endOffset" : 23
+    }, {
+      "referenceID" : 23,
+      "context" : "36 Cliff, D. et al. (1993) Explorations in evolutionary robotics.",
+      "startOffset" : 3,
+      "endOffset" : 27
+    }, {
+      "referenceID" : 20,
+      "context" : "37 Schöner, G. et al. (1995) Dynamics of behavior: theory and applications",
+      "startOffset" : 3,
+      "endOffset" : 29
+    }, {
+      "referenceID" : 26,
+      "context" : "39 Beer, R.D. (1996) Toward the evolution of dynamical neural networks",
+      "startOffset" : 3,
+      "endOffset" : 21
+    }, {
+      "referenceID" : 27,
+      "context" : "40 Parisi, D. (1997) Artificial life and higher level cognition.",
+      "startOffset" : 3,
+      "endOffset" : 21
+    }, {
+      "referenceID" : 26,
+      "context" : "and Beer, R.D. (1999) Evolution and analysis of dynamical",
+      "startOffset" : 4,
+      "endOffset" : 22
+    }, {
+      "referenceID" : 29,
+      "context" : "42 Husbands, P. et al. (1995) Circle in the round: state space attractors for",
+      "startOffset" : 3,
+      "endOffset" : 30
+    }, {
+      "referenceID" : 26,
+      "context" : "43 Beer, R.D. (1997) The dynamics of adaptive behavior: a research program.",
+      "startOffset" : 3,
+      "endOffset" : 21
+    }, {
+      "referenceID" : 26,
+      "context" : "44 Beer, R.D. (1995) On the dynamics of small continuous-time recurrent",
+      "startOffset" : 3,
+      "endOffset" : 21
+    }, {
+      "referenceID" : 32,
+      "context" : "45 Mitchell, M. (1996) An Introduction to Genetic Algorithms, MIT Press",
+      "startOffset" : 3,
+      "endOffset" : 23
+    }, {
+      "referenceID" : 34,
+      "context" : "48 Studdert-Kennedy, M. et al. (1970) Motor theory of speech perception: Review B e e r – D y n a m i c a l a p r o a c h e s t o c o g n i t i v e s c i e n c e",
+      "startOffset" : 3,
+      "endOffset" : 38
+    }, {
+      "referenceID" : 35,
+      "context" : "49 Garson, J.W. (1998) Why dynamical implementation matters.",
+      "startOffset" : 3,
+      "endOffset" : 23
+    }, {
+      "referenceID" : 36,
+      "context" : "51 Branicky, M.S. (1995) Universal computation and other capabilities of",
+      "startOffset" : 3,
+      "endOffset" : 25
+    }, {
+      "referenceID" : 26,
+      "context" : "53 Beer, R.D. (1998) Framing the debate between computational and",
+      "startOffset" : 3,
+      "endOffset" : 21
+    }, {
+      "referenceID" : 32,
+      "context" : "21, 461–481 55 Mitchell, M. (1998) Theories of structure versus theories of change.",
+      "startOffset" : 15,
+      "endOffset" : 35
+    }, {
+      "referenceID" : 38,
+      "context" : "and Clark, A. (1999) Genic representation: reconciling",
+      "startOffset" : 4,
+      "endOffset" : 21
+    }, {
+      "referenceID" : 26,
+      "context" : "7, 5–16 58 Beer, R.D. (1995) Computational and dynamical languages for",
+      "startOffset" : 11,
+      "endOffset" : 29
+    }, {
+      "referenceID" : 38,
+      "context" : "(1995) Cognition in the Wild, MIT Press 63 Clark, A. (1997) Being There, MIT Press 64 Brooks, R.",
+      "startOffset" : 43,
+      "endOffset" : 60
+    }, {
+      "referenceID" : 38,
+      "context" : "(1995) Cognition in the Wild, MIT Press 63 Clark, A. (1997) Being There, MIT Press 64 Brooks, R.A. (1986) A robust layered control system for a mobile robot.",
+      "startOffset" : 43,
+      "endOffset" : 106
+    }, {
+      "referenceID" : 26,
+      "context" : "67 Beer, R.D. (1990) Intelligence as Adaptive Behavior, Academic Press 68 Clancey, W.",
+      "startOffset" : 3,
+      "endOffset" : 21
+    }, {
+      "referenceID" : 26,
+      "context" : "67 Beer, R.D. (1990) Intelligence as Adaptive Behavior, Academic Press 68 Clancey, W.J. (1997) Situated Cognition, Cambridge University Press B e e r – D y n a m i c a l a p r o a c h e s t o c o g n i t i v e s c i e n c e",
+      "startOffset" : 3,
+      "endOffset" : 95
+    } ],
+    "year" : 2000,
+    "abstractText" : "cognition can have profound empirical consequences on the practice of cognitive science. It influences the phenomena we choose to study, the questions we ask about these phenomena, the experiments we perform, and the ways in which we interpret the results of these experiments. Until relatively recently, there was ‘only one game in town’1 – the computational hypothesis that underlying cognition is the purely formal manipulation of quasi-linguistic symbolic representations by syntactic rules1–3. However, in the mid-1980s, the theoretical imagination of cognitive science was significantly expanded by the proliferation of connectionist models4–6. More recently, there has been a growing interest in dynamical approaches to cognitive science7–12. Drawing upon the mathematical tools of dynamical systems theory (see Box 1), a dynamical analysis of a cognitive process seeks to understand the unfolding of that process over time and the multiple internal and external influences whose interplay shapes this unfolding. In this article, I will briefly review three rather different examples of this dynamical approach to cognition. I will then compare and contrast this approach with the more traditional symbolic and connectionist approaches, and briefly discuss some of the contributions that dynamical ideas are making to ongoing debates about the foundations of cognitive science.",
+    "creator" : "QuarkXPressª 4.04: LaserWriter 8 B1-8.6.5"
+  }
+}

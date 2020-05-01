@@ -1,0 +1,9 @@
+15:53:02.312 [main] DEBUG com.amazonaws.AmazonWebServiceClient - Internal logging successfully configured to commons logger: true
+15:53:02.361 [main] DEBUG com.amazonaws.metrics.AwsSdkMetrics - Admin mbean registered under com.amazonaws.management:type=AwsSdkMetrics
+15:53:02.418 [main] DEBUG c.a.internal.config.InternalConfig - Configuration override awssdk_config_override.json not found.
+15:53:02.780 [ModelLoaderThread] INFO  org.allenai.scienceparse.Parser - Loading model from /home/krz-glowka/.ai2/datastore/public/org.allenai.scienceparse/productionModel-v9.dat
+15:53:02.780 [scala-execution-context-global-11] INFO  org.allenai.scienceparse.Parser - Loading gazetteer from /home/krz-glowka/.ai2/datastore/public/org.allenai.scienceparse/gazetteer-v5.json
+15:53:02.782 [scala-execution-context-global-11] INFO  org.allenai.scienceparse.Parser - Loading bib model from /home/krz-glowka/.ai2/datastore/public/org.allenai.scienceparse/productionBibModel-v7.dat
+15:53:02.785 [scala-execution-context-global-11] INFO  org.allenai.scienceparse.Parser - Creating gazetteer cache at /tmp/gazetteer-v5.json-2ffa5049.gazetteerCache.bin
+15:53:14.390 [scala-execution-context-global-11] INFO  o.a.scienceparse.ParserGroundTruth - Read 1609659 papers.
+15:54:25.166 [ModelLoaderThread] INFO  org.allenai.scienceparse.Parser - Loaded model from /home/krz-glowka/.ai2/datastore/public/org.allenai.scienceparse/productionModel-v9.dat

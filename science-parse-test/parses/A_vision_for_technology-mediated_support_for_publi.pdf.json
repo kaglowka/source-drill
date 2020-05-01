@@ -1,0 +1,578 @@
+{
+  "name" : "A_vision_for_technology-mediated_support_for_publi.pdf",
+  "metadata" : {
+    "source" : "CRF",
+    "title" : "A Vision for Technology-Mediated Support for Public Participation & Assistance in Mass Emergencies & Disasters",
+    "authors" : [ "Leysia Palen", "Kenneth M. Anderson", "Douglas Sicker", "Martha Palmer", "Dirk Grunwald" ],
+    "emails" : [ "palen@cs.colorado.edu", "kena@cs.colorado.edu", "martin@cs.colorado.edu", "sicker@cs.colorado.edu", "palmer@cs.colorado.edu", "grunwald@cs.colorado.edu", "gmark@ics.uci.edu" ],
+    "sections" : [ {
+      "heading" : null,
+      "text" : "See discussions, stats, and author profiles for this publication at: https://www.researchgate.net/publication/228626938\nA vision for technology-mediated support for public participation & rescue in\nmass emergencies & disasters\nArticle · April 2010\nCITATIONS 103 READS 268\n7 authors, including:\nSome of the authors of this publication are also working on these related projects:\nInvestigation of Actual Requirements Engineering Practice View project\nNLP Annotation Methods for EarthScience Texts (Clearearth) View project\nLeysia Palen University of Colorado Boulder\n110 PUBLICATIONS   9,759 CITATIONS   \nSEE PROFILE\nKenneth M. Anderson University of Colorado Boulder\n126 PUBLICATIONS   3,002 CITATIONS   \nSEE PROFILE\nGloria Mark University of California, Irvine\n191 PUBLICATIONS   4,926 CITATIONS   \nSEE PROFILE\nJames H. Martin University of Colorado Boulder\n100 PUBLICATIONS   7,431 CITATIONS   \nSEE PROFILE\nAll content following this page was uploaded by Dirk Grunwald on 19 May 2014.\nThe user has requested enhancement of the downloaded file.\n© The Authors. Published by the British Informatics Society Ltd. Proceedings of ACM-BCS Visions of Computer Science 2010\n1\nA Vision for Technology-Mediated Support for Public Participation & Assistance in\nMass Emergencies & Disasters\nLeysia Palen † , Kenneth M. Anderson † , Gloria Mark ‡ , James Martin † , Douglas Sicker † , Martha Palmer † , Dirk Grunwald †\n† University of Colorado, Boulder\n‡ University of California, Irvine\nDepartment of Computer Science Department of Informatics 430 UCB Donald Bren Hall 5042 Boulder CO 80309-0430 Irvine, CA 92697-3440 {palen,kena,martin,sicker,palmer,grunwald}@cs.colorado.edu gmark@ics.uci.edu\nWe present a vision of the future of emergency management that better supports inclusion of activities and information from members of the public during disasters and mass emergency events. Such a vision relies on integration of multiple subfields of computer science, and a commitment to an understanding of the domain of application. It supports the hopes of a grid/cyberinfrastructure-enabled future that makes use of social software. However, in contrast to how emergency management is often understood, it aims to push beyond the idea of monitoring on-line activity, and instead focuses on an understudied but critical aspect of mass emergency response—the needs and roles of members of the public. By viewing the citizenry as a powerful, self-organizing, and collectively intelligent force, information and communication technology can play a transformational role in crisis. Critical topics for research and development include an understanding of the quantity and quality of information (and its continuous change) produced through computer-mediated communication during emergencies; mechanisms for ensuring trustworthiness and security of information; mechanisms for aligning informal and formal sources of information; and new applications of information extraction techniques.\nCrisis Informatics, Disasters, Emergency Management, Natural Hazards, Social-Technical Systems, Social Computing, Technology-Mediated Social Participation, Visions of Computer Science"
+    }, {
+      "heading" : "1. INTRODUCTION: A NEW VIEW OF DISASTER TECHNOLOGY",
+      "text" : "In an increasingly global society and on a planet experiencing effects of climatic change, large-scale emergencies both instigated by humans and arising from nature can devastate human life and our tightlywoven social fabric. With a promise of improved warning and coordination, a prevailing hope is that information and communication technology (ICT) can help reduce the impacts of large-scale disruptions, including political crises, natural disasters, pandemics, and terrorist threats. It is reassuring to know that interest in disaster technology development is growing and that the needs of first responders and emergency management agencies are receiving this attention (see for example, Landgren, 2006).\nHowever, we argue that an opportunity to push computer science research in new directions is before us. We hope to grow a program and vision of research that focuses instead on an understudied but critical aspect of large-scale emergency response—the needs and roles of members of the public. 1 By viewing the citizenry as a powerful, self-organizing, and collectively intelligent force, ICT has the potential to play a remarkable and transformational role in the way society responds to mass emergencies and disaster. Furthermore, this view of a civil society that can be augmented by ICT is based on social and behavioral knowledge about how people truly respond in disaster, rather than on simplified and mythical portrayals of\n1 We use ―citizens‖ and ―members of the public‖ interchangeably to support readability, though the latter is the most accurate term. When readability allows, we privilege ―members of the public‖ in acknowledgement that not all people who are affected by emergencies and other disruptions are accorded national citizenship. In fact, vulnerable populations, which include non-citizens, are disproportionately affected by such situations. Tourists and visitors to foreign countries are also affected by disruptions, and usually have fewer resources for reacting to events than residents.\n2\npeople unable to help themselves (Fischer, 1998). Research has shown that disaster victims themselves are the true ―first responders,‖ frequently acting on the basis of knowledge not available to officials (Stallings & Quarantelli, 1985; Aguirre et al., 1995; Kendra & Wachtendorf, 2006). We argue that this transformative view is critical to our global future: When large-scale emergencies happen, there is often no way to survive it in practical terms unless we rely on each other for help. The urgency and scale of many disaster events are such that no one— not even the most experienced and best technologyequipped responders—can rescue all victims or direct all people over the span of the event as to what the best course of action might be. Climatic change and population migration to geographically vulnerable areas mean that naturally occurring hazards will exert increasingly extensive damage. Man-made and terrorist threats can also have greater potential to cause lasting damage to the social and built environment. The practical answers to responding to these scaling needs cannot only be to hire increasingly more first responders. It is instead necessary, through innovative ICT, to leverage the power of the collective intelligence of the citizenry to support natural instincts, which are to search for reliable information using any means possible to optimize for local conditions (Sorenson & Sorenson, 2006). To this end, we propose a vision of research that makes use of and enhances information supplied by members of the public and official sources, and supports members of the public to become better ―everyday analysts‖ with application services that support their immediate needs in times of disaster and mass emergency. This view challenges fundamental assumptions about how information should be controlled and disseminated to ensure public safety. That officials can and should provide the best information during emergencies, and that the public can and should primarily rely on official information appears to be a difficult-to-resist, nearuniversal human hope. However, it is critical that we adopt a view of broad public participation in emergency response as soon as possible. Technology is already expanding peer-to-peer information-seeking behavior through computermediated communication (CMC) in remarkable ways through community websites, email, broadcast texting, and other media. Through ICT, people are ―going local‖ to tap the knowledge of their fellow residents to make critical decisions. In research during the 2007 Southern California fires (Sutton, Palen, Shklovski, 2008; Shklovski, Palen, Sutton, 2008), unofficial, ICT-enabled ―backchannel‖ communications activity supported selfhelp as described by research participants:\n―The only way we all have to get good information here is for those who have it to share it. We relied on\nothers to give us updates when they had info and we do the same for others.‖\n―What we learned…is that there is no ‗they.‘ ‗They‘ won‘t tell us if there is danger, ‗they‘ aren‘t coming to help, and ‗they‘ won‘t correct bad information. We regular folks have to do that amongst ourselves.‖\nIn this event, there was simply too much rapidly changing activity over an expansive area for officials and the news media to capably support the vast and highly localized information needs of the public.\nNew Vision, New Objective\nThis vision for a new future in emergency response is being realized in part by research our team is conducting in an effort we call Project EPIC: Empowering the Public with Information in Crisis (Project EPIC, 2009), funded at the level of US$2.8M by the US National Science Foundation. Our hope is that this research project contributes solutions for short-term needs as well as a long-term vision in the emergency space through applied and basic research. The objective for such a vision is that people find and share the information they need to make the best, most informed decisions possible during situations of emergency and high disruption—in other words, to support and enhance the analytical skills of members of the public. In our own work, we aim to do this through leveraging the knowledge of members of the public, and through reframing emergency response as a socially-distributed information system. This work will support people across a range of geographies (Powell, 1954), by which we broadly mean those who are inside the crisis zone as well as those on the outside who are compelled to help not only through supplying physical labor, goods and psychological support, but also by playing critical roles in information dissemination. Through reuse of computer-mediated communications that are publicly available (such as those on community websites, personal blogs, public texting systems like Twitter, social networking sites, mapping sites, etc.), we aim to derive applications and services for use by the public that integrate those original communications with information that helps citizens assess context, validity, source, credibility, and timeliness to make the best decisions for their highly localized, changing conditions. Such a vision of research, then, is guided by this question: How can publicly-available, grassroots, peergenerated information be deemed to be trustworthy, secure and accurate, so that it can be leveraged and aligned with official information sources for optimal, local decision-making by members of the public? The answer to this question requires programmatic vision to gain significant ground as soon as possible, but it will nevertheless remain a core and even guiding challenge for our future‘s big computing challenges that\n3\nwe must face today. This research-based, empiricallysupported integration, extraction and presentation of information to directly support members of the public during crisis is based on a significant shift in perspective of emergency management as a sociallydistributed information system. Imagine this scenario of public activity and local decision-making in the not-toodistant future:\nIt is Fall 2014 in Southern California. Temperatures are high and small fires have ignited in dry areas. With Santa Ana winds picking up speed and fuel for the fire—dried vegetation—at its densest in years, emergency officials are worried that the fires will expand and affect communities that have encroached further and further into the ―wildlandurban interface.‖ Residents have been notified of the fires through weather and environmental alerting directly to their smart phones. Some evacuations have begun, and residents in other more distant areas remain on alert.\nUpon receiving the evacuation and alert notifications, people start taking action. Most residents under evacuation prepare to leave quickly, and use smart phone applications to get information about evacuation routes and traffic conditions. In addition, they post about their plans to leave; where they plan to go; as well as requests for help that they might need once they evacuate, including places to stay, medical assistance for pre-existing health concerns, and help with children and pets. This information gets propagated to friends, family and neighbors, as well as officials who can then make better plans about who might still need evacuation assistance. Neighbors, all concerned about their communities, make plans to stay in close digital coordination to pool information they are able to gather about what is happening in their area.\nOthers in more distant areas are also engaged in intensified information search in case they need to evacuate quickly. They go online to get specific information about the fires from a wide range of peer sources who know well the particular areas under threat. After all, some areas are still rural, and require local knowledge to convey precise information about what is happening and what neighbors down the road are doing. Rather than attempt to assemble this online information by hand and check it against heavily taxed official websites with possibly aged information as in the past, they now have access to a suite of synthesized, easy-touse web applications tailored to crisis situations that integrate up-to-the minute information from multiple sources. No longer must they worry about not knowing what new technology is available and missing critical information that resides in those new forums. Instead, they can readily find the most relevant online destinations and information streams with supplemental meta-information about how trustworthy, timely and relevant the information is to their particular circumstances."
+    }, {
+      "heading" : "Multidisciplinary Orientation",
+      "text" : "Realizing this vision of transparent, trustworthy information access, integration and delivery requires multidisciplinary research specialized in the area of emergency and crisis conditions. Empirical research with analysis that directly inputs into information extraction and data mining techniques will make the solutions ―ecologically valid‖ and practical. Solutions in this social space are different than they are for other domains running under so-called ―normal‖ conditions. A program of research in this area poses a set of research questions that integrates empirical research and innovation, and that (at least) includes expertise in software engineering, information science, humancomputer interaction, information extraction, natural language processing, network security, telecom policy, and emergency management.\n2. CRISIS INFORMATICS: PERSPECTIVE, RATIONALE & SUPPORTING RESEARCH\nWe place this research vision into a broader frame of investigative engagement known as crisis informatics (Hagar & Haythornthwaite, 2005; Palen, et al. 2009). Our view is that crisis informatics addresses sociotechnical concerns in large-scale emergency response. Additionally it expands consideration to include not only official responders (who tend to be the focus in policy and technology-focused matters), but also members of the public. It therefore views emergency response as a social system where information is disseminated within and between official and public channels and entities. Crisis informatics wrestles with methodological concerns as it strives to develop new theory and support informed development of ICT and policy (Palen, 2009). The simplified schematic in Figure 1 illustrates our conceptualization of changes occurring within the information arena of disaster, and the pressures these changes place upon the ―interface‖ between the formal and informal response. The white arrow (A) denotes conventional management of public information as unidirectional from the formal to the informal spheres. This assumption of unilateral communication—though never accurate in practice—is the basis for US local and federal policy decisions, and is similar to other nations‘ emergency management arrangements. The dark gray arrow (B) illustrates that existing peer processes of information creation and dispersion is now expedited and proliferating because of pervasive ICT. This, in turn, has two consequences of concern denoted by the black arrows: these changing peer communications now spawn tactical data and human or crowd convergence information that is often of interest to the official response (C) both to leverage and control.\n4\nThe new issue depicted by arrow C deals with the matter of where this new information is received in the organization of emergency response: Are these data that result from communications something that the ―public information‖ function attends to, or does the ―intelligence‖ arm of command field them? That we can ask this question speaks to the new tensions that are arising in the institution of emergency management, and is requiring it to reconsider how information is shared and received. This argument of ―changing information pathways‖ is one we have made in previous papers (e.g., Palen & Liu, 2007) and have presented to practitioner audiences. This issue is actively being reviewed by government agencies in the US and groups, including the US Federal Emergency Management Agency, where the new presidential administrative appointee, Craig Fugate, is now calling for increased support of such change (O‘Keefe, 2009)."
+    }, {
+      "heading" : "Research on Citizen Activity",
+      "text" : "The rationale for such a vision of computing research is based on knowledge of existing social behavior in crisis events (Dynes, 1970; Mileti, Drabek & Haas, 1975; Drabek, 1986; Tierney, Lindell & Perry, 2001). High involvement by members of the public in disaster is not new, though ICT makes their role more visible and broadens the scope of their participation. ―First responders‖ are not, in practice, the trained professionals who are deployed to a scene in spite of\nthe common use of that term for them; they are instead people from the local and surrounding communities (Dynes, 1970) who provide first aid, transport victims to hospitals in their own cars, and begin search and rescue (Fischer, 1998; Tierney, Lindell & Perry, 2001). Indeed, in cases of structural collapse, the majority of those saved are by local emergent volunteer groups (Aguirre, 1993). Individuals and local groups come together as emergent temporary organizations that improvise rescue and relief efforts (Mendonça & Wallace, 2004; Wachtendorf & Kendra, 2005). For example, following 9/11, ferry captains and others selforganized to systematically evacuate people from Manhattan Island (Kendra & Wachtendorf, 2003). Members of the public in the immediate and surrounding area of a disaster provide relief in the form of shelter, clothing, blankets and food (Tierney, Lindell & Perry, 2001). Victims of disasters—to the extent they are able—are themselves often among the volunteers. It is also the local community that manages and shapes long-term recovery once the immediate response effort is complete. The public is central to disaster response. In addition, people are natural information seekers, and will seek information from multiple sources, relying primarily on their own social networks—friends and family—to validate and interpret information coming from formal sources, and then to calculate their own response measures, such as when they will leave and\n5\nunder what conditions. Several studies (e.g., Drabek et al., 1975) found that people will collectively decide with their extended family, friends and neighbors their evacuation behavior based on their interpretation of warning content, its mode of communication, and its source.\nICT & Public Participation in Disaster Response\nICT is rapidly expanding this existing self-organizing, improvisational, information-seeking, and innovation behavior by members of the public. Importantly, ICTenabled public self-organization around the decomposition of problems that present themselves in disaster response provides the means for highly parallel and distributed problem solving. The ramp up to this point has been steep. Following the September 11, 2001 World Trade Center and Pentagon attacks during the disaster phase period that is characterized by intensive information search, people turned to the Web (Schneider & Foot, 2002), a time when blogs were not yet popularized. During this same time period, Hagar and Haythornwaite examined how farmers used computational media to find information and support one another during the lengthy 2001 UK farming crisis (2005; 2009). Indications of significant socio-technical change in public participation behaviors as mobile phones, personal blogging, and on-line photo repositories like Flickr became available (Liu et al., 2008) were notably apparent in the December 2004 Indian Ocean tsunami. In the 2005 London terrorist attack, camera phone users on subway trains offered officials, the media, and the public, first-hand assessments of the impact of the bombings (though this transmission of information was not necessarily real-time). Numerous public-initiated information sources and new forms of personal ICT use sprang up in the aftermath of Hurricane Katrina, including some of the earliest housing aggregator and giving sites, people-finding activity, and map-based mashups (Palen & Liu, 2007; Torrey et al., 2007; Shklovski, Palen, Sutton, 2008). The tragic Virginia Tech shootings in April 2007 saw the emergence of social networking sites as destinations for collective disaster-related sensemaking, as students and others collected information on details of the shootings and reported on their own safety (Vieweg et al. 2008). The resulting interactions became the basis for the emergence of collective intelligence (Hiltz & Turoff, 1993; Palen, Hiltz, Liu, 2007) or socially distributed cognition activity (Hutchins, 1995) that ―discovered,‖ in parallel and with redundancy and accuracy, the names of the 32 fatalities in advance of official releases of that information (Palen, et al., 2009). With the August 2007 Minneapolis Bridge collapse came new public attention placed on the possibilities of micro-blog messaging activity (Twitter) among members of the public, and increasingly, among traditional news media.\nSimilar activities over a more protracted time period during the 2007 Southern California wildfires showed the centrality of ICT-enabled community information resources and other ―backchannel‖ communications (Sutton, Palen, Shklovski, 2008; Shklovski, Palen, Sutton, 2008). The use of social networking sites in the aftermath of the shootings at Northern Illinois University in February 2008 once again demonstrated how people engage in widescale interaction as they did during the Virginia Tech event, though with more apparent caution because of the awareness students had about being on the public, digital stage (Palen & Vieweg, 2008). After the May 12, 2008 Sichuan earthquake in China, a popular internet forum became a location for integrating information from multiple sources, organizing public action and expressing grief and anger (Qu et al., 2009). During the Red River Floods in the US and Canada, and the Oklahoma grassfires (US), extensive research of twitter records examined the relationship between geographical location and the generation of new information to the discussion space (Starbird et al., 2010; Vieweg et al., 2010; Starbird & Palen, 2010). Analysis of the ―neogeographers‖ who emerge during crisis events to create crisis map mashups reveals the relationship between design decisions and mashup evolution (Liu & Palen, 2010). Development work to build upon ICT-supported public activity is gaining ground. Work in the area of humanitarian crisis, specifically the Kenyan postelection violence in January 2008, was the basis for the creation of a ―crowd sourcing‖ environment, ―Ushahidi,‖ where people could warn others and report violence. Initial findings on an analysis of the use of that system show that citizen journalism had a greater geographical reach than traditional sources but that use fell off quickly in this early instantiation of the kinds of behaviors we might envision as more common for the future (Meier & Brodock, 2008). Work at the University of Maryland on ―community response grids‖ seeks to similarly leverage public participation in emergency response (Wu et al, 2008b; Shneiderman & Preece, 2007), and also included empirical examination of the adoption of college campus SMS early warning systems by students, which still remains lower than hoped (Wu et al., 2008a). In the area of public health, disease trajectories are being tracked and anticipated through Internet search. Multiple efforts, including Google Flutrends, track flu outbreaks by analyzing and geolocating relevant query terms (e.g., ―aches‖). The US Geological Association (USGS) uses citizen geo-reports to measure the intensity of earthquakes on ―Did You Feel It‖ (http://earthquake.usgs.gov/eqcenter/dyfi/). The USGS has also deployed software using common accelerometer-based laptops to detect earthquakes, and is now mining twitter for earthquake detection. This again suggests a future vision of computer-augmented\n6\nusers as participatory data collectors. Finally, examination of personal ICT use by Israeli and Iraqi citizens suggests that it can help people repair broken daily routines and substitute for face-to-face social interaction that is severed during ongoing, indefinite wartime disruption (Mark & Semaan, 2008). Blogs, Internet forums, and email distribution lists enabled them to communicate with people across the globe residing in undisrupted environments, which helped restore a sense of normalcy to their lives (Mark et al., 2009; Al-Ani, Mark, Semaan, 2010). Finally, the Information Systems for Crisis Management and Response organization and conference is a forum where new issues in ICT and crisis are being explored (ISCRAM, 2009)."
+    }, {
+      "heading" : "3. A RESEARCH PROGRAM",
+      "text" : "We envision a future where members of the public can get information about an emergency that is specialized to their needs—as well as meta-information specialized for crisis situations that helps them make judgments about the ever-growing amount of information. Such meta-information includes features of its source; judgments about the authoritativeness of the source; its concurrence (or not) with official sources; its timeliness (as the information may be better than official sources); other spatio-temporal features of the information‘s life; and consideration of who would be looking for this information and why. The discovery of what kind of meta-information is necessary will need to be derived from ongoing empirical research, which our group is conducting, but for which there remains additional need by complementary efforts. Data mining and information extraction techniques have a critical place here, as does the creation of trust models and security techniques. The combination of empirical grounding and computing innovation is required to achieve our goal of scaffolding the veridicality of peer-generated information with supplemental, computationally-derived meta-information that lends additional context for better, local decision-making.\nSetting Initial Directions: Research Questions\nThis vision enumerates a number of questions. We outline five primary questions that we are addressing.\nEmpirical Research on Technology-Mediated Behavior\nRQ1: What kind of information is being generated and distributed through computational media by members of the public in times of crisis? How do people selforganize around this information? How do they assess accuracy and trustworthiness? Extending traditional ―quick response‖ disaster research strategies (Stallings, 2002), research on the study of CMC before, during and after events is a new terrain that requires adaptation of current methods to tackle such a massive number of data points. The\nproblem here is never quite knowing what the universe of interaction is, and therefore how to properly sample it, and selectively choose from it. It is here where we first see that to tackle the challenge of technologymediated social participation is to tackle what many are doing in the new E-Social Science field (see Halfpenny & Procter, 2009) as a primary example among others. Early work in this area was known as digital or virtual ethnography (Jones, 1999; Miller & Slater, 2000; Hine, 2000, 2005), though we must already modernize this methodological orientation to depict real-time search and visualizations of massive data sets that support quantitative and qualitative analyses. In tackling such empirical goals for disaster research, we must understand features of activity at different scales of interaction. This includes (but is not limited to) analysis of:\n(i) where and when online crisis-based information arises;\n(ii) how people organize around online information exchange including the degrees and types of participation;\n(iii) who participates and why; (iv) the presence or absence of self-policing for accuracy and credibility; (v) the management of timeliness of information; (vi) the kind of information needs that arise for\ndifferent kinds of large-scale emergency events, and who needs what kinds;\n(vii) how people make judgments about the accuracy/validity of information from peers.\nFrom this, we need to engage in analyses to characterize the kinds of information and social roles that people take to generate requirements for innovation. This research is producing analyses that describe such behavior, particularly with respect to microblogging activity, (Starbird et al, 2010; Vieweg et al, 2010; Starbird & Palen, 2010), and is supporting the development of information integration and data mining techniques for accurate, informative characterization of computer-mediated, self-organizing behavior. Finally, engagement with emergency response practitioners, including the use of participatory design techniques (Greenbaum & Kyng, 1992), is critical here. Though the vision of the work is driven by an overarching goal of supporting the needs of the public rather than monitoring them, these same goals of communication of good information are espoused in the work of emergency personnel, particularly the ―public information officers‖ who liaison with members of the public to support accurate dispersion of information. It is critical that our modelling of behavior that we see on-line both informs and is informed by established and perhaps changing practice of practitioners.\n7\nInformation Integration\nRQ2: How can the extreme heterogeneity of information generated during crisis events be tamed such that it can be transformed into useful knowledge for citizens? We see information integration (Anderson et al., 2003) as a core computational research concern of this crisis informatics-informed technology space. During the emergency period of disasters, vast heterogeneous information is produced from multiple sources. New techniques and tools are needed to usefully process this information in an automated fashion. The basic software architecture (Figure 2) therefore sits on top of the rich information landscape of Web 2.0 sites and services and feeds key aspects of that information through the analytical tools that need to be developed in the areas of NLP, security, privacy and data validation. It then generates new information and services that the public can use to make decisions in a crisis event while also saving that information for later empirical analysis. This architecture assumes the use of scalable data integration services that already exist for popular social media/networking sites as well as Web 2.0 sites.\nThe integration layer of the software architecture populates a shared repository for other tools and services that produce meta-information associated with the original data that identify important entities, classify contributors according to the roles they enact and assume, maintain privacy for members of the public as their information is aggregated into summaries of an event‘s status, and annotate information with indicators as to its trustworthiness, accuracy and reliability (within appropriate timescales). In addition, visualization and mash-up services are needed that allow data to be merged in multiple ways for delivery to members of the public through a suite of Web-based applications and services optimized for mobile and desktop devices. These services will include applications that point users to active on-line forums, help them make sense of relative terms in posts via association with known entities surrounding an event, and visualize results of security and trust models.\nInformation Extraction & Natural Language Processing\nRQ3: How can information extraction and in particular natural language processing techniques be extended to accommodate the emergence of different forms of crisis-related communication in real time, and what features of those communications will be most relevant for characterizing important elements in different kinds of events?\n8\nThe diversity and sheer volume of information sources generated during crises events pose major challenges for current NLP-based information extraction (IE) techniques. In our work, we are attempting to use NLPbased techniques to critically inform the development of classification services by use of robust and efficient IE. These services annotate language-based information streams from publicly-generated CMC sources with data that reveal the types of events and entities represented in those streams, the roles of those entities in the events in question, and any temporal and geospatial information that can be gleaned. These annotations will serve as critical inputs for determining relevance of the information to different members of the public. They aim to facilitate the detection of new and anomalous events, enable comparison of information both across sources and crisis, and facilitate data mining of CMC information streams. Consider the excerpt in Figure 3 from the text-based Twitter stream generated by a local resident turned ―information broker‖ during the 2007 Southern California fires: ―Thousand Trails will be open for reentry at 8am today. Re-entry point will be south from Chula Vista at Otay Road.” As the following semantic markup in Figure 3 illustrates, this example contains three named locations (two communities and 1 road), one temporal relation and one geospatial relation, as well as a future event. Previous research in IE has shown that identification and indexing of basic elements such as these can facilitate the creation of systems that can reliably detect and classify more complex recurring events of interest to the general public. For example, the annotations shown in Figure 3 might be used to instantiate and populate a ―reopening‖ event frame as shown. Further temporal and geospatial processing can normalize the mentioned times and location to specific times and locales. The identification and classification of recurring events such as the opening of shelters or closure of roads will facilitate the creation of services that allow users to create ad hoc or standing requests for alerts about types of events, or events occurring at or near particular locations.\nCurrent NLP-based approaches to information extraction are trained using supervised machine learning techniques to reproduce the sets of annotations produced by human analysts (Jurafsky & Martin, 2008). While the bulk of this work has been applied to edited newswire-style texts, some of the most exciting and challenging areas of research involve the application of these techniques to new forms of social media that serve as the channels for the kind of user-generated content we see in crisis warning and response. The primary research challenge facing the application of IE techniques here lies in translating the use of machine learning techniques that are trained on materials from previous events to the real-time emergent conditions and interactions during crisis situations. Our approach to this includes applying the annotation described above to our social media data collections, as well as using bootstrapping techniques to quickly detect key novel elements in new situations.\nInformation Security and Reputation Systems\nRQ4: How can diverse information security techniques be used to address such issues as privacy of participants, validity of data and appropriateness of information aggregation methods? How might different security methods conflict and potentially compromise one another? We are investigating the use of established and potentially new techniques, including information aggregation, privacy protection (Sicker, 2003), location privacy (Gruteser & Grunwald, 2003), confidentiality, reputation validation (Sicker & McCoy, 2007) and anonymization (Bauer et al., 2007), as they apply to the matters of security, privacy and accuracy in selforganization and peer communication in crisis events. The cause and effects of these security and privacy techniques are inter-related and interdependent: As some techniques strengthen some data qualities, they will weaken others. Research in this area therefore needs to identify and develop the need for additional methods that can balance issues such as privacy and reputation. There are several security and privacy concerns within the proposed architecture. In particular, since users are sharing their perspectives and contributing information about a dynamic situation, it is necessary to consider user privacy, because such citizen reporting may put people at risk, particularly in places of ongoing disruption from political crises. An even more fundamental concern stems directly from the collaborative and peer nature of the information sharing: Malicious users may have an incentive to contribute false or misleading information, particularly in a situation of terrorism. If enough malicious users exist under terrorist or cyber-terrorist conditions, it may be possible to disseminate false information to others and disrupt natural social processes of self-policing\nSemantic Mark-Up: [Thousand Trails LOC] will be open for [re-entry EVENT] at [8am today TMP]. Re-entry point will be [south GEO] from [Chula Vista LOC] at [Otay Road LOC]. ReOpening event: Locale: Thousand Trails Time: 8am ReEntry Point: Otay Rd\nFigure 3: Information Extraction on Microblog Data\n9\nand accuracy ascertainment. This is a challenging but critical situation to address. Due to the peer and collaborative nature of this system, it is possible to pool perspectives of several users and extract relevant information about the disaster in part by using ratings to rank information accuracy with Bayesian filtering to determine reputation from those ratings (Mui & Mohtashemi, 2002; Whitby et al., 2004). Though the user-provided information and rankings approach offers tremendous advantages such as fast information collection and aggregation, it is also necessary to provide certain privacy protections for contributors. For instance, users may not wish to share their physical location with others, in part because they may be violating official laws to leave certain areas, so mechanisms must be in place to offer privacy protection. Physical location is just one example of a weak identifier (i.e., pieces of information that can be used to identify individual users). Other identifiers include network addresses. A wealth of literature describes many techniques to effectively remove these network identifiers and achieve a degree of anonymity (Chaum, 1988; Reiter & Rubin, 1998; Dingledine et al., 2004). However, in our context, it may be more appropriate to allow users to have a high degree of control and flexibility with respect to the types of personally identifying information revealed. However, if mechanisms are provided to enhance the users' privacy and even offer the capability for anonymous information contributions, it is possible that malicious entities may exploit this anonymity and inject false and misleading information into information streams. Fundamentally, establishing identity within a networked environment is a challenging problem. For instance, a classic problem within the field of reputation systems is the Sybil attack, which occurs when a single entity establishes a large number of identities, for instance, by adding a large number of nodes to a peerto-peer network (Douceur, 2002). This has implications for designing reputation systems to detect the injection of bad information by malicious parties, since it is always possible for them to simply add a new identity to the system to counteract any previous misbehaviour. A number of reputation systems have been proposed to combat against attacks such as the Sybil attack. However, these systems, considered \"explicit\" reputation systems, rely on quantitatively measurable activities or transactions (largely suited to e-commerce) and maintain databases of explicit feedback given by users—features that do not exist in typical social networks. Given this fact, we take an alternate approach to determining reputable users during an event. We will look at two possible implicit reputation indicators, one using client location services and another using analysis methods from varying disciplines such as computer science, physics, biology and others that are\nbased on network graphs and activity within networks. Using client location services, it may be possible to determine location based on usage of the cellular or wireless 802.11 wireless infrastructure. However, access to this client information is dependent on obtaining information from service providers or users making location information available from their client programs. Using network analysis methods, it may be possible to infer location, influence, and other attributes based on communication, context, and association with others in the network. Data for these methods are available via public application programming interfaces (APIs) from some online social networks. By monitoring the APIs during crisis situations, we are able to use these analysis methods to infer information about users as the crisis is evolving.\nPublic Policy\nThe synthesis of these activities within our own group—but that we hope will be complemented by efforts elsewhere in this important area—aims to generate the basis for supporting a variety of tools and services aimed at supporting the citizenry during times of disasters and mass emergencies. Consequently, we must consider public policy issues that arise from this research and innovation: RQ5: What public policy issues emerge as a result of this vision of empirical research and development activities, and how can they be framed using a crisis informatics lens? Investigations of this kind require consideration about how crisis-related data collection, analysis, and dissemination within the context of current federal and state laws, policies, and regulations (Ohm, Sicker & Grunwald, 2007). Because information aggregation efforts may cross national borders, we will also take into account similar (and often more stringent) laws and policies in other countries. Important questions in this area center on issues of legal precedent, communications-related laws and policies, regulations and authorities regarding information dissemination during disasters, along with privacy and security issues. Other questions include how the policy context will affect our own information capture and aggregation methods. As an over-arching concern, we question how it will be possible to design methods for capturing and processing diverse content ethically and in adherence of law, while also not creating new, insurmountable policy issues around information aggregation (Ohm, Sicker & Grunwald, 2007)."
+    }, {
+      "heading" : "CONCLUSION",
+      "text" : "This initial programmatic research vision for computer science focuses on an understudied aspect of largescale emergency response—the information-producing and sharing activities by members of the public as supported by ICT. Intellectual contributions include the\n10\nexpansion of broad thinking about societal-scale interaction in the area of crisis informatics, and bridging information science, cognitive science and computer science. They include the application of these empirical and policy implications to challenging matters of information integration and extraction, as well as trust modeling of highly heterogeneous data for transformation to useful knowledge. Innovation will be based on empirical study of computer mediated communication and citizen information needs in a range of crisis events, with the development of methods to analyze such behavior, and in light of privacy, security, ethical and public policy issues. The initial directions here are based on a foundation of supporting work that has led to the very paradigmshifting perspective we propose: that innovation for emergencies could greatly benefit by reframing disaster response as a set of socially-distributed information activities that support powerful, parallel, socio-technical processing of problems in times of change and disruption. Good quality information and meta-information that indicates accuracy and trustworthiness is what people need to make local decisions, to gain situational awareness and build resilience in the face of threat. At its most ambitious, such a programmatic vision speaks to the difference between a society that painfully comes to this understanding after enduring repeated disasters, and one in which mechanisms for leveraging the collective intelligence of the public are accelerated in a systematic fashion, and with serious consideration to ethics, the practical aspects of emergency management, and human needs."
+    }, {
+      "heading" : "ACKNOWLEDGEMENTS",
+      "text" : "We thank the US National Science Foundation for their support of this research through grants IIS-0546315 and IIS-0910586. We thank the team associated with this research: Ban Al-Ani, Mossaab Bagdouri, William Corvey, Amanda Hughes, Sophia B. Liu, Matt Novinger, Travis Rood, Chris Schenk, Aaron Schram, Bryan Semaan, Catharine (Kate) Starbird, Sudha Verma and Sarah Vieweg; and advisors Ed Hutchins and Morten Kyng. Any opinions, findings, conclusions or recommendations expressed in this material are those of the authors and do not necessarily reflect the views of the US National Science Foundation."
+    } ],
+    "references" : [ {
+      "title" : "The Social Organization of Search and Rescue: Evidence from the Guadalajara Gasoline",
+      "author" : [ "B. Aguirre", "D. Wenger", "T. Glass", "M. Diaz-Murillo", "G. Vigo" ],
+      "venue" : null,
+      "citeRegEx" : "Aguirre et al\\.,? \\Q1995\\E",
+      "shortCiteRegEx" : "Aguirre et al\\.",
+      "year" : 1995
+    }, {
+      "title" : "Metis: Lightweight, Flexible and Web-based Workflow Services for Digital Libraries",
+      "author" : [ "K. Anderson", "A. Andersen", "N. Wadhwani", "L. Bartolo" ],
+      "venue" : "In Proc. 2003 Joint Conf. Digital Libraries,",
+      "citeRegEx" : "Anderson et al\\.,? \\Q2003\\E",
+      "shortCiteRegEx" : "Anderson et al\\.",
+      "year" : 2003
+    }, {
+      "title" : "Low-Resource Routing Attacks Against Tor",
+      "author" : [ "K. Bauer", "D. McCoy", "D. Grunwald", "T. Kohno", "D. Sicker" ],
+      "venue" : "In Proc. 2007 ACM Workshop on Privacy in the Electronic Society,",
+      "citeRegEx" : "Bauer et al\\.,? \\Q2007\\E",
+      "shortCiteRegEx" : "Bauer et al\\.",
+      "year" : 2007
+    }, {
+      "title" : "The Dining Cryptographers Problem: Unconditional Sender and Recipient Untraceability",
+      "author" : [ "D. Chaum" ],
+      "venue" : "Journal of Cryptology., pp. 65-75.",
+      "citeRegEx" : "Chaum,? 1988",
+      "shortCiteRegEx" : "Chaum",
+      "year" : 1988
+    }, {
+      "title" : "Tor: The Second-Generation Onion Router",
+      "author" : [ "R. Dingledine", "N. Mathewson", "P. Syverson" ],
+      "venue" : "In Proceedings of the 13th USENIX Security Symposium",
+      "citeRegEx" : "Dingledine et al\\.,? \\Q2004\\E",
+      "shortCiteRegEx" : "Dingledine et al\\.",
+      "year" : 2004
+    }, {
+      "title" : "The Sybil Attack",
+      "author" : [ "J.R. Douceur" ],
+      "venue" : "Revised Papers From the First Int'l. Workshop on Peer-To-Peer Systems, Druschel, P. Kaashoek, M. & Rowstron, A. (Eds.) Lecture Notes In Computer Science, vol. 2429. Springer-Verlag, London, pp. 251-260.",
+      "citeRegEx" : "Douceur,? 2002",
+      "shortCiteRegEx" : "Douceur",
+      "year" : 2002
+    }, {
+      "title" : "Human System Responses to Disasters: An Inventory of Sociological Findings",
+      "author" : [ "T. Drabek" ],
+      "venue" : "Springer-Verlag.",
+      "citeRegEx" : "Drabek,? 1986",
+      "shortCiteRegEx" : "Drabek",
+      "year" : 1986
+    }, {
+      "title" : "The Impact of Disaster on Kin Relationships",
+      "author" : [ "T. Drabek", "W. Key", "P. Erickson", "J. Crowe" ],
+      "venue" : "Journal of Marriage and the Family,",
+      "citeRegEx" : "Drabek et al\\.,? \\Q1975\\E",
+      "shortCiteRegEx" : "Drabek et al\\.",
+      "year" : 1975
+    }, {
+      "title" : "Organized Behavior in Disaster",
+      "author" : [ "R.R. Dynes" ],
+      "venue" : "Heath.",
+      "citeRegEx" : "Dynes,? 1970",
+      "shortCiteRegEx" : "Dynes",
+      "year" : 1970
+    }, {
+      "title" : "Response to Disaster",
+      "author" : [ "III H. Fischer" ],
+      "venue" : "Fact Versus Fiction & Perpetuation,",
+      "citeRegEx" : "Fischer,? \\Q1998\\E",
+      "shortCiteRegEx" : "Fischer",
+      "year" : 1998
+    }, {
+      "title" : "Design at Work: Cooperative Design of Computer Systems",
+      "author" : [ "J. Greenbaum", "M. Kyng" ],
+      "venue" : null,
+      "citeRegEx" : "Greenbaum and Kyng,? \\Q1992\\E",
+      "shortCiteRegEx" : "Greenbaum and Kyng",
+      "year" : 1992
+    }, {
+      "title" : "Anonymous Usage of Location-based Services through Spatial and Temporal Cloaking",
+      "author" : [ "M. Gruteser", "D. Grunwald" ],
+      "venue" : "In Proceedings of the 2nd International Conference on Mobile Systems, Applications and Services,",
+      "citeRegEx" : "Gruteser and Grunwald,? \\Q2003\\E",
+      "shortCiteRegEx" : "Gruteser and Grunwald",
+      "year" : 2003
+    }, {
+      "title" : "The Information and Social Needs of Cumbrian Farmers during the UK 2001 Foot and Mouth Disease Outbreak and the Role of Information and Communication Technologies",
+      "author" : [ "C. Hagar" ],
+      "venue" : "Döring, M. & Nerlich, B. (Eds.) The Socio-Cultural Impact of Foot and Mouth",
+      "citeRegEx" : "Hagar,? 2009",
+      "shortCiteRegEx" : "Hagar",
+      "year" : 2009
+    }, {
+      "title" : "Crisis, Farming & Community",
+      "author" : [ "C. Hagar", "Haythornthwaite C" ],
+      "venue" : "The Journal of Community Informatics,",
+      "citeRegEx" : "Hagar and C.,? \\Q2005\\E",
+      "shortCiteRegEx" : "Hagar and C.",
+      "year" : 2005
+    }, {
+      "title" : "Special Issue on e-Social Science",
+      "author" : [ "P. Halfpenny", "R. Procter" ],
+      "venue" : "Social Science Computing Review 27,",
+      "citeRegEx" : "Halfpenny and Procter,? \\Q2009\\E",
+      "shortCiteRegEx" : "Halfpenny and Procter",
+      "year" : 2009
+    }, {
+      "title" : "The Network Nation: Human Communication via Computer",
+      "author" : [ "R. Hiltz", "M. Turoff" ],
+      "venue" : null,
+      "citeRegEx" : "Hiltz and Turoff,? \\Q1993\\E",
+      "shortCiteRegEx" : "Hiltz and Turoff",
+      "year" : 1993
+    }, {
+      "title" : "Virtual Ethnography",
+      "author" : [ "C. Hine" ],
+      "venue" : "London: Sage Publications.",
+      "citeRegEx" : "Hine,? 2000",
+      "shortCiteRegEx" : "Hine",
+      "year" : 2000
+    }, {
+      "title" : "Virtual Methods: Issues in Social Research on the Internet",
+      "author" : [ "C. Hine" ],
+      "venue" : null,
+      "citeRegEx" : "Hine,? \\Q2005\\E",
+      "shortCiteRegEx" : "Hine",
+      "year" : 2005
+    }, {
+      "title" : "Cognition in the Wild",
+      "author" : [ "E Hutchins" ],
+      "venue" : null,
+      "citeRegEx" : "Hutchins,? \\Q1995\\E",
+      "shortCiteRegEx" : "Hutchins",
+      "year" : 1995
+    }, {
+      "title" : "Place Lab",
+      "author" : [ "Intel Research." ],
+      "venue" : "<http://www.placelab.org/>.",
+      "citeRegEx" : "Research.,? 2006",
+      "shortCiteRegEx" : "Research.",
+      "year" : 2006
+    }, {
+      "title" : "Doing Internet Research: Critical Issues and Methods for Examining the Net",
+      "author" : [ "S. Jones" ],
+      "venue" : null,
+      "citeRegEx" : "Jones,? \\Q1999\\E",
+      "shortCiteRegEx" : "Jones",
+      "year" : 1999
+    }, {
+      "title" : "Community Innovation and Disasters",
+      "author" : [ "J. Kendra", "T. Wachtendorf" ],
+      "venue" : "Handbook of Disaster",
+      "citeRegEx" : "Kendra and Wachtendorf,? \\Q2006\\E",
+      "shortCiteRegEx" : "Kendra and Wachtendorf",
+      "year" : 2006
+    }, {
+      "title" : "Making Action Visible in TimeCritical Work",
+      "author" : [ "J. Landgren" ],
+      "venue" : "Proceedings of the ACM 2006 Conference on Human Factors in Computing Systems (CHI 2006), Montréal, pp. 201-210.",
+      "citeRegEx" : "Landgren,? 2006",
+      "shortCiteRegEx" : "Landgren",
+      "year" : 2006
+    }, {
+      "title" : "In Search of the Bigger Picture: The Emergent Role of On-Line Photo-Sharing in Times of Disaster",
+      "author" : [ "S. Liu", "L. Palen", "J. Sutton", "A. Hughes", "S. Vieweg" ],
+      "venue" : "Proc. ISCRAM 2008.",
+      "citeRegEx" : "Liu et al\\.,? 2008",
+      "shortCiteRegEx" : "Liu et al\\.",
+      "year" : 2008
+    }, {
+      "title" : "The New Cartographers: Crisis Map Mashups and the Emergence of Neogeographic Practice",
+      "author" : [ "S.B. Liu" ],
+      "venue" : "Special Issue on Mapping Hazards and Disasters Cartography and Geographic Information Science (CaGIS) Journal,",
+      "citeRegEx" : "Liu,? \\Q2010\\E",
+      "shortCiteRegEx" : "Liu",
+      "year" : 2010
+    }, {
+      "title" : "Resilience in Collaboration: Technology as a Resource for New Patterns of Action",
+      "author" : [ "G. Mark", "B. Semaan" ],
+      "venue" : "Proceedings of the ACM 2008 Conference on Computer Supported Cooperative Work (CSCW",
+      "citeRegEx" : "Mark and Semaan,? \\Q2008\\E",
+      "shortCiteRegEx" : "Mark and Semaan",
+      "year" : 2008
+    }, {
+      "title" : "Expanding a Country‘s Borders During War: The Internet War Diary",
+      "author" : [ "G. Mark", "B. Semaan" ],
+      "venue" : "In Proc. ACM Workshop on Intercultural Collaboration, Stanford University,",
+      "citeRegEx" : "Mark and Semaan,? \\Q2009\\E",
+      "shortCiteRegEx" : "Mark and Semaan",
+      "year" : 2009
+    }, {
+      "title" : "Resilience through technology adoption: Merging the old and the new in Iraq",
+      "author" : [ "G. Mark", "B. Al-Ani", "G. Semaan" ],
+      "venue" : "Proceedings of the ACM 2009 Conference on Human Factors in Computing Systems, Boston, pp. 689-698.",
+      "citeRegEx" : "Mark et al\\.,? 2009",
+      "shortCiteRegEx" : "Mark et al\\.",
+      "year" : 2009
+    }, {
+      "title" : "Crisis Mapping Kenya's Election Violence: Comparing Mainstream News, Citizen Journalism and Ushahidi. Harvard Humanitarian Initiative, Harvard University: Boston)",
+      "author" : [ "P. Meier", "K. Brodock" ],
+      "venue" : null,
+      "citeRegEx" : "Meier and Brodock,? \\Q2008\\E",
+      "shortCiteRegEx" : "Meier and Brodock",
+      "year" : 2008
+    }, {
+      "title" : "Studying Organizationally-Situated Improvisation in Response to Extreme Events",
+      "author" : [ "D. Mendonça", "W. Wallace" ],
+      "venue" : "International Journal of Mass Emergencies and Disasters,",
+      "citeRegEx" : "Mendonça and Wallace,? \\Q2004\\E",
+      "shortCiteRegEx" : "Mendonça and Wallace",
+      "year" : 2004
+    }, {
+      "title" : "Human Systems in Extreme Environments. Boulder, CO: Institute of Behavioral Science, Program on Environment and Behavior",
+      "author" : [ "D. Mileti", "T. Drabek", "J. Haas" ],
+      "venue" : null,
+      "citeRegEx" : "Mileti et al\\.,? \\Q1975\\E",
+      "shortCiteRegEx" : "Mileti et al\\.",
+      "year" : 1975
+    }, {
+      "title" : "A Computational Model of Trust and Reputation",
+      "author" : [ "L. Mui", "M. Mohtashemi" ],
+      "venue" : null,
+      "citeRegEx" : "Mui and Mohtashemi,? \\Q2002\\E",
+      "shortCiteRegEx" : "Mui and Mohtashemi",
+      "year" : 2002
+    }, {
+      "title" : "Issues Involving Network Monitoring",
+      "author" : [ "P. Ohm", "D. Sicker", "D. Grunwald" ],
+      "venue" : "Internet Measurement Conference",
+      "citeRegEx" : "Ohm et al\\.,? \\Q2007\\E",
+      "shortCiteRegEx" : "Ohm et al\\.",
+      "year" : 2007
+    }, {
+      "title" : "Keeping Up with the Future of HumanComputer Interaction: The Many Masters of Scholarship, Social Action Work, and Rapid Technological Change",
+      "author" : [ "Palen" ],
+      "venue" : "Human Computer Interaction Consortium 2009, February 4-7, Winter Park, CO.",
+      "citeRegEx" : "Palen,? 2009",
+      "shortCiteRegEx" : "Palen",
+      "year" : 2009
+    }, {
+      "title" : "Citizen Communications in Crisis: Anticipating a Future of ICT-supported Public Participation",
+      "author" : [ "L. Palen", "S. Liu" ],
+      "venue" : "Proceedings of the ACM 2007 Conference on Human Factors in Computing Systems (CHI",
+      "citeRegEx" : "Palen and Liu,? \\Q2007\\E",
+      "shortCiteRegEx" : "Palen and Liu",
+      "year" : 2007
+    }, {
+      "title" : "Emergent, Widescale Online Interaction in Unexpected Events: Assistance, Alliance and Retreat",
+      "author" : [ "L. Palen", "S. Vieweg" ],
+      "venue" : "Proceedings of the ACM 2008 Conference on Computer Supported Cooperative Work (CSCW",
+      "citeRegEx" : "Palen and Vieweg,? \\Q2008\\E",
+      "shortCiteRegEx" : "Palen and Vieweg",
+      "year" : 2008
+    }, {
+      "title" : "Online Forums Supporting Grassroots Participation in Emergency Preparedness and Response",
+      "author" : [ "L. Palen", "R. Hiltz", "S. Liu" ],
+      "venue" : "Communications of the ACM,",
+      "citeRegEx" : "Palen et al\\.,? \\Q2007\\E",
+      "shortCiteRegEx" : "Palen et al\\.",
+      "year" : 2007
+    }, {
+      "title" : "Crisis in a Networked World:Features of ComputerMediated",
+      "author" : [ "L. Palen", "S. Vieweg", "S. Liu", "A. Hughes" ],
+      "venue" : "Communication in the April",
+      "citeRegEx" : "Palen et al\\.,? \\Q2009\\E",
+      "shortCiteRegEx" : "Palen et al\\.",
+      "year" : 2009
+    }, {
+      "title" : "An Introduction to the Natural History of Disaster",
+      "author" : [ "J. Powell" ],
+      "venue" : "U. Maryland: Disaster Research Project.",
+      "citeRegEx" : "Powell,? 1954",
+      "shortCiteRegEx" : "Powell",
+      "year" : 1954
+    }, {
+      "title" : "Project EPIC: Empowering the Public with Information in Crisis, University of Colorado, Boulder and University of California, Irvine",
+      "author" : [ "Project EPIC" ],
+      "venue" : "<http://epic.cs.colorado.edu/>.",
+      "citeRegEx" : "EPIC,? 2009",
+      "shortCiteRegEx" : "EPIC",
+      "year" : 2009
+    }, {
+      "title" : "Online Community Response to Major Disaster: A Case Study of Tianya",
+      "author" : [ "Y. Qu", "P. Wu", "X. Wang" ],
+      "venue" : null,
+      "citeRegEx" : "Qu et al\\.,? \\Q2009\\E",
+      "shortCiteRegEx" : "Qu et al\\.",
+      "year" : 2009
+    }, {
+      "title" : "Crowds: Anonymity for Web Transactions",
+      "author" : [ "M. Reiter", "A. Rubin" ],
+      "venue" : "In ACM Transactions on Information and System Security,",
+      "citeRegEx" : "Reiter and Rubin,? \\Q1998\\E",
+      "shortCiteRegEx" : "Reiter and Rubin",
+      "year" : 1998
+    }, {
+      "title" : "The Web After September 11",
+      "author" : [ "S. Schneider", "K. Foot" ],
+      "venue" : "One Year Later, September 11 and the Internet, Pew Internet & American Life Project Report",
+      "citeRegEx" : "Schneider and Foot,? \\Q2002\\E",
+      "shortCiteRegEx" : "Schneider and Foot",
+      "year" : 2002
+    }, {
+      "title" : "Use of Communication Technologies in Hurricane Katrina Aftermath. Position paper for the HCI for Emergencies",
+      "author" : [ "I. Shklovski", "M. Burke", "S. Kiesler", "R. Kraut" ],
+      "venue" : null,
+      "citeRegEx" : "Shklovski et al\\.,? \\Q2008\\E",
+      "shortCiteRegEx" : "Shklovski et al\\.",
+      "year" : 2008
+    }, {
+      "title" : "Finding Community Through Information and Communication Technology in Disaster Events",
+      "author" : [ "I. Shklovski", "L. Palen", "Sutton J" ],
+      "venue" : "In Proceedings of the ACM 2008 Conference on Computer Supported Cooperative Work (CSCW",
+      "citeRegEx" : "Shklovski et al\\.,? \\Q2008\\E",
+      "shortCiteRegEx" : "Shklovski et al\\.",
+      "year" : 2008
+    }, {
+      "title" : "Privacy & Anonymity through Role Based Authorization",
+      "author" : [ "D. Sicker" ],
+      "venue" : "31st Telecommunications Policy Research Conference",
+      "citeRegEx" : "Sicker,? \\Q2003\\E",
+      "shortCiteRegEx" : "Sicker",
+      "year" : 2003
+    }, {
+      "title" : "A Mechanism for Detecting and Responding to Misbehaving Nodes in Wireless Networks",
+      "author" : [ "D. Sicker", "D. McCoy" ],
+      "venue" : "SDR Workshop,",
+      "citeRegEx" : "Sicker and McCoy,? \\Q2007\\E",
+      "shortCiteRegEx" : "Sicker and McCoy",
+      "year" : 2007
+    }, {
+      "title" : "Legal Issues Surrounding Monitoring During Network Research",
+      "author" : [ "D. Sicker", "P. Ohm", "D. Grunwald" ],
+      "venue" : "In Proceedings of the 7th ACM SIGCOMM Conf. on Internet Measurement,",
+      "citeRegEx" : "Sicker et al\\.,? \\Q2007\\E",
+      "shortCiteRegEx" : "Sicker et al\\.",
+      "year" : 2007
+    }, {
+      "title" : "Community Processes: Warning and Evacuation",
+      "author" : [ "J. Sorenson", "B. Sorenson" ],
+      "venue" : "Handbook of Disaster Research,",
+      "citeRegEx" : "Sorenson and Sorenson,? \\Q2006\\E",
+      "shortCiteRegEx" : "Sorenson and Sorenson",
+      "year" : 2006
+    }, {
+      "title" : "Emergent Citizen Groups and Emergency Management",
+      "author" : [ "R.A. Stallings", "E.L. Quarantelli" ],
+      "venue" : "Public Administration Review",
+      "citeRegEx" : "Stallings and Quarantelli,? \\Q1985\\E",
+      "shortCiteRegEx" : "Stallings and Quarantelli",
+      "year" : 1985
+    }, {
+      "title" : "Chatter on The Red: What Hazards Threat Reveals about the Social Life of Microblogged Information",
+      "author" : [ "C Starbird", "L. Palen", "A. Hughes", "S. Vieweg" ],
+      "venue" : "Proceedings of the ACM 2010 Conference on Computer Supported Cooperative Work (CSCW",
+      "citeRegEx" : "Starbird et al\\.,? \\Q2010\\E",
+      "shortCiteRegEx" : "Starbird et al\\.",
+      "year" : 2010
+    }, {
+      "title" : "Pass it On? Retweeting in Mass Emergencies",
+      "author" : [ "C. Starbird", "L Palen" ],
+      "venue" : "To appear in the 2010 Proceedings of Conference on Information Systems on Crisis Response and Management (ISCRAM",
+      "citeRegEx" : "Starbird and Palen,? \\Q2010\\E",
+      "shortCiteRegEx" : "Starbird and Palen",
+      "year" : 2010
+    }, {
+      "title" : "Backchannels on the Front Lines: Emergent Use of Social Media in the 2007 Southern California Wildfires",
+      "author" : [ "J. Sutton", "L. Palen", "I. Shklovski" ],
+      "venue" : "In the 2008 Proceedings of Conference on Information Systems on Crisis Response and Management",
+      "citeRegEx" : "Sutton et al\\.,? \\Q2008\\E",
+      "shortCiteRegEx" : "Sutton et al\\.",
+      "year" : 2008
+    }, {
+      "title" : "Facing the Unexpected: Disaster Preparedness and Response in the United States",
+      "author" : [ "K. Tierney", "M. Lindell", "R. Perry" ],
+      "venue" : null,
+      "citeRegEx" : "Tierney et al\\.,? \\Q2001\\E",
+      "shortCiteRegEx" : "Tierney et al\\.",
+      "year" : 2001
+    }, {
+      "title" : "Connected Giving: Ordinary People Coordinating Disaster Relief on the Internet",
+      "author" : [ "C. Torrey", "M. Burke", "M. Lee", "A. Dey", "S. Fussell", "S. Kiesler" ],
+      "venue" : "In Proceedings of the Hawaii International Conference on System Sciences (HICSS",
+      "citeRegEx" : "Torrey et al\\.,? \\Q2007\\E",
+      "shortCiteRegEx" : "Torrey et al\\.",
+      "year" : 2007
+    }, {
+      "title" : "A Comparison of Microblogging Behavior in Two Natural Hazards Events: What Twitter May Contribute to Situational Awareness",
+      "author" : [ "S Vieweg", "A Hughes", "C Starbird", "L Palen" ],
+      "venue" : "Proceedings of the ACM 2010 Conference on Human Factors in Computing Systems",
+      "citeRegEx" : "Vieweg et al\\.,? \\Q2010\\E",
+      "shortCiteRegEx" : "Vieweg et al\\.",
+      "year" : 2010
+    }, {
+      "title" : "Collective Intelligence in Disaster: An Examination of the Phenomenon in the Aftermath of the 2007 Virginia Tech Shootings",
+      "author" : [ "S. Vieweg", "L. Palen", "S. Liu", "A. Hughes", "J. Sutton" ],
+      "venue" : "Proceedings of Conference on Information Systems on Crisis",
+      "citeRegEx" : "Vieweg et al\\.,? \\Q2008\\E",
+      "shortCiteRegEx" : "Vieweg et al\\.",
+      "year" : 2008
+    }, {
+      "title" : "Improvising Disaster in the City of Jazz: Organizational Response to Hurricane Katrina. Understanding Katrina: Perspectives from the Social Sciences, <understandingkatrina.ssrc.org>",
+      "author" : [ "T. Wachtendorf", "J. Kendra" ],
+      "venue" : null,
+      "citeRegEx" : "Wachtendorf and Kendra,? \\Q2005\\E",
+      "shortCiteRegEx" : "Wachtendorf and Kendra",
+      "year" : 2005
+    }, {
+      "title" : "Filtering out Unfair Ratings in Bayesian Reputation Systems",
+      "author" : [ "A. Whitby", "A. Jøsang", "J. Indulska" ],
+      "venue" : "In Proc. 7th Int'l. Workshop on Trust in Agent Societies",
+      "citeRegEx" : "Whitby et al\\.,? \\Q2004\\E",
+      "shortCiteRegEx" : "Whitby et al\\.",
+      "year" : 2004
+    }, {
+      "title" : "Why an Emergency Alert System isn't Adopted: The Impact of SocioTechnical Context",
+      "author" : [ "Wu", "Y.P. Qu", "J. Preece" ],
+      "venue" : null,
+      "citeRegEx" : "Wu et al\\.,? \\Q2008\\E",
+      "shortCiteRegEx" : "Wu et al\\.",
+      "year" : 2008
+    }, {
+      "title" : "Community Response Grid for a University Campus: Design",
+      "author" : [ "P. Wu", "Y. Qu", "J. Preece", "K. Fleischmann", "J. Golbeck", "P. Jaeger", "B. Shneiderman" ],
+      "venue" : "Human Computer Interaction Conference",
+      "citeRegEx" : "Wu et al\\.,? \\Q2008\\E",
+      "shortCiteRegEx" : "Wu et al\\.",
+      "year" : 2008
+    } ],
+    "referenceMentions" : [ {
+      "referenceID" : 9,
+      "context" : "2 people unable to help themselves (Fischer, 1998).",
+      "startOffset" : 35,
+      "endOffset" : 50
+    }, {
+      "referenceID" : 0,
+      "context" : "Research has shown that disaster victims themselves are the true ―first responders,‖ frequently acting on the basis of knowledge not available to officials (Stallings & Quarantelli, 1985; Aguirre et al., 1995; Kendra & Wachtendorf, 2006).",
+      "startOffset" : 156,
+      "endOffset" : 237
+    }, {
+      "referenceID" : 38,
+      "context" : "support people across a range of geographies (Powell, 1954), by which we broadly mean those who are inside the crisis zone as well as those on the outside who are compelled to help not only through supplying physical labor, goods and psychological support, but also by playing critical roles in information dissemination.",
+      "startOffset" : 45,
+      "endOffset" : 59
+    }, {
+      "referenceID" : 33,
+      "context" : "Crisis informatics wrestles with methodological concerns as it strives to develop new theory and support informed development of ICT and policy (Palen, 2009).",
+      "startOffset" : 144,
+      "endOffset" : 157
+    }, {
+      "referenceID" : 8,
+      "context" : "The rationale for such a vision of computing research is based on knowledge of existing social behavior in crisis events (Dynes, 1970; Mileti, Drabek & Haas, 1975; Drabek, 1986; Tierney, Lindell & Perry, 2001).",
+      "startOffset" : 121,
+      "endOffset" : 209
+    }, {
+      "referenceID" : 6,
+      "context" : "The rationale for such a vision of computing research is based on knowledge of existing social behavior in crisis events (Dynes, 1970; Mileti, Drabek & Haas, 1975; Drabek, 1986; Tierney, Lindell & Perry, 2001).",
+      "startOffset" : 121,
+      "endOffset" : 209
+    }, {
+      "referenceID" : 8,
+      "context" : "―First responders‖ are not, in practice, the trained professionals who are deployed to a scene in spite of the common use of that term for them; they are instead people from the local and surrounding communities (Dynes, 1970) who provide first aid, transport victims to hospitals in their own cars, and begin search and rescue (Fischer, 1998; Tierney, Lindell & Perry, 2001).",
+      "startOffset" : 212,
+      "endOffset" : 225
+    }, {
+      "referenceID" : 9,
+      "context" : "―First responders‖ are not, in practice, the trained professionals who are deployed to a scene in spite of the common use of that term for them; they are instead people from the local and surrounding communities (Dynes, 1970) who provide first aid, transport victims to hospitals in their own cars, and begin search and rescue (Fischer, 1998; Tierney, Lindell & Perry, 2001).",
+      "startOffset" : 327,
+      "endOffset" : 374
+    }, {
+      "referenceID" : 23,
+      "context" : "Indications of significant socio-technical change in public participation behaviors as mobile phones, personal blogging, and on-line photo repositories like Flickr became available (Liu et al., 2008) were notably apparent in the December 2004 Indian Ocean tsunami.",
+      "startOffset" : 181,
+      "endOffset" : 199
+    }, {
+      "referenceID" : 54,
+      "context" : "Numerous public-initiated information sources and new forms of personal ICT use sprang up in the aftermath of Hurricane Katrina, including some of the earliest housing aggregator and giving sites, people-finding activity, and map-based mashups (Palen & Liu, 2007; Torrey et al., 2007; Shklovski, Palen, Sutton, 2008).",
+      "startOffset" : 244,
+      "endOffset" : 316
+    }, {
+      "referenceID" : 56,
+      "context" : "The tragic Virginia Tech shootings in April 2007 saw the emergence of social networking sites as destinations for collective disaster-related sensemaking, as students and others collected information on details of the shootings and reported on their own safety (Vieweg et al. 2008).",
+      "startOffset" : 261,
+      "endOffset" : 281
+    }, {
+      "referenceID" : 18,
+      "context" : "Liu, 2007) or socially distributed cognition activity (Hutchins, 1995) that ―discovered,‖ in parallel and with redundancy and accuracy, the names of the 32 fatalities in advance of official releases of that information (Palen, et al.",
+      "startOffset" : 54,
+      "endOffset" : 70
+    }, {
+      "referenceID" : 40,
+      "context" : "After the May 12, 2008 Sichuan earthquake in China, a popular internet forum became a location for integrating information from multiple sources, organizing public action and expressing grief and anger (Qu et al., 2009).",
+      "startOffset" : 202,
+      "endOffset" : 219
+    }, {
+      "referenceID" : 50,
+      "context" : "relationship between geographical location and the generation of new information to the discussion space (Starbird et al., 2010; Vieweg et al., 2010; Starbird & Palen, 2010).",
+      "startOffset" : 105,
+      "endOffset" : 173
+    }, {
+      "referenceID" : 55,
+      "context" : "relationship between geographical location and the generation of new information to the discussion space (Starbird et al., 2010; Vieweg et al., 2010; Starbird & Palen, 2010).",
+      "startOffset" : 105,
+      "endOffset" : 173
+    }, {
+      "referenceID" : 27,
+      "context" : "Blogs, Internet forums, and email distribution lists enabled them to communicate with people across the globe residing in undisrupted environments, which helped restore a sense of normalcy to their lives (Mark et al., 2009; Al-Ani, Mark, Semaan, 2010).",
+      "startOffset" : 204,
+      "endOffset" : 251
+    }, {
+      "referenceID" : 20,
+      "context" : "Early work in this area was known as digital or virtual ethnography (Jones, 1999; Miller & Slater, 2000; Hine, 2000, 2005), though we must already modernize this methodological orientation to depict real-time search and visualizations of massive data sets that support quantitative and qualitative analyses.",
+      "startOffset" : 68,
+      "endOffset" : 122
+    }, {
+      "referenceID" : 45,
+      "context" : "We are investigating the use of established and potentially new techniques, including information aggregation, privacy protection (Sicker, 2003), location privacy (Gruteser & Grunwald, 2003), confidentiality, reputation validation (Sicker & McCoy, 2007) and anonymization (Bauer et al.",
+      "startOffset" : 130,
+      "endOffset" : 144
+    }, {
+      "referenceID" : 2,
+      "context" : "We are investigating the use of established and potentially new techniques, including information aggregation, privacy protection (Sicker, 2003), location privacy (Gruteser & Grunwald, 2003), confidentiality, reputation validation (Sicker & McCoy, 2007) and anonymization (Bauer et al., 2007), as they apply to the matters of security, privacy and accuracy in selforganization and peer communication in crisis events.",
+      "startOffset" : 272,
+      "endOffset" : 292
+    }, {
+      "referenceID" : 58,
+      "context" : "Due to the peer and collaborative nature of this system, it is possible to pool perspectives of several users and extract relevant information about the disaster in part by using ratings to rank information accuracy with Bayesian filtering to determine reputation from those ratings (Mui & Mohtashemi, 2002; Whitby et al., 2004).",
+      "startOffset" : 283,
+      "endOffset" : 328
+    }, {
+      "referenceID" : 3,
+      "context" : "describes many techniques to effectively remove these network identifiers and achieve a degree of anonymity (Chaum, 1988; Reiter & Rubin, 1998; Dingledine et al., 2004).",
+      "startOffset" : 108,
+      "endOffset" : 168
+    }, {
+      "referenceID" : 4,
+      "context" : "describes many techniques to effectively remove these network identifiers and achieve a degree of anonymity (Chaum, 1988; Reiter & Rubin, 1998; Dingledine et al., 2004).",
+      "startOffset" : 108,
+      "endOffset" : 168
+    }, {
+      "referenceID" : 5,
+      "context" : "For instance, a classic problem within the field of reputation systems is the Sybil attack, which occurs when a single entity establishes a large number of identities, for instance, by adding a large number of nodes to a peerto-peer network (Douceur, 2002).",
+      "startOffset" : 241,
+      "endOffset" : 256
+    } ],
+    "year" : 2010,
+    "abstractText" : null,
+    "creator" : "Microsoft® Office Word 2007"
+  }
+}

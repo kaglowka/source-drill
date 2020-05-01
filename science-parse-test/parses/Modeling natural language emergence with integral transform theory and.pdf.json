@@ -1,0 +1,353 @@
+{
+  "name" : "Modeling natural language emergence with integral transform theory and.pdf",
+  "metadata" : {
+    "source" : "CRF",
+    "title" : "Modeling natural language emergence with integral transform theory and reinforcement learning",
+    "authors" : [ "Bohdan B. Khomtchouk", "Shyam Sudhakaran" ],
+    "emails" : [ ],
+    "sections" : [ {
+      "heading" : null,
+      "text" : "Modeling natural language emergence with integral transform theory and reinforcement learning\nBohdan B. Khomtchouk∗\nStanford University Department of Biology\nStanford, CA 94305, USA\nShyam Sudhakaran†\nQuiltomics Palo Alto, CA 94306, USA\nZipf’s law predicts a power-law relationship between word rank and frequency in language communication systems and has been widely reported in a variety of natural language processing applications. However, the emergence of natural language is often modeled as a function of bias between speaker and listener interests, which lacks a direct way of relating information-theoretic bias to Zipfian rank. A function of bias also serves as an unintuitive interpretation of the communicative effort exchanged between a speaker and a listener. We counter these shortcomings by proposing a novel integral transform and kernel for mapping communicative bias functions to corresponding word frequency-rank representations at any arbitrary phase transition point, resulting in a direct way to link communicative effort (modeled by speaker/listener bias) to specific vocabulary used (represented by word rank). We demonstrate the practical utility of our integral transform by showing how a change from bias to rank results in greater accuracy and performance at an image classification task for assigning word labels to images randomly subsampled from CIFAR10. We model this task as a reinforcement learning game between a speaker and listener and compare the relative impact of bias and Zipfian word rank on communicative performance (and accuracy) between the two agents.\nKeywords: Natural language processing — information theory — integral transform theory — deep learning — reinforcement learning — computer vision"
+    }, {
+      "heading" : "INTRODUCTION AND BACKGROUND",
+      "text" : "The linguist George Kingsley Zipf made the observation that the frequency of a word is proportional to the inverse of the word’s rank in a text. If the most common word occurs at frequency n, then the second most common word occurs at frequency n/2, the word with rank three at frequency n/3, etc. Generalized, Zipf’s law [1] states:\nf ∝ 1 rα\n(1)\nwhere r is the word rank and f the frequency in the text, and α is the scaling coefficient generally found to be near 1.0 for many of the texts examined [2–5].\nFerrer i Cancho’s research group formalized the least-effort principle as it applies to Zipf’s law [2, 10–12] by employing a mutation-driven genetic algorithm. Here the listener and speaker have different and conflicting interests. The listener seeks to gain as much information as possible from a communicative exchange, and would benefit if there were no ambiguity between word-object mappings. This is the case in which the correlation between words and objects is highest; in information theory [13], this corresponds to a high mutual information, or I(S,R) where S represents the symbol and R the referent or object. The speaker on the other hand looks to minimize her effort in communicating and would benefit from fewer words to choose from, assuming that the choice of words comes with an effort; in information theory, this is quantified using information entropy or H(S). To this end, Ferrer i Cancho [2] introduced an energy function based on information theory that models the speaker’s and listener’s interests:\nΩ(λ) = λI(S,R)− (1− λ)H(S) (2)\nwhere λ (0 < λ < 1) controls the balance between the speaker interests, H(S), and listener interests, I(S,R). It is found [2, 10, 11] that natural languages emerge at the phase transition (Fig. 1) near λ∗ ≈ 0.5 (i.e., when listener and speaker interests are weighted about equally). For λ < λ∗, there is little or no communication because there are few words in the lexicon 〈L〉 (Fig. 1B) while, it is assumed, the number of objects remains constant which produces tremendous ambiguity in word-meaning mappings – one or a few words point to all the objects (i.e., low I(S,R),\nar X\niv :1\n81 2.\n01 43\n1v 1\n[ cs\n.C L\n] 3\n0 N\nov 2\n01 8\n2\n(Fig. 1A)). For λ > λ∗, there is extremely efficient communication involving single word-single object mappings (i.e., high I(S,R)) – though this comes at a high cost for the speaker (i.e., high H(S)) because the lexicon abruptly rises to the number of objects.\nThe form of both of these phase transitions (Fig. 1) lies somewhere between a step (Heaviside) function and a ramp function (Fig. 2). The unit ramp function increases gradually, one unit per unit time. The abrupt switching between states [x < 0, f(x) = 0; x > 0, f(x) = 1] is typical of electrical circuits [14] and neural systems [15]. Indeed, prior studies performed analytical derivations of global minima from equation (2) to prove that this theoretical phase transition is well modeled by a step function [11, 16]. These studies demonstrated that the domain λ < λ∗ is characterized by single-signal systems (i.e., one signal refers to all objects), the domain λ = λ∗ is characterized by non-synonymous systems (i.e., no two signals refer to the same object, although one signal may refer to multiple objects), and the domain λ > λ∗ is characterized by one-to-one mappings between signals and objects.\nIn mathematics, a transform is a method used to convert an equation in one variable to an equation in a different variable [17]. Integrals are a common type of transform and have the generalized form:\nT [f(x)] = F (z) = ∫ b a f(x)g(x, z) dx (3)\nwhere f(x) is the function being transformed, T is the generalized mathematical transform, and g(x, z) is the kernel of the transform. When the definite integral is evaluated, the variable x drops out of the equation and one is left with a function purely of z. For example, in a Laplace transform [14], the kernel is the negative exponential e−xz, which serves as a damping function. In the special case that f(x) is the unit step function (Fig. 2A), the Laplace transform simply yields 1/z. For example, in electrical engineering, the Laplace transform is often used to map the behavior of functions in the time domain, f(t), to the frequency domain, F (z)."
+    }, {
+      "heading" : "RESULTS",
+      "text" : "We propose a new integral transform called the Slavi transform, S, to map communicative bias functions to corresponding word frequencies. Consider the function to transform as N(λ): the lexical size 〈L〉 of a language (i.e., the number of words in the language that are connected and have non-zero probability) as a function of the bias, λ, imparted to the listener over the speaker (Fig. 1B). Because the lexicon size and word-meaning mappings abruptly change at the phase transition near λ∗ (Fig. 1A,B), we can substitute the unit step function (Fig. 2A) for N(λ):\n1\nS[N(λ)] = ∫ 1 0 N(λ)e−λr dλ = ∫ x 0 N(λ)e−λr dλ+ ∫ 1 x\nN(λ)e−λr dλ =∫ x 0 (0)e−λr dλ+ ∫ 1 x (1)e−λr dλ = 1 r (e−xr − e−r) = N(r, x)\n(4)\nwhere x ∈ [0, 1] represents the phase transition near λ∗. Kernels of integral transforms of this form are called Slavi kernels, e−λr. Since e−xr − e−r < 1 for all x ∈ [0, 1), it follows that:\nN(r, x) < 1\nr (5)\nWe’ll see the importance of this result in Equation 7. For now, we emphasize four key points to give some intuition behind the utility of the proposed kernel (e−λr) used during the mapping:\n• Lexical size of a language has been transformed from a function of bias (λ) to a function of rank (r).\n• λ > λ∗ (one-to-one mappings between signals and objects) corresponds to high r (rare, unique signals specific to one object). λ < λ∗ (single-signal systems where one signal refers to all objects) corresponds to low r (frequent, repetitive words referring to multiple objects).\n• The y-axis is preserved under the transformation: it is still the number of words in the language (i.e., frequency).\n• Applying dimensional analysis validates the prerequisite of dimensionless products, as the product −λr is dimensionless since λ is a constant in the range [0, 1] (Fig. 1) and r is a rank (r ∈ N) corresponding to a specific word (i.e., signal) in the lexicon.\nInvestigating the other boundary (Fig. 2B) by substituting the unit ramp function for N(λ) and performing the Slavi transform yields 1/r2 for r →∞, a hallmark of complex languages possessing many words (where high r corresponds to rare words in the lexicon):\nS[N(λ)] = ∫ 1 0 N(λ)e−λr dλ = ∫ 1 0 (λ)e−λr dλ = − 2 rer + 1 r2 = N(r) (6)\nThus, depending on how abrupt the phase transition is, one should expect most words in a complex language to scale within the range:\n4 1\nr2 ≤ N(r) ≤ 1 r (7)\nor, in terms of the Zipfian exponent, 1 ≤ α ≤ 2, which is typically found to be the case [5, 18]. Taken together, there is a connection between the rank of the rth word and its frequency in the lexicon, N(r, x), provided the language is organizing around a phase transition in mutual information and lexicon size."
+    }, {
+      "heading" : "SIMULATION",
+      "text" : "We want to further demonstrate the importance of the Slavi transform mapping the lexical size of a language, originally a function of bias, to a function of rank by introducing a reinforcement learning simulation. Our goal for this simulation is to introduce a realistic scenario where we can show that word rank is more impactful than bias for tasks involving communication performance. Higher word rank corresponds to more infrequent and unique words, while lower word rank corresponds to more frequent words and synonyms. To better understand the inspiration behind the simulation, consider the following scenario:\nYou are walking with your friend in a very busy park. There are numerous objects that you and your friend see, but a brown colored dog captures your attention and you want to communicate this to your friend verbally. In this case, you are the “speaker” and your friend is the “listener”. You, the speaker, generate a “label”, such as “brown dog”, to alert the listener’s attention to the dog in question. “Brown dog”, is a very specific label and therefore it makes it very easy for the listener to associate it with the specific dog the speaker intends to communicate. The phrase, “brown dog”, is exclusively for a dog whose color is brown, which means that the phrase is mapped to the brown colored dog or similar objects like it in the environment. In this scenario, the speaker is exerting more effort than the listener, who can easily map “brown dog” to the brown colored dog. If the speaker instead just says “brown thing”, the listener will have to exert more effort to figure out that the speaker is talking about the dog (and, therefore, map its location in the environment). This would mean that the listener is exerting more effort than the speaker.\nRecall from Eq. 2 that this effort measurement is represented as bias in Ferrer i Cancho’s energy function. Bias (i.e., λ) controls the balance between the speaker interests, H(S), and listener interests, I(S,R). It can be viewed as a learning rate, which will help with the formulation of the training model later on. It is also important to note that even if the listener initially has no idea that the “brown dog” means brown colored dog, through repetition it would learn this association, in order to communicate effectively with the speaker. This can be viewed as natural language emergence, where labels are chosen (or “generated”) and repeated until the listener and speaker reach a consensus. Our main goal is to simulate this natural language emergence and compare the effects of bias and word rank on the ability to communicate efficiently between a speaker and a listener, ultimately testing the hypothesis that the Slavi transform (i.e., transforming bias to rank) is useful for practical computer vision tasks such as image classification."
+    }, {
+      "heading" : "DATA AND SOURCE CODE",
+      "text" : "We chose a set of 10 unique image classes, provided by the CIFAR10 dataset. The image classes are “airplane”, “automobile”, “bird”, “cat”, “deer”, “dog”, “frog”, “horse”, “ship”, and “truck”. Source code accompanying this simulation can be found here: https://github.com/Quiltomics/NLERL"
+    }, {
+      "heading" : "MODEL STRUCTURE",
+      "text" : "We attempt to model the scenario introduced above with a two-player game between two reinforcement learning agents, a speaker and a listener, where images are the objects that are to be communicated. The speaker and listener start off as almost independent, not communicating successfully. Through a training process they will create a language, or a mapping, between objects and one hot encoded values to communicate effectively. We adapted the model introduced by Angeliki Lazaridou, Alexander Peysakhovich, Marco Baroni [19].\nThe game between the speaker, parameterized as θs, and listener, parameterized as θl, is as follows:\n1. A sample image from each of the n unique classes from an image dataset is drawn and passed through a pretrained VGG19 network [20], the output represented by image vectors {i0, ..., in−1}. One of the vectors is chosen to be the “target image”, represented as it ∈ {i0, ..., in−1}, where t ∈ {0, ..., n− 1}.\n5 2. The speaker takes as input the target image it and generates a label from a vocabulary of size m, where m > 1. The label is represented as a one hot encoded vector of size m. This action is the speaker’s policy, πθs(it,m).\n3. The listener takes in each image vector, {i0, ..., in−1}, and the action label, πθs(it,m), generated by the speaker. It tries to guess which image the speaker saw by matching the label generated by the speaker to the correct target image it. This guess is the listener’s policy, πθl({i0, ...in−1} , πθs(it,m)).\n4. If the listener guesses the target correctly, or πθl({i0, ...in−1} , πθs(it,m)) = it, then both the speaker and listener receive a reward of 1. If the listener gets it wrong, the speaker and listener receive a reward of 0.\n5. Update parameters θs and θl.\nOver time, the listener and the speaker will develop a mapping to communicate the target images."
+    }, {
+      "heading" : "TRAINING AND TESTING",
+      "text" : "We chose the speaker and listener to be reinforcement learning agents because the way they learn to communicate effectively is similar to how humans would learn: through repetition and based on whether the speaker and listener reached a consensus or not. The update rule we chose to optimize the speaker’s and listener’s parameters is based off the Monte Carlo Policy Gradient (REINFORCE) algorithm [22]:\nAlgorithm 1 Monte Carlo Policy Gradient (REINFORCE) algorithm\nprocedure REINFORCE initialize parameters θ arbitrarily for each episode {s0, a0, r0, ..., sT , aT , rT } ∼ πθ do\nfor t = 0 to T do generate long term value vt from function Q\nπ(s, a) θ ← θ + α∇θ log πθ(st, at)vt\nend for end for return θ\nend procedure\nWe chose the long term reward vt for our algorithm to simply be rt, because trials are independent of each other. We also chose to modify the update rule by incorporating bias, 0 < λ < 1. Returning to Ferrer i Cancho’s energy function (Eq. 2), we can view bias (i.e., λ) as the “learning rate”, measuring the importance of the speaker’s and listener’s performances, and updating the model accordingly. This lets us easily incorporate λ into our simulation. Since (1− λ) scales speaker interests, H(S), and λ scales listener interests, I(S,R), we can scale our normal learning rate by (1− λ) for the speaker’s update and λ for the listener’s update and formulate a modified Monte Carlo Policy Gradient (REINFORCE) algorithm:\nAlgorithm 2 Modified Monte Carlo Policy Gradient (REINFORCE) algorithm\nprocedure Modified REINFORCE st = speaker state at time step t lt = listener state at time step t initialize speaker parameters θs and listener parameters θl arbitrarily. for each episode {s0, l0, πθs(s0), πθl(l0, πθs(s0)), r0, ..., sT , lT , πθs(sT ), πθl(lT , πθs(sT )), rT } do\nfor t = 0 to T do update speaker parameters: θs ← θs + (α× (1− λ))∇θs log πθs(st)rt update listener parameters: θl ← θl + (α× λ)∇θl log πθl(lt, πθs(st))rt\nend for end for return θs, θl end procedure"
+    }, {
+      "heading" : "AGENT ARCHITECTURES",
+      "text" : "Both the speaker and listener are feedforward neural networks, implemented in Keras. The neural networks’ weights are initialized using Glorot Initialization [21]. The speaker takes the target image as input and passes it through a\n6\npretrained VGG19 to generate an image vector embedding. The speaker passes the embeddings through its hidden layers to output a softmax probability vector of vocabulary size m. The speaker samples an action, or a label, from the generated probability vector. The listener passes a sampled image from each class, including the target image, through a pretrained VGG19 to generate image vector embeddings. The listener takes in the speaker’s generated label as an additional input. The image vector embeddings are passed through a shared hidden layer to create a new embedding. The speaker’s generated label is passed through a separate hidden layer to create a label embedding. Dot products are computed between each new image embedding and label embedding. A softmax probability vector of size 10 is generated from these dot products. A comprehensive workflow is illustrated in Fig. 3."
+    }, {
+      "heading" : "SIMULATION RESULTS",
+      "text" : "To simulate word rank, we simply modify the vocabulary size m: smaller vocabulary corresponds to more frequent labels for multiple objects, resulting in lower word rank, while larger vocabulary corresponds to more one-to-one\n7\nmappings between labels and objects, resulting in higher word rank. This is very intuitive to how humans interact, if there are less words in a speaker’s vocabulary than objects, the speaker will be forced to use the same word more frequently to mean different objects, making it harder to communicate. We trained for 1000 episodes, with 100 samples from each image class, and used a learning rate α of 0.001.\nTo reiterate, our main goal of the simulation has been to test the practical utility of the Slavi transform, namely to see if transforming bias to rank is useful for machine learning tasks. We wish to test the hypothesis that word rank is a better and more intuitive alternative to bias for effective communication. To do this, we observed the effect on the performance of our model while changing vocabulary size m and keeping bias λ constant compared to the performance while changing bias λ and keeping vocabulary size m constant. Performance is measured as accuracy, or total reward / total number of trials, which means the proportion of trials where the receiver picked the right object. We then determine whether there is a stronger trend between accuracy and rank compared to accuracy and bias. To test word rank, we ran the simulation with vocabulary sizes m of 2,10,50,100,250,500,650,800,1000, with a constant λ of 0.5 (equal effort between speaker and listener). When testing for bias, we used λ values of 0.002,0.01,0.05,0.1,0.25,0.5,0.65,0.8,0.99, and a constant vocabulary size m of 10. The rolling average of the 100 most recent episodes for both the simulations are shown in Fig. 4. The accuracy values for rank and bias are shown in Table I and Table II, respectively.\n8 From the accuracy measurements, we can see that both bias (λ) and word rank (vocabulary size m) have a positive relationship with accuracy. However, it is clear that bias has a weaker relationship than word rank. For vocabulary sizes m ≤ 800, there seemed to be a consistent increase in model performance, reaching a peak of 70%, and from m > 800 the accuracy seemed to level off at around 69%. Bias seemed to have a weaker relationship: at 0.001 ≤ λ ≤ 0.05 and 0.25 ≤ λ ≤ 0.5 the performance of the model did not improve. Furthermore, at 0.65 ≤ λ ≤ 0.8, the performance actually dipped from 44% to 37%, but eventually rose to 47%. Observing the Linear regression coefficients for vocabulary size vs accuracy and bias vs accuracy, we can see that a proportional increase in vocabulary size has about a 60% larger expected increase in accuracy than bias (95.38/59.41). Word rank is not only more intuitive to understand (i.e., vocabulary size is much easier to understand than bias), but also has a stronger positive relationship with accuracy, implying that it has a stronger effect, compared to bias, on the communicative performance between a speaker and a listener."
+    }, {
+      "heading" : "FUTURE DIRECTIONS",
+      "text" : "The peak accuracy we reached was 70%, so there is definite room for improvement. The model architecture can be expanded upon to improve the performance – one idea could be to include 1D convolutional layers, which may improve the accuracy. In addition to model improvements, with more computational power, more image samples and training episodes can be played. It would also be interesting to substitute CIFAR10 with the CIFAR100 dataset (i.e., to have more objects to communicate the problem)."
+    }, {
+      "heading" : "CONCLUSIONS",
+      "text" : "We show that the Slavi transform maps communicative functions of speaker-listener bias directly to word rank. Specifically, we demonstrate that the lexical size of a language can be mapped from a function of bias, N(λ), to a function of rank at any arbitrary phase transition point, N(r, x). We provide a practical example in the form of a unique approach to an image classification task, where two reinforcement learning agents (a speaker and a listener) communicate images and labels with each other. When testing the impact of bias and word rank we observed that word rank had a much stronger positive effect on communicative performance (and accuracy) than bias. This suggests that functions of word rank are generally more useful than functions of bias for modeling communicative systems. This study highlights the importance of integral transform theory to understanding and improving information-theoretic models of communicative systems in the context of Zipfian ranks.\n∗ Electronic address: bohdan@stanford.edu † Electronic address: shyamsnair@protonmail.com\n[1] Zipf G (1949), Human Behaviour and the Principle of Least Effort: An Introduction to Human Ecology (Addison–Wesley, Cambridge, MA). [2] Ferrer i Cancho R (2005), Zipf’s law from a communicative phase transition. European Physical Journal B 47: 449–457. [3] Baixeries J, Elvev̊ag B, Ferrer i Cancho R (2013), The evolution of the exponent of Zipf’s law in language ontogeny. PLoS\nOne 8(3): e53227. [4] Alday PM (2016), Towards A Rigorous Motivation For Zipf’s Law. In S.G. Roberts, C. Cuskley, L. McCrohon, L. Barceló-\nCoblijn, O. Fehér & T. Verhoef (eds.) The Evolution of Language: Proceedings of the 11th International Conference (EVOLANG11). [5] Moreno-Sánchez I, Font-Clos F, Corral Á (2016), Large-Scale Analysis of Zipf’s Law in English Texts. PLoS One 11(1): e0147073. [6] Mandelbrot B (1966), Information theory and psycholinguistics: a theory of word frequencies. In Lazafeld P, Henry N, eds.: Readings in Mathematical Social Science (MIT Press, Cambridge, USA). [7] Mandelbrot B (1983), The Fractal Structure of Nature (Freeman, New York). [8] Montemurro MA (2001), Beyond the Zipf–Mandelbrot law in quantitative linguistics. Physica A 300: 567–578. [9] Manning C, Schütze H (1999), Foundations of Statistical Natural Language Processing (MIT Press, Cambridge, MA). [10] Ferrer i Cancho R, Solé RV (2003), Least effort and the origins of scaling in human language. Proc Natl Acad Sci USA 100: 788–791. [11] Ferrer i Cancho R, Dı́az-Guilera A (2007), The global minima of the communicative energy of natural communication systems. Journal of Statistical Mechanics: P06009. [12] Ferrer i Cancho R, Elvev̊ag B (2010), Random texts do not exhibit the real Zipf’s law-like rank distribution. PLoS One 5(3): e9411. [13] Shannon C (1948), A Mathematical Theory of Communication. Bell System Tech J 27: 379–423 & 623–656.\n9 [14] Spiegel MR (1965), Laplace Transforms (McGraw-Hill Book Company, New York). [15] McCulloch W, Pitts W (1943), A logical calculus of the ideas immanent in nervous activity. Bulletin of Mathematical\nBiophysics 7: 115–133. [16] Prokopenko M, Ay N, Obst O, Polani D (2010), Phase transitions in least-effort communications. Journal of Statistical\nMechanics: Theory and Experiment. 11: P11025. [17] Körner TW (2008), Transforms. In Gowers, T., ed.: The Princeton Companion to Mathematics (Princeton University\nPress, Princeton): 303–307. [18] Ferrer i Cancho R (2006), When language breaks into pieces: A conflict between communication through isolated signals\nand language. BioSystems 84(3): 242–253. [19] Angeliki Lazaridou, Alexander Peysakhovich, Marco Baroni (2016), Multi-Agent Cooperation and the Emergence of (Nat-\nural) Language. CoRR: abs/1612.07182 [20] K. Simonyan, A. Zisserman (2014), Very Deep Convolutional Networks for Large-Scale Image Recognition. ArXiv e-prints:\n1409.1556 [21] Xavier Glorot, Yoshua Bengio (2010) Understanding the difficulty of training deep feedforward neural networks. Proceedings\nof Machine Learning Research, 9:249–256 [22] Ronald J Williams (1992) Simple statistical gradient-following algorithms for connectionist reinforcement learning. Machine\nlearning, 8(3-4):229-256"
+    } ],
+    "references" : [ {
+      "title" : "Human Behaviour and the Principle of Least Effort: An Introduction to Human Ecology (Addison–Wesley",
+      "author" : [ "G Zipf" ],
+      "venue" : null,
+      "citeRegEx" : "1",
+      "shortCiteRegEx" : "1",
+      "year" : 1949
+    }, {
+      "title" : "Zipf’s law from a communicative phase transition",
+      "author" : [ "R Ferrer i Cancho" ],
+      "venue" : "European Physical Journal B",
+      "citeRegEx" : "2",
+      "shortCiteRegEx" : "2",
+      "year" : 2005
+    }, {
+      "title" : "The evolution of the exponent of Zipf’s law in language ontogeny",
+      "author" : [ "J Baixeries", "B Elvev̊ag", "R Ferrer i Cancho" ],
+      "venue" : "PLoS One",
+      "citeRegEx" : "3",
+      "shortCiteRegEx" : "3",
+      "year" : 2013
+    }, {
+      "title" : "Towards A Rigorous Motivation For Zipf’s Law",
+      "author" : [ "PM Alday" ],
+      "venue" : "The Evolution of Language: Proceedings of the 11th International Conference (EVOLANG11)",
+      "citeRegEx" : "4",
+      "shortCiteRegEx" : "4",
+      "year" : 2016
+    }, {
+      "title" : "Large-Scale Analysis of Zipf’s Law in English Texts",
+      "author" : [ "I Moreno-Sánchez", "F Font-Clos", "Á Corral" ],
+      "venue" : "PLoS One",
+      "citeRegEx" : "5",
+      "shortCiteRegEx" : "5",
+      "year" : 2016
+    }, {
+      "title" : "Information theory and psycholinguistics: a theory of word frequencies",
+      "author" : [ "B Mandelbrot" ],
+      "venue" : "In Lazafeld P, Henry N, eds.: Readings in Mathematical Social Science",
+      "citeRegEx" : "6",
+      "shortCiteRegEx" : "6",
+      "year" : 1966
+    }, {
+      "title" : "The Fractal Structure of Nature (Freeman, New York)",
+      "author" : [ "B Mandelbrot" ],
+      "venue" : null,
+      "citeRegEx" : "7",
+      "shortCiteRegEx" : "7",
+      "year" : 1983
+    }, {
+      "title" : "Beyond the Zipf–Mandelbrot law in quantitative linguistics",
+      "author" : [ "MA Montemurro" ],
+      "venue" : "Physica A",
+      "citeRegEx" : "8",
+      "shortCiteRegEx" : "8",
+      "year" : 2001
+    }, {
+      "title" : "Foundations of Statistical Natural Language Processing",
+      "author" : [ "C Manning", "H Schütze" ],
+      "venue" : null,
+      "citeRegEx" : "9",
+      "shortCiteRegEx" : "9",
+      "year" : 1999
+    }, {
+      "title" : "Least effort and the origins of scaling in human language",
+      "author" : [ "R Ferrer i Cancho", "RV Solé" ],
+      "venue" : "Proc Natl Acad Sci USA",
+      "citeRegEx" : "10",
+      "shortCiteRegEx" : "10",
+      "year" : 2003
+    }, {
+      "title" : "Dı́az-Guilera A (2007), The global minima of the communicative energy of natural communication systems",
+      "author" : [ "R Ferrer i Cancho" ],
+      "venue" : "Journal of Statistical Mechanics: P06009",
+      "citeRegEx" : "11",
+      "shortCiteRegEx" : "11",
+      "year" : 2007
+    }, {
+      "title" : "Random texts do not exhibit the real Zipf’s law-like rank distribution",
+      "author" : [ "R Ferrer i Cancho", "B Elvev̊ag" ],
+      "venue" : "PLoS One",
+      "citeRegEx" : "12",
+      "shortCiteRegEx" : "12",
+      "year" : 2010
+    }, {
+      "title" : "A Mathematical Theory of Communication",
+      "author" : [ "C Shannon" ],
+      "venue" : "Bell System Tech J",
+      "citeRegEx" : "13",
+      "shortCiteRegEx" : "13",
+      "year" : 1948
+    }, {
+      "title" : "A logical calculus of the ideas immanent in nervous activity",
+      "author" : [ "W McCulloch", "W Pitts" ],
+      "venue" : "Bulletin of Mathematical Biophysics",
+      "citeRegEx" : "15",
+      "shortCiteRegEx" : "15",
+      "year" : 1943
+    }, {
+      "title" : "Phase transitions in least-effort communications",
+      "author" : [ "M Prokopenko", "N Ay", "O Obst", "D Polani" ],
+      "venue" : "Journal of Statistical Mechanics: Theory and Experiment",
+      "citeRegEx" : "16",
+      "shortCiteRegEx" : "16",
+      "year" : 2010
+    }, {
+      "title" : "When language breaks into pieces: A conflict between communication through isolated signals and language",
+      "author" : [ "R Ferrer i Cancho" ],
+      "venue" : null,
+      "citeRegEx" : "18",
+      "shortCiteRegEx" : "18",
+      "year" : 2006
+    }, {
+      "title" : "Multi-Agent Cooperation and the Emergence of (Natural) Language",
+      "author" : [ "Angeliki Lazaridou", "Alexander Peysakhovich", "Marco Baroni" ],
+      "venue" : null,
+      "citeRegEx" : "19",
+      "shortCiteRegEx" : "19",
+      "year" : 2016
+    }, {
+      "title" : "Very Deep Convolutional Networks for Large-Scale Image Recognition",
+      "author" : [ "K. Simonyan", "A. Zisserman" ],
+      "venue" : "ArXiv e-prints:",
+      "citeRegEx" : "20",
+      "shortCiteRegEx" : "20",
+      "year" : 2014
+    }, {
+      "title" : "Understanding the difficulty of training deep feedforward neural networks",
+      "author" : [ "Xavier Glorot", "Yoshua Bengio" ],
+      "venue" : "Proceedings of Machine Learning Research,",
+      "citeRegEx" : "21",
+      "shortCiteRegEx" : "21",
+      "year" : 2010
+    }, {
+      "title" : "Simple statistical gradient-following algorithms for connectionist reinforcement learning",
+      "author" : [ "Ronald J Williams" ],
+      "venue" : "Machine learning,",
+      "citeRegEx" : "22",
+      "shortCiteRegEx" : "22",
+      "year" : 1992
+    } ],
+    "referenceMentions" : [ {
+      "referenceID" : 12,
+      "context" : "This is the case in which the correlation between words and objects is highest; in information theory [13], this corresponds to a high mutual information, or I(S,R) where S represents the symbol and R the referent or object.",
+      "startOffset" : 102,
+      "endOffset" : 106
+    }, {
+      "referenceID" : 1,
+      "context" : "To this end, Ferrer i Cancho [2] introduced an energy function based on information theory that models the speaker’s and listener’s interests:",
+      "startOffset" : 29,
+      "endOffset" : 32
+    }, {
+      "referenceID" : 1,
+      "context" : "It is found [2, 10, 11] that natural languages emerge at the phase transition (Fig.",
+      "startOffset" : 12,
+      "endOffset" : 23
+    }, {
+      "referenceID" : 9,
+      "context" : "It is found [2, 10, 11] that natural languages emerge at the phase transition (Fig.",
+      "startOffset" : 12,
+      "endOffset" : 23
+    }, {
+      "referenceID" : 10,
+      "context" : "It is found [2, 10, 11] that natural languages emerge at the phase transition (Fig.",
+      "startOffset" : 12,
+      "endOffset" : 23
+    }, {
+      "referenceID" : 13,
+      "context" : "The abrupt switching between states [x < 0, f(x) = 0; x > 0, f(x) = 1] is typical of electrical circuits [14] and neural systems [15].",
+      "startOffset" : 129,
+      "endOffset" : 133
+    }, {
+      "referenceID" : 10,
+      "context" : "Indeed, prior studies performed analytical derivations of global minima from equation (2) to prove that this theoretical phase transition is well modeled by a step function [11, 16].",
+      "startOffset" : 173,
+      "endOffset" : 181
+    }, {
+      "referenceID" : 14,
+      "context" : "Indeed, prior studies performed analytical derivations of global minima from equation (2) to prove that this theoretical phase transition is well modeled by a step function [11, 16].",
+      "startOffset" : 173,
+      "endOffset" : 181
+    }, {
+      "referenceID" : 4,
+      "context" : "or, in terms of the Zipfian exponent, 1 ≤ α ≤ 2, which is typically found to be the case [5, 18].",
+      "startOffset" : 89,
+      "endOffset" : 96
+    }, {
+      "referenceID" : 15,
+      "context" : "or, in terms of the Zipfian exponent, 1 ≤ α ≤ 2, which is typically found to be the case [5, 18].",
+      "startOffset" : 89,
+      "endOffset" : 96
+    }, {
+      "referenceID" : 16,
+      "context" : "We adapted the model introduced by Angeliki Lazaridou, Alexander Peysakhovich, Marco Baroni [19].",
+      "startOffset" : 92,
+      "endOffset" : 96
+    }, {
+      "referenceID" : 17,
+      "context" : "A sample image from each of the n unique classes from an image dataset is drawn and passed through a pretrained VGG19 network [20], the output represented by image vectors {i0, .",
+      "startOffset" : 126,
+      "endOffset" : 130
+    }, {
+      "referenceID" : 19,
+      "context" : "The update rule we chose to optimize the speaker’s and listener’s parameters is based off the Monte Carlo Policy Gradient (REINFORCE) algorithm [22]:",
+      "startOffset" : 144,
+      "endOffset" : 148
+    }, {
+      "referenceID" : 18,
+      "context" : "The neural networks’ weights are initialized using Glorot Initialization [21].",
+      "startOffset" : 73,
+      "endOffset" : 77
+    }, {
+      "referenceID" : 0,
+      "context" : "com [1] Zipf G (1949), Human Behaviour and the Principle of Least Effort: An Introduction to Human Ecology (Addison–Wesley, Cambridge, MA).",
+      "startOffset" : 4,
+      "endOffset" : 7
+    }, {
+      "referenceID" : 1,
+      "context" : "[2] Ferrer i Cancho R (2005), Zipf’s law from a communicative phase transition.",
+      "startOffset" : 0,
+      "endOffset" : 3
+    }, {
+      "referenceID" : 2,
+      "context" : "[3] Baixeries J, Elvev̊ag B, Ferrer i Cancho R (2013), The evolution of the exponent of Zipf’s law in language ontogeny.",
+      "startOffset" : 0,
+      "endOffset" : 3
+    }, {
+      "referenceID" : 3,
+      "context" : "[4] Alday PM (2016), Towards A Rigorous Motivation For Zipf’s Law.",
+      "startOffset" : 0,
+      "endOffset" : 3
+    }, {
+      "referenceID" : 4,
+      "context" : "[5] Moreno-Sánchez I, Font-Clos F, Corral Á (2016), Large-Scale Analysis of Zipf’s Law in English Texts.",
+      "startOffset" : 0,
+      "endOffset" : 3
+    }, {
+      "referenceID" : 5,
+      "context" : "[6] Mandelbrot B (1966), Information theory and psycholinguistics: a theory of word frequencies.",
+      "startOffset" : 0,
+      "endOffset" : 3
+    }, {
+      "referenceID" : 6,
+      "context" : "[7] Mandelbrot B (1983), The Fractal Structure of Nature (Freeman, New York).",
+      "startOffset" : 0,
+      "endOffset" : 3
+    }, {
+      "referenceID" : 7,
+      "context" : "[8] Montemurro MA (2001), Beyond the Zipf–Mandelbrot law in quantitative linguistics.",
+      "startOffset" : 0,
+      "endOffset" : 3
+    }, {
+      "referenceID" : 8,
+      "context" : "[9] Manning C, Schütze H (1999), Foundations of Statistical Natural Language Processing (MIT Press, Cambridge, MA).",
+      "startOffset" : 0,
+      "endOffset" : 3
+    }, {
+      "referenceID" : 9,
+      "context" : "[10] Ferrer i Cancho R, Solé RV (2003), Least effort and the origins of scaling in human language.",
+      "startOffset" : 0,
+      "endOffset" : 4
+    }, {
+      "referenceID" : 10,
+      "context" : "[11] Ferrer i Cancho R, Dı́az-Guilera A (2007), The global minima of the communicative energy of natural communication systems.",
+      "startOffset" : 0,
+      "endOffset" : 4
+    }, {
+      "referenceID" : 11,
+      "context" : "[12] Ferrer i Cancho R, Elvev̊ag B (2010), Random texts do not exhibit the real Zipf’s law-like rank distribution.",
+      "startOffset" : 0,
+      "endOffset" : 4
+    }, {
+      "referenceID" : 12,
+      "context" : "[13] Shannon C (1948), A Mathematical Theory of Communication.",
+      "startOffset" : 0,
+      "endOffset" : 4
+    }, {
+      "referenceID" : 13,
+      "context" : "[15] McCulloch W, Pitts W (1943), A logical calculus of the ideas immanent in nervous activity.",
+      "startOffset" : 0,
+      "endOffset" : 4
+    }, {
+      "referenceID" : 14,
+      "context" : "[16] Prokopenko M, Ay N, Obst O, Polani D (2010), Phase transitions in least-effort communications.",
+      "startOffset" : 0,
+      "endOffset" : 4
+    }, {
+      "referenceID" : 15,
+      "context" : "[18] Ferrer i Cancho R (2006), When language breaks into pieces: A conflict between communication through isolated signals and language.",
+      "startOffset" : 0,
+      "endOffset" : 4
+    }, {
+      "referenceID" : 16,
+      "context" : "[19] Angeliki Lazaridou, Alexander Peysakhovich, Marco Baroni (2016), Multi-Agent Cooperation and the Emergence of (Natural) Language.",
+      "startOffset" : 0,
+      "endOffset" : 4
+    }, {
+      "referenceID" : 18,
+      "context" : "1556 [21] Xavier Glorot, Yoshua Bengio (2010) Understanding the difficulty of training deep feedforward neural networks.",
+      "startOffset" : 5,
+      "endOffset" : 9
+    }, {
+      "referenceID" : 19,
+      "context" : "Proceedings of Machine Learning Research, 9:249–256 [22] Ronald J Williams (1992) Simple statistical gradient-following algorithms for connectionist reinforcement learning.",
+      "startOffset" : 52,
+      "endOffset" : 56
+    } ],
+    "year" : 2018,
+    "abstractText" : "Zipf’s law predicts a power-law relationship between word rank and frequency in language communication systems and has been widely reported in a variety of natural language processing applications. However, the emergence of natural language is often modeled as a function of bias between speaker and listener interests, which lacks a direct way of relating information-theoretic bias to Zipfian rank. A function of bias also serves as an unintuitive interpretation of the communicative effort exchanged between a speaker and a listener. We counter these shortcomings by proposing a novel integral transform and kernel for mapping communicative bias functions to corresponding word frequency-rank representations at any arbitrary phase transition point, resulting in a direct way to link communicative effort (modeled by speaker/listener bias) to specific vocabulary used (represented by word rank). We demonstrate the practical utility of our integral transform by showing how a change from bias to rank results in greater accuracy and performance at an image classification task for assigning word labels to images randomly subsampled from CIFAR10. We model this task as a reinforcement learning game between a speaker and listener and compare the relative impact of bias and Zipfian word rank on communicative performance (and accuracy) between the two agents.",
+    "creator" : "LaTeX with hyperref package"
+  }
+}
