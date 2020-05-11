@@ -1,10 +1,14 @@
 
 #### our own ignores
 
-sample_pdfs/*.pdf
-output/*
-science-parse-test/science-parse/*
+
+# a repository that needs to be downloaded separately
+pdf-parsing/science-parse-test/science-parse
+# other
+sample-pdfs/*
+pdf-parsing/output/*
 datasets/*
+# large corpus data
 s2orc-data/*
 
 ##### Python template from GitHub
