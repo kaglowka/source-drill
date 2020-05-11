@@ -5,6 +5,7 @@ sample_pdfs/*.pdf
 output/*
 science-parse-test/science-parse/*
 datasets/*
+s2orc-data/*
 
 ##### Python template from GitHub
 # Byte-compiled / optimized / DLL files
