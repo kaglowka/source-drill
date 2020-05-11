@@ -7,8 +7,8 @@ pdf-parsing/science-parse-test/science-parse
 # other
 sample-pdfs/*
 pdf-parsing/output/*
-datasets/*
-# large corpus data
+# corpus data
+other-data/scicite
 s2orc-data/*
 
 ##### Python template from GitHub
