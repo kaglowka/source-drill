@@ -1,0 +1,8 @@
+boto3
+numpy
+pandas
+torch
+jsonlines
+tqdm
+flair
+syntok
