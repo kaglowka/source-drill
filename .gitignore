@@ -1,15 +1,8 @@
 
 #### our own ignores
-
-
-# a repository that needs to be downloaded separately
-pdf-parsing/science-parse-test/science-parse
-# other
-sample-pdfs/*
-pdf-parsing/output/*
-# corpus data
-other-data/scicite
-s2orc-data/*
+data/*
+!data/example_conversation.json
+.DS_Store
 
 ##### Python template from GitHub
 # Byte-compiled / optimized / DLL files

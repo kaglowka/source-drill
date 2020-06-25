@@ -44,7 +44,7 @@ def get_citation_contexts(paper: Dict, toks_in_context=10) -> List[Dict]:
             contexts.append({
                 "paper_id": paper['paper_id'],
                 "pre_context": pre_string,
-                "context_string": cite_span['text'],
+                "context_string": full_context,
                 "post_context": post_string,
                 "cite_start": len(pre_string),
                 "cite_end": len(pre_string) + len(cite_span['text']),
