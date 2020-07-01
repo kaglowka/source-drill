@@ -11,3 +11,5 @@ Contents:
 * **plot_text_sim.py**: function to make interactive plots of metrics
 
 * **pickle files**: created in **analyze-pipeline.ipynb** and loaded in **Report.ipynb**
+
+* **s2orc catalog**: files related to S2ORC (corpus)
