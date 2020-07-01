@@ -2,7 +2,7 @@ import plotly.graph_objects as go
 import textwrap
 import numpy as np
 
-def plot_text_sim(similarities: list, texts: list):
+def plot_text_sim(similarities: list, texts: list, title=''):
     plt_texts = []
     shorten_width = 1000 # characters
     line_width = 60
@@ -24,6 +24,9 @@ def plot_text_sim(similarities: list, texts: list):
         ]
     )
     fig.update_layout(
+        title=title,
+        xaxis_title="text chunk number",
+        yaxis_title="similarity to context",
         hoverlabel=dict(
             bgcolor="white", 
             font_size=13, 
@@ -31,4 +34,4 @@ def plot_text_sim(similarities: list, texts: list):
         ),)
     _ = fig.show()
     return fig
- 
+    
