@@ -1,9 +1,13 @@
 # source-drill
 
-### pdf parsing
+Contents:
 
-### pdfminer TODO
-- merge lines of equal font size into blocks
-- merge chunks of only minimally variable font size (in scanned text it's continuous!) -- it creates false chunks...
-- in fontsize clustering reduce the number of clusters in case of low and long left tail
-- see what can be achieved with TTextBox
+* **Report.ipynb**: report of the findings including several case-studies
+
+* **analyze-pipeline.ipynb**: pipeline with the main analysis
+
+* **make-psycho-corpus.ipynb**: corpus preprocessing
+
+* **plot_text_sim.py**: function to make interactive plots of metrics
+
+* **pickle files**: created in **analyze-pipeline.ipynb** and loaded in **Report.ipynb**
