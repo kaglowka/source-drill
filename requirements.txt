@@ -6,3 +6,7 @@ jsonlines
 tqdm
 flair
 syntok
+spacy
+wordfreq
+nltk
+scikit-fuzzy

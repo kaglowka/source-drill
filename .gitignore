@@ -1,8 +1,7 @@
 
 #### our own ignores
-data/*
-!data/example_conversation.json
-.DS_Store
+.idea
+s2orc-data
 
 ##### Python template from GitHub
 # Byte-compiled / optimized / DLL files
