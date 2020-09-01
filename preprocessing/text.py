@@ -4,15 +4,12 @@ from syntok.tokenizer import Tokenizer
 from flair.data import Sentence
 
 token_filter_re = r'^\p{L}(\p{L}|\.|[0-9])+$'
-science_blacklist = {'et', 'al', 'al.'}  # remove words specific for scientific papers without any importance for the task
-
 
 def filter_tokens(tokens):
     # Filter out non-common-word/non-real-world-entity tokens
     return [
         token for token in tokens if
             regex.match(token_filter_re, token.text)
-            and token.text not in science_blacklist
     ]
 
 
